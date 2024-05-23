@@ -53,7 +53,7 @@ export function HeaderWrapper() {
         {/* end::Aside toggle */}
       </div>
       {/* end::Brand */}
-      <HeaderToolbar />
+      {/* <HeaderToolbar /> */}
     </div>
   )
 }
