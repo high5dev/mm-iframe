@@ -67,10 +67,21 @@ const SkinAnalysisPage = () => (
                 </div>
                 <div className='mx-auto mw-600px w-100 pt-15 pb-10'>
                     <div className='mr-4 row'>
-                        <button className='btn btn-lg btn-primary me-3'>Your Routine</button>
+                        <a
+                            href="/daily-routine"
+                            className="btn btn-block btn-primary me-150 mr-150 btn-shadow ms-2"
+                        >
+                            Your Routine
+                        </a>
+                        {/* <button className='btn btn-block btn-primary me-3 ms-2'>Your Routine</button> */}
                     </div>
                     <div className='mr-2 mt-10 row'>
-                            <button className='btn btn-block btn-primary me-150 mr-150'>Retake Photo</button>
+                        <a
+                            href="/"
+                            className="btn btn-light-primary btn-shadow ms-2"
+                        >
+                            Retake Photo
+                        </a>
                     </div>
                 </div>
             </div>

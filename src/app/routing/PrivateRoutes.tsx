@@ -7,6 +7,7 @@ import {HomeWrapper} from '../pages/home/HomeWrapper'
 import {MenuTestPage} from '../pages/MenuTestPage'
 import {HautAIWrapper} from '../pages/haut-ai/HautAIWrapper'
 import {SkinAnalysisWrapper} from '../pages/skin-analysis/SkinAnalysisWrapper'
+import {SelectDailyRoutineWrapper} from '../pages/daily-routine/SelectDailyRoutine'
 import {getCSSVariableValue} from '../../_metronic/assets/ts/_utils'
 import {WithChildren} from '../../_metronic/helpers'
 import BuilderPageWrapper from '../pages/layout-builder/BuilderPageWrapper'
@@ -30,6 +31,7 @@ const PrivateRoutes = () => {
         <Route path='home' element={<HomeWrapper />} />
         <Route path='api-to-haut' element={<HautAIWrapper />} />
         <Route path='skin-analysis' element={<SkinAnalysisWrapper />} />
+        <Route path='daily-routine' element={<SelectDailyRoutineWrapper />} />
         <Route
           path='builder'
           element={

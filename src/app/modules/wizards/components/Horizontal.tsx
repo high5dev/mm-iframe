@@ -1,4 +1,5 @@
 import { FC, useEffect, useRef, useState } from 'react'
+import { useNavigate } from 'react-router-dom';
 import { Step1 } from './steps/Step1'
 import { Step2 } from './steps/Step2'
 import { Step3 } from './steps/Step3'
@@ -32,6 +33,8 @@ const Horizontal: FC = () => {
     setIsChecked(checked);
   };
 
+  const navigate = useNavigate();
+
   const loadStepper = () => {
     setStepper(StepperComponent.createInsance(stepperRef.current as HTMLDivElement))
   }
@@ -57,7 +60,11 @@ const Horizontal: FC = () => {
       stepper.goNext()
     } else {
       alert("Form" +values+ "will be submitted")
-      stepper.goto(1)
+      navigate('/api-to-haut')
+      setTimeout(() => {
+        navigate('/skin-analysis')
+      }, 5000);
+      // stepper.goto(1)
       actions.resetForm()
     }
 
