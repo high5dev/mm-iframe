@@ -12,12 +12,12 @@ const Step12: FC = () => {
       <div className='mb-10 fv-row'>
         <Field
           type='text'
-          className='form-control form-control-lg form-control-solid'
+          className='form-control form-control-lg border-bottom-only'
           name='accountEmail'
         />
-        <div className='text-danger mt-2'>
+        {/* <div className='text-danger mt-2'>
           <ErrorMessage name='accountEmail' />
-        </div>
+        </div> */}
       </div>
       <div className='mb-10 row'>
         <button type='submit' className='btn btn-lg btn-primary me-3'>

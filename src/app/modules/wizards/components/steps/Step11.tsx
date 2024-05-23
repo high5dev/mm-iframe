@@ -1,6 +1,7 @@
 import React, { FC } from 'react'
 import { KTIcon } from '../../../../../_metronic/helpers'
 import { ErrorMessage, Field } from 'formik'
+import './styles.scss'
 
 const Step11: FC = () => {
   return (
@@ -12,12 +13,12 @@ const Step11: FC = () => {
       <div className='mb-10 fv-row'>
         <Field
           type='text'
-          className='form-control form-control-lg form-control-solid'
+          className='form-control form-control-lg border-bottom-only'
           name='accountName'
         />
-        <div className='text-danger mt-2'>
+        {/* <div className='text-danger mt-2'>
           <ErrorMessage name='accountName' />
-        </div>
+        </div> */}
       </div>
       <div className='mb-10 row'>
         <button type='submit' className='btn btn-lg btn-primary me-3 align-items-center'>
