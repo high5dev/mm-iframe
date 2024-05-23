@@ -77,9 +77,9 @@ const Step17: FC = () => {
             </label>
           </div>
         </div>
-        <div className='text-danger mt-2'>
+        {/* <div className='text-danger mt-2'>
           <ErrorMessage name='skinSensible' />
-        </div>
+        </div> */}
 
         <div className='mb-10 row'>
           <button type='submit' className='btn btn-lg btn-primary me-3'>

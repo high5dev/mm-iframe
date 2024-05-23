@@ -106,9 +106,9 @@ const Step18: FC = () => {
             </label> */}
           </div>
         </div>
-        <div className='text-danger mt-2'>
+        {/* <div className='text-danger mt-2'>
           <ErrorMessage name='termsAccept' />
-        </div>
+        </div> */}
 
         <div className='mb-10 row'>
           <button type='submit' className='btn btn-md btn-primary me-3'>
