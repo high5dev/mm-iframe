@@ -2,12 +2,13 @@
 import { FC } from 'react'
 import { KTIcon } from '../../../../../_metronic/helpers'
 import { ErrorMessage, Field } from 'formik'
+import './styles.scss'
 
 const Step13: FC = () => {
   return (
     <div className='w-100'>
       <div className='pb-10 pb-lg-15'>
-        <h2 className='text-gray-900 text-center'>
+        <h2 className='text-gray-900 text-center font-size-24'>
           You belong to which age group?
         </h2>
       </div>
@@ -27,9 +28,7 @@ const Step13: FC = () => {
                   className='btn btn-outline btn-outline-dashed btn-outline-default p-7 d-block align-items-center mb-10'
                   htmlFor='kt_create_account_form_age_group_1'
                 >
-                  <span className='fw-bold'>
-                    <span className='text-gray-900 fs-7 mb-2 text-center'>Below 18</span>
-                  </span>
+                    <span className='text-gray-900 font-size-24 mb-2 text-center'>Below 18</span>
                 </label>
               </div>
             </div>
@@ -47,7 +46,7 @@ const Step13: FC = () => {
                   htmlFor='kt_create_account_form_age_group_2'
                 >
                   <span className='fw-bold'>
-                    <span className='text-gray-900 fs-7 mb-2 text-center'>18 to 24</span>
+                    <span className='text-gray-900 font-size-24 mb-2 text-center'>18 to 24</span>
                   </span>
                 </label>
               </div>
@@ -68,7 +67,7 @@ const Step13: FC = () => {
                   htmlFor='kt_create_account_form_age_group_3'
                 >
                   <span className='fw-bold'>
-                    <span className='text-gray-900 fs-7 mb-2 text-center'>25 to 30</span>
+                    <span className='text-gray-900 font-size-24 mb-2 text-center'>25 to 30</span>
                   </span>
                 </label>
               </div>
@@ -87,7 +86,7 @@ const Step13: FC = () => {
                   htmlFor='kt_create_account_form_age_group_4'
                 >
                   <span className='fw-bold'>
-                    <span className='text-gray-900 fs-7 mb-2 text-center'>30 to 34</span>
+                    <span className='text-gray-900 font-size-24 mb-2 text-center'>30 to 34</span>
                   </span>
                 </label>
               </div>
@@ -108,7 +107,7 @@ const Step13: FC = () => {
                   htmlFor='kt_create_account_form_age_group_5'
                 >
                   <span className='fw-bold'>
-                    <span className='text-gray-900 fs-7 mb-2 text-center'>34 to 40</span>
+                    <span className='text-gray-900 font-size-24 mb-2 text-center'>34 to 40</span>
                   </span>
                 </label>
               </div>
@@ -127,7 +126,7 @@ const Step13: FC = () => {
                   htmlFor='kt_create_account_form_age_group_6'
                 >
                   <span className='fw-bold'>
-                    <span className='text-gray-900 fs-7 mb-2 text-center'>Above 40</span>
+                    <span className='text-gray-900 font-size-24 mb-2 text-center'>Above 40</span>
                   </span>
                 </label>
               </div>
@@ -138,7 +137,7 @@ const Step13: FC = () => {
       <div className='fv-row'>
         <div className='mb-10 row'>
           <button type='submit' className='btn btn-lg btn-primary me-3'>
-            <span className='indicator-label'>Next
+            <span className='indicator-label font-size-24'>Next
               {/* <KTIcon iconName='arrow-right' className='fs-3 ms-2 me-0' /> */}
             </span>
           </button>

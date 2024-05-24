@@ -1,12 +1,13 @@
 import React, { FC } from 'react'
 import { KTIcon } from '../../../../../_metronic/helpers'
 import { ErrorMessage, Field } from 'formik'
+import './styles.scss'
 
 const Step12: FC = () => {
   return (
     <div className='w-100'>
       <div className='pb-10 pb-lg-15'>
-        <h2 className='fw-bolder text-gray-900 text-center'>To share the results with you, please share your email Id?</h2>
+        <h2 className='text-gray-900 text-center font-size-24'>To share the results with you, please share your email Id?</h2>
       </div>
 
       <div className='mb-10 fv-row'>
@@ -21,7 +22,7 @@ const Step12: FC = () => {
       </div>
       <div className='mb-10 row'>
         <button type='submit' className='btn btn-lg btn-primary me-3'>
-          <span className='indicator-label'>Next
+          <span className='indicator-label font-size-24'>Next
           </span>
         </button>
       </div>

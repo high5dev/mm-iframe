@@ -1,10 +1,5 @@
 import { FC, useEffect, useRef, useState } from 'react'
 import { useNavigate } from 'react-router-dom';
-import { Step1 } from './steps/Step1'
-import { Step2 } from './steps/Step2'
-import { Step3 } from './steps/Step3'
-import { Step4 } from './steps/Step4'
-import { Step5 } from './steps/Step5'
 import { Step11 } from './steps/Step11'
 import { Step12 } from './steps/Step12'
 import { Step13 } from './steps/Step13'
@@ -13,12 +8,12 @@ import { Step15 } from './steps/Step15'
 import { Step16 } from './steps/Step16'
 import { Step17 } from './steps/Step17'
 import { Step18 } from './steps/Step18'
-import { KTIcon } from '../../../../_metronic/helpers'
 import { StepperComponent } from '../../../../_metronic/assets/ts/components'
 import { Form, Formik, FormikValues } from 'formik'
 import { createAccountSchemas, ICreateAccount, inits } from './CreateAccountWizardHelper'
 import { Toolbar } from '../../../../_metronic/layout/components/toolbar/Toolbar'
 import { Content } from '../../../../_metronic/layout/components/Content'
+import './steps/styles.scss'
 
 const Horizontal: FC = () => {
   const stepperRef = useRef<HTMLDivElement | null>(null)
@@ -53,7 +48,7 @@ const Horizontal: FC = () => {
     if (stepper.currentStepIndex !== stepper.totalStepsNumber) {
       stepper.goNext()
     } else {
-      alert(values.customerName+'`s result will sent to'+values.customerEmail+ ".After Form submitted")
+      alert(values.customerName + '`s result will sent to' + values.customerEmail + ".After Form submitted")
       navigate('/api-to-haut')
       setTimeout(() => {
         navigate('/skin-analysis')
@@ -217,7 +212,8 @@ const Horizontal: FC = () => {
                           className='btn btn-lg btn-dark me-3'
                           data-kt-stepper-action='previous'
                         >
-                          Back
+                          <span className='indicator-label font-size-24'>Back
+                          </span>
                         </button>
                       </div>
                     </div>
