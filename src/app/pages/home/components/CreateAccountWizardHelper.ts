@@ -3,30 +3,19 @@ import * as Yup from 'yup'
 export interface ICreateAccount {
   ageGroup: string
   accountTeamSize: string
-  accountName: string
+  customerName: string
   accountEmail: string
   genderType: string
   pregnancy: string
   skinType: string
   skinSensible: string
   accountPlan: string
-  // businessName: string
   termsAccept: false
-  // businessDescriptor: string
-  // businessType: string
-  // businessDescription: string
-  // businessEmail: string
-  // nameOnCard: string
-  // cardNumber: string
-  // cardExpiryMonth: string
-  // cardExpiryYear: string
-  // cardCvv: string
-  // saveCard: string
 }
 
 const createAccountSchemas = [
   Yup.object({
-    accountName: Yup.string().required().label('Account Name'),
+    customerName: Yup.string().required().label('Account Name'),
   }),
   Yup.object({
     accountEmail: Yup.string().email('Invalid email').required().label('Account Email'),
@@ -49,25 +38,12 @@ const createAccountSchemas = [
   Yup.object({
     termsAccept: Yup.bool().oneOf([true],'You need to accept the terms and conditions').required().label('Accept'),
   }),
-  // Yup.object({
-  //   businessName: Yup.string().required().label('Business Name'),
-  //   businessDescriptor: Yup.string().required().label('Shortened Descriptor'),
-  //   businessType: Yup.string().required().label('Corporation Type'),
-  //   businessEmail: Yup.string().required().label('Contact Email'),
-  // }),
-  // Yup.object({
-  //   nameOnCard: Yup.string().required().label('Name On Card'),
-  //   cardNumber: Yup.string().required().label('Card Number'),
-  //   cardExpiryMonth: Yup.string().required().label('Expiration Month'),
-  //   cardExpiryYear: Yup.string().required().label('Expiration Year'),
-  //   cardCvv: Yup.string().required().label('CVV'),
-  // }),
 ]
 
 const inits: ICreateAccount = {
   ageGroup: '',
   accountTeamSize: '50+',
-  accountName: '',
+  customerName: '',
   accountEmail: '',
   accountPlan: '1',
   genderType: '',
@@ -75,17 +51,6 @@ const inits: ICreateAccount = {
   skinType: '',
   skinSensible: '',
   termsAccept: false,
-  // businessName: 'Keenthemes Inc.',
-  // businessDescriptor: 'KEENTHEMES',
-  // businessType: '1',
-  // businessDescription: '',
-  // businessEmail: 'corp@support.com',
-  // nameOnCard: 'Max Doe',
-  // cardNumber: '4111 1111 1111 1111',
-  // cardExpiryMonth: '1',
-  // cardExpiryYear: '2025',
-  // cardCvv: '123',
-  // saveCard: '1',
 }
 
 export {createAccountSchemas, inits}
