@@ -1,0 +1,25 @@
+.border-bottom-only {
+    // border-width: 0 0 2px !important; /* Set border width for bottom only */
+    // border-color: #ffffff !important; /* Set border color */
+    // border-radius: 0 !important; /* Optional: Set border radius to 0 if you don't want rounded corners */
+    box-sizing: border-box;
+    border: none;
+    border-radius: 0;
+    border-bottom: 2px solid rgb(5, 5, 5);
+}
+
+.stepper.stepper-links.stepper-nav {
+    justify-content: space-between !important;
+    display: flex;
+}
+
+.stepper-item {
+    flex: 1; /* Make stepper items flexible */
+    text-align: center; /* Center-align stepper item content */
+}
+
+@media (max-width: 768px) {
+    .stepper-item {
+      font-size: 0.8rem; /* Decrease font size for smaller screens */
+    }
+  }

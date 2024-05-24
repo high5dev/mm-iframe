@@ -71,19 +71,30 @@ const Vertical = () => {
             <div className='card-body px-6 px-lg-10 px-xxl-15 py-20'>
               {/* begin::Nav*/}
               <div className='stepper-nav'>
+                {/* begin::Step 1*/}
                 <div className='stepper-item current' data-kt-stepper-element='nav'>
+                  {/* begin::Wrapper*/}
                   <div className='stepper-wrapper'>
+                    {/* begin::Icon*/}
                     <div className='stepper-icon w-40px h-40px'>
                       <i className='stepper-check fas fa-check'></i>
                       <span className='stepper-number'>1</span>
                     </div>
+                    {/* end::Icon*/}
+
+                    {/* begin::Label*/}
                     <div className='stepper-label'>
                       <h3 className='stepper-title'>Account Type</h3>
 
                       <div className='stepper-desc fw-semibold'>Setup Your Account Details</div>
                     </div>
+                    {/* end::Label*/}
                   </div>
+                  {/* end::Wrapper*/}
+
+                  {/* begin::Line*/}
                   <div className='stepper-line h-40px'></div>
+                  {/* end::Line*/}
                 </div>
                 {/* end::Step 1*/}
 
@@ -196,7 +207,7 @@ const Vertical = () => {
           <div className='d-flex flex-row-fluid flex-center bg-body rounded'>
             <Formik validationSchema={currentSchema} initialValues={initValues} onSubmit={submitStep}>
               {() => (
-                <Form className='py-20 w-100 w-xl-700px px-9' noValidate id='kt_create_account_form' placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
+                <Form className='py-20 w-100 w-xl-700px px-9' noValidate id='kt_create_account_form' placeholder={undefined}>
                   <div className='current' data-kt-stepper-element='content'>
                     <Step1 />
                   </div>

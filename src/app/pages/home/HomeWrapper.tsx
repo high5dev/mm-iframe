@@ -1,6 +1,6 @@
 import {useIntl} from 'react-intl'
 import {PageTitle} from '../../../_metronic/layout/core'
-import {Horizontal} from '../../modules/wizards/components/Horizontal'
+import {Horizontal} from './components/Horizontal'
 
 const HomePage = () => (
   <>

@@ -105,10 +105,10 @@ const Step2: FC = () => {
         <Field
           type='text'
           className='form-control form-control-lg form-control-solid'
-          name='accountName'
+          name='accountEmail'
         />
         <div className='text-danger mt-2'>
-          <ErrorMessage name='accountName' />
+          <ErrorMessage name='accountEmail' />
         </div>
       </div>
 
