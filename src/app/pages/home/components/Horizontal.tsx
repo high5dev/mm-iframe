@@ -53,7 +53,7 @@ const Horizontal: FC = () => {
     if (stepper.currentStepIndex !== stepper.totalStepsNumber) {
       stepper.goNext()
     } else {
-      alert(values.customerName+'`s result will sent to'+values.accountEmail+ ".After Form submitted")
+      alert(values.customerName+'`s result will sent to'+values.customerEmail+ ".After Form submitted")
       navigate('/api-to-haut')
       setTimeout(() => {
         navigate('/skin-analysis')

@@ -2,14 +2,12 @@ import * as Yup from 'yup'
 
 export interface ICreateAccount {
   ageGroup: string
-  accountTeamSize: string
   customerName: string
-  accountEmail: string
+  customerEmail: string
   genderType: string
   pregnancy: string
   skinType: string
   skinSensible: string
-  accountPlan: string
   termsAccept: false
 }
 
@@ -18,7 +16,7 @@ const createAccountSchemas = [
     customerName: Yup.string().required().label('Account Name'),
   }),
   Yup.object({
-    accountEmail: Yup.string().email('Invalid email').required().label('Account Email'),
+    customerEmail: Yup.string().email('Invalid email').required().label('Account Email'),
   }),
   Yup.object({
     ageGroup: Yup.string().required().label('Age group'),
@@ -42,10 +40,8 @@ const createAccountSchemas = [
 
 const inits: ICreateAccount = {
   ageGroup: '',
-  accountTeamSize: '50+',
   customerName: '',
-  accountEmail: '',
-  accountPlan: '1',
+  customerEmail: '',
   genderType: '',
   pregnancy: '',
   skinType: '',

@@ -13,10 +13,10 @@ const Step12: FC = () => {
         <Field
           type='text'
           className='form-control form-control-lg border-bottom-only'
-          name='accountEmail'
+          name='customerEmail'
         />
         {/* <div className='text-danger mt-2'>
-          <ErrorMessage name='accountEmail' />
+          <ErrorMessage name='customerEmail' />
         </div> */}
       </div>
       <div className='mb-10 row'>
