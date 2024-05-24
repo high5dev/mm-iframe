@@ -7,7 +7,7 @@ const Step11: FC = () => {
   return (
     <div className='w-100'>
       <div className='pb-10 pb-lg-15'>
-        <h2 className='fw-bolder text-gray-900 text-center'>Hi there,<br />Please share your Name?</h2>
+        <h2 className='text-gray-900 text-center font-size-24'>Hi there,<br />Please share your Name?</h2>
       </div>
 
       <div className='mb-10 fv-row'>

@@ -101,7 +101,7 @@ const Horizontal: FC = () => {
 
               <Formik validationSchema={currentSchema} initialValues={initValues} onSubmit={submitStep}>
                 {() => (
-                  <Form className='mx-auto mw-600px w-100 pt-15 pb-10' id='kt_create_account_form' placeholder={undefined}>
+                  <Form className='mx-auto mw-600px w-100 pt-15 pb-10' id='kt_create_account_form' placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
                     <div className='current' data-kt-stepper-element='content'>
                       <Step1 />
                     </div>

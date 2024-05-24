@@ -2,12 +2,13 @@
 import { FC } from 'react'
 import { KTIcon } from '../../../../../_metronic/helpers'
 import { ErrorMessage, Field } from 'formik'
+import './styles.scss'
 
 const Step1: FC = () => {
   return (
     <div className='w-100'>
       <div className='pb-10 pb-lg-15'>
-        <h2 className='fw-bolder d-flex align-items-center text-gray-900'>
+        <h2 className='d-flex align-items-center text-gray-900 font-size-24'>
           You belong to which age group?
         </h2>
       </div>

@@ -7,7 +7,7 @@ const Step13: FC = () => {
   return (
     <div className='w-100'>
       <div className='pb-10 pb-lg-15'>
-        <h2 className='fw-bolder text-gray-900 text-center'>
+        <h2 className='text-gray-900 text-center'>
           You belong to which age group?
         </h2>
       </div>
@@ -28,7 +28,7 @@ const Step13: FC = () => {
                   htmlFor='kt_create_account_form_age_group_1'
                 >
                   <span className='fw-bold'>
-                    <span className='text-gray-900 fw-bolder fs-7 mb-2 text-center'>Below 18</span>
+                    <span className='text-gray-900 fs-7 mb-2 text-center'>Below 18</span>
                   </span>
                 </label>
               </div>
@@ -47,7 +47,7 @@ const Step13: FC = () => {
                   htmlFor='kt_create_account_form_age_group_2'
                 >
                   <span className='fw-bold'>
-                    <span className='text-gray-900 fw-bolder fs-7 mb-2 text-center'>18 to 24</span>
+                    <span className='text-gray-900 fs-7 mb-2 text-center'>18 to 24</span>
                   </span>
                 </label>
               </div>
@@ -68,7 +68,7 @@ const Step13: FC = () => {
                   htmlFor='kt_create_account_form_age_group_3'
                 >
                   <span className='fw-bold'>
-                    <span className='text-gray-900 fw-bolder fs-7 mb-2 text-center'>25 to 30</span>
+                    <span className='text-gray-900 fs-7 mb-2 text-center'>25 to 30</span>
                   </span>
                 </label>
               </div>
@@ -87,7 +87,7 @@ const Step13: FC = () => {
                   htmlFor='kt_create_account_form_age_group_4'
                 >
                   <span className='fw-bold'>
-                    <span className='text-gray-900 fw-bolder fs-7 mb-2 text-center'>30 to 34</span>
+                    <span className='text-gray-900 fs-7 mb-2 text-center'>30 to 34</span>
                   </span>
                 </label>
               </div>
@@ -108,7 +108,7 @@ const Step13: FC = () => {
                   htmlFor='kt_create_account_form_age_group_5'
                 >
                   <span className='fw-bold'>
-                    <span className='text-gray-900 fw-bolder fs-7 mb-2 text-center'>34 to 40</span>
+                    <span className='text-gray-900 fs-7 mb-2 text-center'>34 to 40</span>
                   </span>
                 </label>
               </div>
@@ -127,7 +127,7 @@ const Step13: FC = () => {
                   htmlFor='kt_create_account_form_age_group_6'
                 >
                   <span className='fw-bold'>
-                    <span className='text-gray-900 fw-bolder fs-7 mb-2 text-center'>Above 40</span>
+                    <span className='text-gray-900 fs-7 mb-2 text-center'>Above 40</span>
                   </span>
                 </label>
               </div>
