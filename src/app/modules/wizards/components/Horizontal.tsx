@@ -223,7 +223,7 @@ const Horizontal: FC = () => {
                           className='btn btn-lg btn-light-primary me-3'
                           data-kt-stepper-action='previous'
                         >
-                          <KTIcon iconName='arrow-left' className='fs-4 me-1' />
+                          {/* <KTIcon iconName='arrow-left' className='fs-4 me-1' /> */}
                           Back
                         </button>
                         {/* </div> */}

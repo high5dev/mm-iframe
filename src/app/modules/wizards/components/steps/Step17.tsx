@@ -84,7 +84,7 @@ const Step17: FC = () => {
         <div className='mb-10 row'>
           <button type='submit' className='btn btn-lg btn-primary me-3'>
             <span className='indicator-label'>Take a selfie
-              <KTIcon iconName='arrow-right' className='fs-3 ms-2 me-0' />
+              {/* <KTIcon iconName='arrow-right' className='fs-3 ms-2 me-0' /> */}
             </span>
           </button>
         </div>
