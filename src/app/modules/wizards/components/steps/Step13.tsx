@@ -109,7 +109,7 @@ const Step13: FC = () => {
                   htmlFor='kt_create_account_form_age_group_5'
                 >
                   <span className='fw-bold'>
-                    <span className='text-gray-900 fw-bolder fs-4 mb-2 text-center'>30 to 34</span>
+                    <span className='text-gray-900 fw-bolder fs-4 mb-2 text-center'>34 to 40</span>
                   </span>
                 </label>
               </div>

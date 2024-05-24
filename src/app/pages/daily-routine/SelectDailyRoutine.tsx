@@ -1,169 +1,90 @@
 import { useIntl } from 'react-intl'
-import { CardItem } from '../../../_metronic/partials/content/cards/CardItem'
+// import { CardItem } from '../../../_metronic/partials/content/cards/CardItem'
 import { PageTitle } from '../../../_metronic/layout/core'
 import { RoutineModel } from './RoutineModels'
+import clsx from 'clsx'
+import { useState } from 'react'
+import { toAbsoluteUrl } from '../../../_metronic/helpers/AssetHelpers'
+import './styles.scss';
+import { CardItem } from './CardItem'
 
-const SelectDailyRoutinePage = () => (
-    <>
-        <div className='d-flex flex-wrap flex-stack mb-6'>
-            <div className='d-flex flex-wrap my-2'>
-                <a
-                    href='/skin-analysis'
-                    className='btn btn-primary btn-sm'
-                    data-bs-toggle='modal'
-                    data-bs-target='#kt_modal_create_project'
-                >
-                    Back
-                </a>
-            </div>
-        </div>
-        <div className='d-flex flex-wrap flex-stack mb-6'>
-            <h3 className='fw-bolder my-2'>
-                Hi, customer
-            </h3>
-        </div>
-        <div className='d-flex flex-wrap flex-stack mb-6'>
-            <span className='fs-6 text-gray-500 fw-bold ms-1'>Based on your Primary 2 concerns (concern 1 & concern 2), AI has picked the best daily routine for you</span>
-        </div>
+const SelectDailyRoutinePage = () => {
+    const [tab, setTab] = useState('Essentials')
 
-        {/* <div className='row g-6 g-xl-9'>
-            <div className='col-md-6 col-xl-4'>
-                <CardItem
-                    icon='media/svg/brand-logos/plurk.svg'
-                    badgeColor='primary'
-                    status='In Progress'
-                    statusColor='primary'
-                    title='Fitnes App'
-                    description='CRM App application to HR efficiency'
-                    date='November 10, 2021'
-                    budget='$284,900.00'
-                    progress={50}
-                    users={users1}
-                />
+    return (
+        <>
+            <div className='d-flex flex-wrap flex-stack mb-6'>
+                <div className='d-flex flex-wrap my-2'>
+                    <a
+                        href='/skin-analysis'
+                        className='btn btn-primary btn-sm round-5'
+                        data-bs-target='#kt_modal_create_project'
+                    >
+                        Back
+                    </a>
+                </div>
             </div>
+            <div className='d-flex flex-wrap flex-stack mb-6'>
+                <h3 className='fw-bolder my-2'>
+                    Hi, customer
+                </h3>
+            </div>
+            <div className='d-flex flex-wrap flex-stack mb-6'>
+                <span className='fs-6 text-gray-500 fw-bold ms-1'>Based on your Primary 2 concerns (concern 1 & concern 2), AI has picked the best daily routine for you.</span>
+            </div>
+            <div className='card'>
+                <div className='card-header card-header-stretch overflow-auto'>
+                    <ul
+                        className='nav nav-stretch nav-line-tabs fw-bold border-transparent flex-nowrap'
+                        role='tablist'
+                    >
+                        <li className='nav-item'>
+                            <a
+                                className={clsx(`nav-link cursor-pointer`, { active: tab === 'Essentials' })}
+                                onClick={() => setTab('Essentials')}
+                                role='tab'
+                            >
+                                Essentials
+                            </a>
+                        </li>
 
-            <div className='col-md-6 col-xl-4'>
-                <CardItem
-                    icon='media/svg/brand-logos/disqus.svg'
-                    badgeColor='info'
-                    status='Pending'
-                    statusColor='info'
-                    title='Leaf CRM'
-                    description='CRM App application to HR efficiency'
-                    date='May 10, 2021'
-                    budget='$36,400.00'
-                    progress={30}
-                    users={users2}
-                />
+                        <li className='nav-item'>
+                            <a
+                                className={clsx(`nav-link cursor-pointer`, { active: tab === 'Boosters' })}
+                                onClick={() => setTab('Boosters')}
+                                role='tab'
+                            >
+                                Boosters
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div className='card-body'>
+                    <div className='tab-content pt-3'>
+                        <div className={clsx('tab-pane', { active: tab === 'Essentials' })}>
+                            <div className='card'>
+                                <CardItem productIndex='Product 1' productName='item1' whenTouse='22:60 AM' price='$1.5'/>
+                                <CardItem productIndex='Product 2' productName='item2' whenTouse='22:60 AM' price='$1.7'/>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <div className='tab-content pt-3'>
+                        <div className={clsx('tab-pane', { active: tab === 'Boosters' })}>
+                            <div className='card'>
+                                <CardItem productIndex='Step 1' productName='item1' whenTouse='22:60 AM' price='$1.5' />
+                                <CardItem productIndex='Step 2' productName='item2' whenTouse='23:60 AM' price='$1.7' />
+                                <CardItem productIndex='Step 3' productName='item3' whenTouse='00:60 AM' price='$1.9' />
+                                <CardItem productIndex='Step 4' productName='item4' whenTouse='03:60 AM' price='$2.3' />
+                                <CardItem productIndex='Step 5' productName='item5' whenTouse='06:60 AM' price='$2.5' />
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-
-            <div className='col-md-6 col-xl-4'>
-                <CardItem
-                    icon='media/svg/brand-logos/figma-1.svg'
-                    badgeColor='success'
-                    status='Completed'
-                    statusColor='success'
-                    title='Atica Banking'
-                    description='CRM App application to HR efficiency'
-                    date='Mar 14, 2021'
-                    budget='$605,100.00'
-                    progress={100}
-                    users={users3}
-                />
-            </div>
-
-            <div className='col-md-6 col-xl-4'>
-                <CardItem
-                    icon='media/svg/brand-logos/sentry-3.svg'
-                    badgeColor='info'
-                    status='Pending'
-                    statusColor='info'
-                    title='Finance Dispatch'
-                    description='CRM App application to HR efficiency'
-                    date='Mar 14, 2021'
-                    budget='$605,100.00'
-                    progress={60}
-                    users={users4}
-                />
-            </div>
-
-            <div className='col-md-6 col-xl-4'>
-                <CardItem
-                    icon='media/svg/brand-logos/xing-icon.svg'
-                    badgeColor='primary'
-                    status='In Progress'
-                    statusColor='primary'
-                    title='9 Degree'
-                    description='CRM App application to HR efficiency'
-                    date='Mar 14, 2021'
-                    budget='$605,100.00'
-                    progress={40}
-                    users={users5}
-                />
-            </div>
-
-            <div className='col-md-6 col-xl-4'>
-                <CardItem
-                    icon='media/svg/brand-logos/tvit.svg'
-                    badgeColor='primary'
-                    status='In Progress'
-                    statusColor='primary'
-                    title='9 Degree'
-                    description='CRM App application to HR efficiency'
-                    date='Mar 14, 2021'
-                    budget='$605,100.00'
-                    progress={70}
-                    users={users6}
-                />
-            </div>
-
-            <div className='col-md-6 col-xl-4'>
-                <CardItem
-                    icon='media/svg/brand-logos/aven.svg'
-                    badgeColor='primary'
-                    status='In Progress'
-                    statusColor='primary'
-                    title='Buldozer CRM'
-                    description='CRM App application to HR efficiency'
-                    date='Mar 14, 2021'
-                    budget='$605,100.00'
-                    progress={70}
-                    users={users7}
-                />
-            </div>
-
-            <div className='col-md-6 col-xl-4'>
-                <CardItem
-                    icon='media/svg/brand-logos/treva.svg'
-                    badgeColor='danger'
-                    status='Overdue'
-                    statusColor='danger'
-                    title='Aviasales App'
-                    description='CRM App application to HR efficiency'
-                    date='Mar 14, 2021'
-                    budget='$605,100.00'
-                    progress={10}
-                    users={users8}
-                />
-            </div>
-
-            <div className='col-md-6 col-xl-4'>
-                <CardItem
-                    icon='media/svg/brand-logos/kanba.svg'
-                    badgeColor='success'
-                    status='Completed'
-                    statusColor='success'
-                    title='Oppo CRM'
-                    description='CRM App application to HR efficiency'
-                    date='Mar 14, 2021'
-                    budget='$605,100.00'
-                    progress={100}
-                    users={users9}
-                />
-            </div>
-        </div> */}
-    </>
-)
+        </>
+    )
+}
 
 const SelectDailyRoutineWrapper = () => {
     const intl = useIntl()
