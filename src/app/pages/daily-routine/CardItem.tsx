@@ -24,7 +24,7 @@ const CardItem: React.FC<Props> = ({ productIndex, productName, whenTouse, price
                         <span className='text-muted d-block fw-semibold'>When to use: {whenTouse}</span>
                         <div className='row d-flex align-items-center'>
                             <span className='col text-muted d-block fw-semibold'>Price: {price}</span>
-                            <button className='col btn btn-sm btn-bg-secondary rounded-10'>Add to Cart</button>
+                            <button className='col btn btn-sm btn-light btn-color-muted btn-active-light-danger rounded-10'>Add to Cart</button>
                         </div>
                     </div>
                 </div>

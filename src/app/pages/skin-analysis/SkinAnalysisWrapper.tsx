@@ -2,6 +2,7 @@ import { useIntl } from 'react-intl'
 import { PageTitle } from '../../../_metronic/layout/core'
 import { Content } from '../../../_metronic/layout/components/Content'
 import { toAbsoluteUrl } from '../../../_metronic/helpers'
+import './styles.scss'
 
 const SkinAnalysisPage = () => (
     <>
@@ -29,18 +30,18 @@ const SkinAnalysisPage = () => (
                             className="w-100 h-250px rounded"
                         />
                         <div className='row g-0'>
-                            <div className='col py-8'>
+                            <div className='col py-0 px-4'>
                                 <a
                                     href="/daily-routine"
-                                    className="btn btn-sm btn-dark"
+                                    className="btn btn-block btn-dark fixed-height-button"
                                 >
                                     Concern
                                 </a>
                             </div>
-                            <div className='col py-8'>
+                            <div className='col py-0 px-0'>
                                 <a
                                     href="/daily-routine"
-                                    className=" btn btn-sm btn-light-dark"
+                                    className=" btn btn-block btn-light-dark fixed-height-button"
                                 >
                                     Lowest Score
                                 </a>
@@ -56,18 +57,18 @@ const SkinAnalysisPage = () => (
                             className="w-100 h-250px rounded"
                         />
                         <div className='row g-0'>
-                            <div className='col py-8'>
+                            <div className='col py-0 px-4'>
                                 <a
                                     href="/daily-routine"
-                                    className="btn btn-sm btn-dark"
+                                    className="btn btn-block btn-dark fixed-height-button"
                                 >
                                     Concern
                                 </a>
                             </div>
-                            <div className='col py-8'>
+                            <div className='col py-0 px-0'>
                                 <a
                                     href="/daily-routine"
-                                    className=" btn btn-sm btn-light-dark"
+                                    className=" btn btn-block btn-light-dark fixed-height-button"
                                 >
                                     Lowest Score
                                 </a>
