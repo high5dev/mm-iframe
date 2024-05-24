@@ -12,7 +12,7 @@ const Step13: FC = () => {
         </h2>
       </div>
       <div className='card-body p-0'>
-        <div className='card-p mt-n20 position-relative'>
+        <div className='card-p mt-n10 position-relative'>
           <div className='row g-0'>
             <div className='col pb-8 rounded-2'>
               <div className='fixed-width'>

@@ -214,13 +214,11 @@ const Horizontal: FC = () => {
                         <button
                           onClick={prevStep}
                           type='button'
-                          className='btn btn-lg btn-light-primary me-3'
+                          className='btn btn-lg btn-dark me-3'
                           data-kt-stepper-action='previous'
                         >
-                          {/* <KTIcon iconName='arrow-left' className='fs-4 me-1' /> */}
                           Back
                         </button>
-                        {/* </div> */}
                       </div>
                     </div>
                   </Form>
