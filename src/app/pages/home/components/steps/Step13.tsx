@@ -11,12 +11,11 @@ const Step13: FC = () => {
           You belong to which age group?
         </h2>
       </div>
-
       <div className='card-body p-0'>
         <div className='card-p mt-n20 position-relative'>
           <div className='row g-0'>
-            <div className='col px-6 py-8 rounded-2 me-7 mb-7'>
-              <div>
+            <div className='col pb-8 rounded-2'>
+              <div className='fixed-width'>
                 <Field
                   type='radio'
                   className='btn-check btn-primary text-center'
@@ -29,13 +28,13 @@ const Step13: FC = () => {
                   htmlFor='kt_create_account_form_age_group_1'
                 >
                   <span className='fw-bold'>
-                    <span className='text-gray-900 fw-bolder fs-4 mb-2 text-center'>Below 18</span>
+                    <span className='text-gray-900 fw-bolder fs-7 mb-2 text-center'>Below 18</span>
                   </span>
                 </label>
               </div>
             </div>
-            <div className='col px-6 py-8 rounded-2 me-7 mb-7'>
-              <div>
+            <div className='col pb-8 rounded-2'>
+              <div className='fixed-width'>
                 <Field
                   type='radio'
                   className='btn-check text-center'
@@ -48,15 +47,15 @@ const Step13: FC = () => {
                   htmlFor='kt_create_account_form_age_group_2'
                 >
                   <span className='fw-bold'>
-                    <span className='text-gray-900 fw-bolder fs-4 mb-2 text-center'>18 to 24</span>
+                    <span className='text-gray-900 fw-bolder fs-7 mb-2 text-center'>18 to 24</span>
                   </span>
                 </label>
               </div>
             </div>
           </div>
           <div className='row g-0'>
-            <div className='col px-6 py-8 rounded-2 me-7 mb-7'>
-              <div>
+            <div className='col pb-8 rounded-2'>
+              <div className='fixed-width'>
                 <Field
                   type='radio'
                   className='btn-check text-center'
@@ -69,13 +68,13 @@ const Step13: FC = () => {
                   htmlFor='kt_create_account_form_age_group_3'
                 >
                   <span className='fw-bold'>
-                    <span className='text-gray-900 fw-bolder fs-4 mb-2 text-center'>25 to 30</span>
+                    <span className='text-gray-900 fw-bolder fs-7 mb-2 text-center'>25 to 30</span>
                   </span>
                 </label>
               </div>
             </div>
-            <div className='col px-6 py-8 rounded-2 me-7 mb-7'>
-              <div>
+            <div className='col pb-8 rounded-2'>
+              <div className='fixed-width'>
                 <Field
                   type='radio'
                   className='btn-check text-center'
@@ -88,15 +87,15 @@ const Step13: FC = () => {
                   htmlFor='kt_create_account_form_age_group_4'
                 >
                   <span className='fw-bold'>
-                    <span className='text-gray-900 fw-bolder fs-4 mb-2 text-center'>30 to 34</span>
+                    <span className='text-gray-900 fw-bolder fs-7 mb-2 text-center'>30 to 34</span>
                   </span>
                 </label>
               </div>
             </div>
           </div>
           <div className='row g-0'>
-            <div className='col px-6 py-8 rounded-2 me-7 mb-7'>
-              <div>
+            <div className='col pb-8 rounded-2'>
+              <div className='fixed-width'>
                 <Field
                   type='radio'
                   className='btn-check text-center'
@@ -109,13 +108,13 @@ const Step13: FC = () => {
                   htmlFor='kt_create_account_form_age_group_5'
                 >
                   <span className='fw-bold'>
-                    <span className='text-gray-900 fw-bolder fs-4 mb-2 text-center'>34 to 40</span>
+                    <span className='text-gray-900 fw-bolder fs-7 mb-2 text-center'>34 to 40</span>
                   </span>
                 </label>
               </div>
             </div>
-            <div className='col px-6 py-8 rounded-2 me-7 mb-7'>
-              <div>
+            <div className='col pb-8 rounded-2'>
+              <div className='fixed-width'>
                 <Field
                   type='radio'
                   className='btn-check text-center'
@@ -128,7 +127,7 @@ const Step13: FC = () => {
                   htmlFor='kt_create_account_form_age_group_6'
                 >
                   <span className='fw-bold'>
-                    <span className='text-gray-900 fw-bolder fs-4 mb-2 text-center'>Above 40</span>
+                    <span className='text-gray-900 fw-bolder fs-7 mb-2 text-center'>Above 40</span>
                   </span>
                 </label>
               </div>

@@ -18,6 +18,10 @@
     text-align: center; /* Center-align stepper item content */
 }
 
+.fixed-width {
+    width: 80px !important;
+}
+
 @media (max-width: 768px) {
     .stepper-item {
       font-size: 0.8rem; /* Decrease font size for smaller screens */
