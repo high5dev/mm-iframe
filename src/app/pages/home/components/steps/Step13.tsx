@@ -16,7 +16,7 @@ const Step13: FC = () => {
         <div className='card-p mt-n10 position-relative'>
           <div className='row g-0'>
             <div className='col pb-8 rounded-2'>
-              <div className='fixed-width'>
+              <div>
                 <Field
                   type='radio'
                   className='btn-check btn-primary text-center'
@@ -25,10 +25,10 @@ const Step13: FC = () => {
                   id='kt_create_account_form_age_group_1'
                 />
                 <label
-                  className='btn btn-outline btn-outline-dashed btn-outline-default p-7 d-block align-items-center mb-10'
+                  className='btn btn-block p-7 d-block align-items-center mb-10 fixed-width'
                   htmlFor='kt_create_account_form_age_group_1'
                 >
-                    <span className='text-gray-900 font-size-24 mb-2 text-center'>Below 18</span>
+                  <span className='font-size-20 mb-2 text-center'>Below 18</span>
                 </label>
               </div>
             </div>
@@ -42,12 +42,10 @@ const Step13: FC = () => {
                   id='kt_create_account_form_age_group_2'
                 />
                 <label
-                  className='btn btn-outline btn-outline-dashed btn-outline-default p-7 d-block align-items-center mb-10'
+                  className='btn btn-block p-7 d-block align-items-center mb-10 fixed-width'
                   htmlFor='kt_create_account_form_age_group_2'
                 >
-                  <span className='fw-bold'>
-                    <span className='text-gray-900 font-size-24 mb-2 text-center'>18 to 24</span>
-                  </span>
+                  <span className='font-size-20 mb-2 text-center'>18 to 24</span>
                 </label>
               </div>
             </div>
@@ -63,12 +61,10 @@ const Step13: FC = () => {
                   id='kt_create_account_form_age_group_3'
                 />
                 <label
-                  className='btn btn-outline btn-outline-dashed btn-outline-default p-7 d-block align-items-center mb-10'
+                  className='btn btn-outline btn-outline-default p-7 d-block align-items-center mb-10 fixed-width'
                   htmlFor='kt_create_account_form_age_group_3'
                 >
-                  <span className='fw-bold'>
-                    <span className='text-gray-900 font-size-24 mb-2 text-center'>25 to 30</span>
-                  </span>
+                  <span className='font-size-20 mb-2 text-center'>25 to 30</span>
                 </label>
               </div>
             </div>
@@ -82,12 +78,10 @@ const Step13: FC = () => {
                   id='kt_create_account_form_age_group_4'
                 />
                 <label
-                  className='btn btn-outline btn-outline-dashed btn-outline-default p-7 d-block align-items-center mb-10'
+                  className='btn btn-outline btn-outline-default p-7 d-block align-items-center mb-10 fixed-width'
                   htmlFor='kt_create_account_form_age_group_4'
                 >
-                  <span className='fw-bold'>
-                    <span className='text-gray-900 font-size-24 mb-2 text-center'>30 to 34</span>
-                  </span>
+                  <span className='font-size-20 mb-2 text-center'>30 to 34</span>
                 </label>
               </div>
             </div>
@@ -103,12 +97,10 @@ const Step13: FC = () => {
                   id='kt_create_account_form_age_group_5'
                 />
                 <label
-                  className='btn btn-outline btn-outline-dashed btn-outline-default p-7 d-block align-items-center mb-10'
+                  className='btn btn-outline btn-outline-default p-7 d-block align-items-center mb-10 fixed-width'
                   htmlFor='kt_create_account_form_age_group_5'
                 >
-                  <span className='fw-bold'>
-                    <span className='text-gray-900 font-size-24 mb-2 text-center'>34 to 40</span>
-                  </span>
+                  <span className='font-size-20 mb-2 text-center'>34 to 40</span>
                 </label>
               </div>
             </div>
@@ -122,12 +114,10 @@ const Step13: FC = () => {
                   id='kt_create_account_form_age_group_6'
                 />
                 <label
-                  className='btn btn-outline btn-outline-dashed btn-outline-default p-7 d-block align-items-center mb-10'
+                  className='btn btn-outline p-7 d-block align-items-center mb-10 fixed-width'
                   htmlFor='kt_create_account_form_age_group_6'
                 >
-                  <span className='fw-bold'>
-                    <span className='text-gray-900 font-size-24 mb-2 text-center'>Above 40</span>
-                  </span>
+                  <span className='font-size-20 mb-2 text-center'>Above 40</span>
                 </label>
               </div>
             </div>

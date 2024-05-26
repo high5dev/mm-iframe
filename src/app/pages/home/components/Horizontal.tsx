@@ -21,6 +21,7 @@ const Horizontal: FC = () => {
   const [currentSchema, setCurrentSchema] = useState(createAccountSchemas[0])
   const [initValues] = useState<ICreateAccount>(inits)
   const [isSubmitButton, setSubmitButton] = useState(false)
+  const [ageGroup, setAgeGroup] = useState('');
 
   const navigate = useNavigate();
 
@@ -40,12 +41,15 @@ const Horizontal: FC = () => {
     setSubmitButton(stepper.currentStepIndex === stepper.totalStepsNumber)
   }
 
+
   const submitStep = (values: ICreateAccount, actions: FormikValues) => {
     if (!stepper) {
       return
     }
 
     if (stepper.currentStepIndex !== stepper.totalStepsNumber) {
+      console.log(values)
+      console.log(stepper)
       stepper.goNext()
     } else {
       alert(values.customerName + '`s result will sent to' + values.customerEmail + ".After Form submitted")
@@ -203,13 +207,11 @@ const Horizontal: FC = () => {
                     </div>
 
                     <div className='mx-auto mw-600px w-100 pt-15 pb-10'>
-                      <div className='mr-2 row'>
-                        {/* <div className='col-md-4'></div> */}
-                        {/* <div className='col-md-4'> */}
+                      <div className='mr-2 row button-alignment'>
                         <button
                           onClick={prevStep}
                           type='button'
-                          className='btn btn-lg btn-dark me-3'
+                          className='btn btn-lg btn-dark me-3 align-items-center'
                           data-kt-stepper-action='previous'
                         >
                           <span className='indicator-label font-size-24'>Back

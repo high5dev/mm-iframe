@@ -14,20 +14,42 @@
 }
 
 .stepper-item {
-    flex: 1; /* Make stepper items flexible */
-    text-align: center; /* Center-align stepper item content */
+    flex: 1;
+    /* Make stepper items flexible */
+    text-align: center;
+    /* Center-align stepper item content */
 }
 
 .fixed-width {
     width: 136px !important;
     height: 41px !important;
+    background-color: #000000;
+    color: #ffffff;
 }
+
+.font-size-20 {
+    font-size: 20px !important;
+}
+
 .font-size-24 {
     font-size: 24px !important;
 }
 
 @media (max-width: 768px) {
     .stepper-item {
-      font-size: 0.8rem; /* Decrease font size for smaller screens */
+        font-size: 0.8rem;
+        /* Decrease font size for smaller screens */
     }
-  }
+}
+
+.btn:not(.btn-outline):not(.btn-dashed):not(.btn-bordered):not(.border-hover):not(.border-active):not(.btn-flush):not(.btn-icon):not(.btn-hover-outline).btn-lg,
+.btn-group-lg>.btn:not(.btn-outline):not(.btn-dashed):not(.btn-bordered):not(.border-hover):not(.border-active):not(.btn-flush):not(.btn-icon):not(.btn-hover-outline) {
+    height: 43px !important;
+    width: 202px !important;
+    justify-content: center !important;
+    display: flex !important;
+}
+
+.button-alignment {
+    justify-content: center;
+}
