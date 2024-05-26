@@ -37,7 +37,9 @@
     --#{$prefix}stepper-label-desc-color-current: var(--#{$prefix}gray-500);
     --#{$prefix}stepper-label-desc-color-completed: var(--#{$prefix}gray-500);
 
-    --#{$prefix}stepper-line-border: 1px dashed var(--#{$prefix}gray-300);
+    // --#{$prefix}stepper-line-border: 1px soid var(--#{$prefix}gray-300);
+    --#{$prefix}stepper-line-border: 1px double var(--#{$prefix}gray-300);
+    --#{$prefix}stepper-line-horizontal-border: 5px double var(--#{$prefix}black);
     
     // Nav
     .stepper-nav {

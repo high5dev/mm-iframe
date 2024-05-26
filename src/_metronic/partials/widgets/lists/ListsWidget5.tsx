@@ -39,7 +39,7 @@ const ListsWidget5: React.FC<Props> = ({className}) => {
           {/* begin::Item */}
           <div className='timeline-item'>
             {/* begin::Label */}
-            <div className='timeline-label fw-bold text-gray-800 fs-6'>08:42</div>
+            {/* <div className='timeline-label fw-bold text-gray-800 fs-6'>08:42</div> */}
             {/* end::Label */}
             {/* begin::Badge */}
             <div className='timeline-badge'>
@@ -47,16 +47,16 @@ const ListsWidget5: React.FC<Props> = ({className}) => {
             </div>
             {/* end::Badge */}
             {/* begin::Text */}
-            <div className='fw-mormal timeline-content text-muted ps-3'>
+            {/* <div className='fw-mormal timeline-content text-muted ps-3'>
               Outlines keep you honest. And keep structure
-            </div>
+            </div> */}
             {/* end::Text */}
           </div>
           {/* end::Item */}
           {/* begin::Item */}
           <div className='timeline-item'>
             {/* begin::Label */}
-            <div className='timeline-label fw-bold text-gray-800 fs-6'>10:00</div>
+            {/* <div className='timeline-label fw-bold text-gray-800 fs-6'>10:00</div> */}
             {/* end::Label */}
             {/* begin::Badge */}
             <div className='timeline-badge'>
@@ -64,9 +64,9 @@ const ListsWidget5: React.FC<Props> = ({className}) => {
             </div>
             {/* end::Badge */}
             {/* begin::Content */}
-            <div className='timeline-content d-flex'>
+            {/* <div className='timeline-content d-flex'>
               <span className='fw-bold text-gray-800 ps-3'>AEOL meeting</span>
-            </div>
+            </div> */}
             {/* end::Content */}
           </div>
           {/* end::Item */}

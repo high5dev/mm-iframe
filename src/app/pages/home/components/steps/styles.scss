@@ -20,11 +20,34 @@
     /* Center-align stepper item content */
 }
 
-.fixed-width {
+.btn.btn-block.d-block.fixed-width {
     width: 136px !important;
     height: 41px !important;
     background-color: #000000;
     color: #ffffff;
+    line-height: 24.2px;
+    border-radius: 0;
+}
+
+.btn.btn-block.d-flex.fixed-width-lg {
+    width: 203px !important;
+    height: 66px !important;
+    background-color: #000000;
+    color: #ffffff;
+    line-height: 24.2px;
+    border-radius: 0;
+    justify-content: center;
+}
+
+
+.btn.btn-block.d-flex.fixed-width-xlg {
+    width: 279px !important;
+    height: 110px !important;
+    background-color: #000000;
+    color: #ffffff;
+    line-height: 24.2px;
+    border-radius: 0;
+    justify-content: start;
 }
 
 .font-size-20 {
@@ -35,6 +58,10 @@
     font-size: 24px !important;
 }
 
+.font-size-12 {
+    font-size: 12px !important;
+}
+
 @media (max-width: 768px) {
     .stepper-item {
         font-size: 0.8rem;
@@ -42,14 +69,57 @@
     }
 }
 
-.btn:not(.btn-outline):not(.btn-dashed):not(.btn-bordered):not(.border-hover):not(.border-active):not(.btn-flush):not(.btn-icon):not(.btn-hover-outline).btn-lg,
-.btn-group-lg>.btn:not(.btn-outline):not(.btn-dashed):not(.btn-bordered):not(.border-hover):not(.border-active):not(.btn-flush):not(.btn-icon):not(.btn-hover-outline) {
+.btn-next-lg {    
     height: 43px !important;
     width: 202px !important;
     justify-content: center !important;
     display: flex !important;
+    margin-top: 119px;
+    border-radius: 0;
+
+}
+
+.btn-top-back {
+    height: 28px;
+    width: 59px;
+    margin-top: 55px !important;
+    margin-bottom: 10px !important;
+    margin-left: 18px !important;
+    justify-content: center !important;
+    display: flex !important;
+    border-radius: 40px;
+    background-color: #ffffff !important;
+    color: #000000 !important;
+    border: #000000 solid 1px !important;
+}
+
+.btn-top-back-hidden {
+    height: 28px;
+    width: 59px;
+    margin-top: 55px !important;
+    margin-bottom: 10px !important;
+    margin-left: 18px !important;
+    justify-content: center !important;
+    display: flex !important;
+    border-radius: 40px;
+    background-color: #ffffff !important;
+    color: #000000 !important;
+}
+
+.btn-next-md {    
+    height: 55px !important;
+    width: 117px !important;
+    justify-content: center !important;
+    display: flex !important;
+    margin-top: 119px;
+    border-radius: 0;
+
 }
 
 .button-alignment {
     justify-content: center;
+}
+
+.stepper.stepper-pills.stepper-column .stepper-line {
+    
 }

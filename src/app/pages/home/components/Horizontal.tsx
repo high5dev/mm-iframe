@@ -81,10 +81,28 @@ const Horizontal: FC = () => {
       {/* <Toolbar /> */}
       <Content>
         <div className='card'>
+          {stepper?.currentStepIndex === 1 || stepper?.currentStepIndex === 2 ? (
+            <button
+              onClick={prevStep}
+              type='button'
+              className='btn btn-top-back btn-dark align-items-center'
+              data-kt-stepper-action='previous'
+            >
+              <span className='indicator-label font-size-12'>Back</span>
+            </button>
+          ) : (
+            <>
+            <div
+              hidden
+              className='btn btn-top-back-hidden btn-dark align-items-center'
+            >
+            </div>
+            </>
+          )}
           <div className='card-body'>
             <div
               ref={stepperRef}
-              className='stepper stepper-links stepper-pills d-flex flex-column pt-15'
+              className='stepper stepper-pills d-flex flex-column pt-5'
               id='kt_create_account_stepper'
             >
               <div className='stepper-nav mb-5'>
@@ -95,6 +113,7 @@ const Horizontal: FC = () => {
                       <span className='stepper-number'></span>
                     </div>
                   </div>
+                  <div className='stepper-line-horizontal w-10px'></div>
                   {/* <h3 className='stepper-title'>Name</h3> */}
                 </div>
 
@@ -206,17 +225,20 @@ const Horizontal: FC = () => {
                       <Step18 />
                     </div>
 
-                    <div className='mx-auto mw-600px w-100 pt-15 pb-10'>
+                    <div className='mx-auto mw-600px w-100 pt-2 pb-10'>
                       <div className='mr-2 row button-alignment'>
-                        <button
-                          onClick={prevStep}
-                          type='button'
-                          className='btn btn-lg btn-dark me-3 align-items-center'
-                          data-kt-stepper-action='previous'
-                        >
-                          <span className='indicator-label font-size-24'>Back
-                          </span>
-                        </button>
+                        {stepper?.currentStepIndex !== 1 && stepper?.currentStepIndex !== 2 ? (
+                          <button
+                            onClick={prevStep}
+                            type='button'
+                            className='btn btn-next-md btn-dark me-3 align-items-center'
+                            data-kt-stepper-action='previous'
+                          >
+                            <span className='indicator-label font-size-20'>Back</span>
+                          </button>
+                        ) : (
+                          <></>
+                        )}
                       </div>
                     </div>
                   </Form>
