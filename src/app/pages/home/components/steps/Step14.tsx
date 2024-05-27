@@ -13,7 +13,7 @@ const Step14: FC = () => {
   };
 
   return (
-    <div className='w-100'>
+    <div className='w-100 mb-120 container'>
       <div className='pb-10 pb-lg-15'>
         <h2 className='text-center font-size-24'>
           What is your Biological Gender Identity?

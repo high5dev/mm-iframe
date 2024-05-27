@@ -5,15 +5,15 @@ import './styles.scss'
 
 const Step11: FC = () => {
   return (
-    <div className='w-100'>
+    <div className='w-100 container'>
       <div className='pb-10 pb-lg-15'>
-        <h2 className='text-gray-900 text-center font-size-24'>Hi there,<br />Please share your Name?</h2>
+        <h2 className='text-center font-size-24'>Hi there,<br /><br />Please share your Name?</h2>
       </div>
 
-      <div className='mb-10 fv-row'>
+      <div className='d-flex justify-content-center mb-10 fv-row'>
         <Field
           type='text'
-          className='form-control form-control-lg border-bottom-only'
+          className='form-control form-control-lg border-bottom-only justify-content-center'
           name='customerName'
         />
         {/* <div className='text-danger mt-2'>
@@ -21,7 +21,7 @@ const Step11: FC = () => {
         </div> */}
       </div>
       <div className='mb-10 row button-alignment'>
-        <button type='submit' className='btn btn-lg btn-primary btn-next-lg me-3 align-items-center'>
+        <button type='submit' className='btn btn-lg btn-primary btn-next-lg align-items-center'>
           <span className='indicator-label font-size-24'>Next
           </span>
         </button>

@@ -7,7 +7,7 @@ import './styles.scss';
 
 const Step17: FC = () => {
   return (
-    <div className='w-100'>
+    <div className='w-100 container'>
       <div className='pb-10 pb-lg-15'>
         <h2 className='text-center font-size-24'>
           Is your skin sensitive?
@@ -79,12 +79,14 @@ const Step17: FC = () => {
           <ErrorMessage name='skinSensible' />
         </div> */}
 
-        <div className='mb-10 row row button-alignment'>
-          <button type='submit' className='btn btn-lg btn-primary me-3 align-items-center'>
-            <span className='indicator-label font-size-20'>Take a selfie
-              {/* <KTIcon iconName='arrow-right' className='fs-3 ms-2 me-0' /> */}
-            </span>
-          </button>
+        <div className='row button-alignment justify-content-center mt-16 mb-5'>
+          {/* <div className='col d-flex justify-content-center'> */}
+            <button type='submit' className='btn btn-lg btn-primary align-items-center w-203 rounded-0'>
+              <span className='indicator-label font-size-20'>Take a selfie
+                {/* <KTIcon iconName='arrow-right' className='fs-3 ms-2 me-0' /> */}
+              </span>
+            </button>
+          {/* </div> */}
         </div>
       </div>
     </div>

@@ -33,7 +33,7 @@ const MasterLayout = () => {
               </Content>
             </div>
           </div>
-          <Footer />
+          {/* <Footer /> */}
         </div>
       </div>
 
@@ -45,7 +45,7 @@ const MasterLayout = () => {
 
       {/* begin:: Modals */}
       <InviteUsers />
-      <UpgradePlan />
+      {/* <UpgradePlan /> */}
       {/* end:: Modals */}
       <ScrollTop />
     </PageDataProvider>

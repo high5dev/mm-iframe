@@ -14,11 +14,9 @@ const Step16: FC = () => {
   };
 
   return (
-    <div className='w-100'>
-      <div className='pb-10 pb-lg-15'>
-        <h2 className='text-center font-size-24'>
+    <div className='w-100 mb-120 container'>
+      <div className='pb-7 pb-lg-15 text-center font-size-24'>
           Your Skin Type?
-        </h2>
       </div>
 
       <div className='fv-row'>

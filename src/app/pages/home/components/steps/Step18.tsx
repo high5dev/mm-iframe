@@ -15,7 +15,7 @@ const Step18: FC = () => {
   return (
     <div className='w-100'>
       <div className='pb-10 pb-lg-15'>
-        <h2 className='fw-bolder text-center text-gray-900'>
+        <h2 className='fw-bolder text-center font-size-16'>
           How to take your picture for skin analysis?
         </h2>
       </div>
@@ -37,8 +37,8 @@ const Step18: FC = () => {
               <img alt='Logo' src={toAbsoluteUrl('media/camera-guide/image 14.png')}
                 className='h-50px h-lg-50px' /> &nbsp;&nbsp;&nbsp;
               <span className='d-block fw-bold text-start'>
-                <span className='text-gray-900 fw-bolder d-block fs-4 mb-2'>Take a natural picture</span>
-                <span className='text-gray-500 fw-bold fs-6'>
+                <span className='font-size-16 d-block  mb-2'>Take a natural picture</span>
+                <span className='font-size-12'>
                   Remove make-up. Take-off your glasses. Pull your hair back & tie it.
                 </span>
               </span>
@@ -61,8 +61,8 @@ const Step18: FC = () => {
               <img alt='Logo' src={toAbsoluteUrl('media/camera-guide/image 15.png')}
                 className='h-50px h-lg-50px' /> &nbsp;&nbsp;&nbsp;
               <span className='d-block fw-bold text-start'>
-                <span className='text-gray-900 fw-bolder d-block fs-4 mb-2'>Ensure it's a well-list face</span>
-                <span className='text-gray-500 fw-bold fs-6'>
+                <span className='font-size-16 d-block  mb-2'>Ensure it's a well-list face</span>
+                <span className='font-size-12 '>
                   Enhance the accuracy of results by clicking the picture in natural light or well-lit space
                 </span>
               </span>
@@ -85,8 +85,8 @@ const Step18: FC = () => {
               <img alt='Logo' src={toAbsoluteUrl('media/camera-guide/image 12.png')}
                 className='h-50px h-lg-50px' /> &nbsp;&nbsp;&nbsp;
               <span className='d-block fw-bold text-start'>
-                <span className='text-gray-900 fw-bolder d-block fs-4 mb-2'>Align your face</span>
-                <span className='text-gray-500 fw-bold fs-6'>
+                <span className='font-size-16 d-block  mb-2'>Align your face</span>
+                <span className='font-size-12 '>
                   Place your face inside the outline
                 </span>
               </span>
@@ -98,7 +98,11 @@ const Step18: FC = () => {
           <div className='d-flex'>
           <label className='form-check form-check-sm form-check-custom form-check-solid me-5'>
               <Field type="checkbox" name="termsAccept"/>
-              <span className='form-check-label'>By clicking the box and clicking the “Proceed” button below, I agree to the Minimalist’s terms & Conditions, and I expressly consent to the scanning and save my image, face, facial geometry, and biometric data.</span>
+              <div className='form-check-label font-size-9 text-dark'>
+                By clicking the box and clicking the “Proceed” button below, I agree to the &nbsp;
+                <span className='text-decoration-underline'>Minimalist’s terms & Conditions</span>, 
+                and I expressly consent to the scanning and save my image, face, facial geometry, and biometric data.
+              </div>
           </label>
             {/* <label className='form-check form-check-sm form-check-custom form-check-solid me-5'>
               <input className='form-check-input' type='checkbox' value='1' checked={isChecked} onChange={checkHandler} />
@@ -110,9 +114,9 @@ const Step18: FC = () => {
           <ErrorMessage name='termsAccept' />
         </div> */}
 
-        <div className='mb-10 row'>
-          <button type='submit' className='btn btn-md btn-primary me-3'>
-            <span className='indicator-label'>Proceed
+        <div className='mt-10 row justify-content-center'>
+          <button type='submit' className='btn btn-md btn-primary w-203 h-55 rounded-0'>
+            <span className='indicator-label font-size-20'>Proceed
               {/* <KTIcon iconName='arrow-right' className='fs-3 ms-2 me-0' /> */}
             </span>
           </button>

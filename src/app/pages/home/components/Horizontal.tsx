@@ -79,27 +79,27 @@ const Horizontal: FC = () => {
   return (
     <>
       {/* <Toolbar /> */}
-      <Content>
-        <div className='card'>
+      {/* <Content> */}
+        <div className=''>
           {stepper?.currentStepIndex === 1 || stepper?.currentStepIndex === 2 ? (
             <button
               onClick={prevStep}
               type='button'
-              className='btn btn-top-back btn-dark align-items-center'
+              className='btn btn-top-back btn-dark align-items-center p-0'
               data-kt-stepper-action='previous'
             >
-              <span className='indicator-label font-size-12'>Back</span>
+              <span className='indicator-label font-size-12'>{'<'} Back</span>
             </button>
           ) : (
             <>
             <div
               hidden
-              className='btn btn-top-back-hidden btn-dark align-items-center'
+              className='btn-top-back-hidden align-items-center'
             >
             </div>
             </>
           )}
-          <div className='card-body'>
+          <div className=''>
             <div
               ref={stepperRef}
               className='stepper stepper-pills d-flex flex-column pt-5'
@@ -231,7 +231,7 @@ const Horizontal: FC = () => {
                           <button
                             onClick={prevStep}
                             type='button'
-                            className='btn btn-next-md btn-dark me-3 align-items-center'
+                            className='btn btn-next-md btn-dark align-items-center'
                             data-kt-stepper-action='previous'
                           >
                             <span className='indicator-label font-size-20'>Back</span>
@@ -247,7 +247,7 @@ const Horizontal: FC = () => {
             </div>
           </div>
         </div>
-      </Content>
+      {/* </Content> */}
     </>
   )
 }

@@ -12,14 +12,14 @@ const Step13: FC = () => {
     formik.submitForm();
   };
   return (
-    <div className='w-100'>
-      <div className='pb-10 pb-lg-15'>
+    <div className='w-100 mb-120 container'>
+      <div className='pb-10 pb-lg-15 mb-5'>
         <h2 className='text-center font-size-24'>
           You belong to which age group?
         </h2>
       </div>
-      <div className='card-body p-0'>
-        <div className='card-p mt-n10 position-relative'>
+      <div className='p-0'>
+        <div className='mt-n10 position-relative'>
           <div className='row g-0'>
             <div className='col pb-8 rounded-2'>
               <Field
