@@ -13,9 +13,9 @@ const Step18: FC = () => {
   }
 
   return (
-    <div className='w-100 container'>
+    <div className='w-100'>
       <div className='pb-10 pb-lg-15'>
-        <h2 className='fw-bolder text-center font-size-16'>
+        <h2 className='text-center font-size-16'>
           How to take your picture for skin analysis?
         </h2>
       </div>
@@ -31,13 +31,13 @@ const Step18: FC = () => {
               id='kt_create_account_form_skin_sensitive_yes'
             /> */}
             <span
-              className='p-7 d-flex align-items-center mb-10'
+              className='d-flex align-items-center mb-10'
               // htmlFor='kt_create_account_form_skin_sensitive_yes'
             >
               <img alt='Logo' src={toAbsoluteUrl('media/camera-guide/image 14.png')}
                 className='h-50px h-lg-50px' /> &nbsp;&nbsp;&nbsp;
-              <span className='d-block fw-bold text-start'>
-                <span className='font-size-16 d-block  mb-2'>Take a natural picture</span>
+              <span className='d-block text-start'>
+                <span className='font-size-16 d-block mb-2'>Take a natural picture</span>
                 <span className='font-size-12'>
                   Remove make-up. Take-off your glasses. Pull your hair back & tie it.
                 </span>
@@ -54,9 +54,9 @@ const Step18: FC = () => {
               value='normal'
               id='kt_create_account_form_skin_sensitive_no'
             /> */}
-            <label
-              className='btn btn-outline btn-outline-dashed btn-outline-default p-7 d-flex align-items-center mb-10'
-              htmlFor='kt_create_account_form_skin_sensitive_no'
+            <span
+              className='d-flex align-items-center mb-10'
+              // htmlFor='kt_create_account_form_skin_sensitive_no'
             >
               <img alt='Logo' src={toAbsoluteUrl('media/camera-guide/image 15.png')}
                 className='h-50px h-lg-50px' /> &nbsp;&nbsp;&nbsp;
@@ -66,7 +66,7 @@ const Step18: FC = () => {
                   Enhance the accuracy of results by clicking the picture in natural light or well-lit space
                 </span>
               </span>
-            </label>
+            </span>
           </div>
         </div>
         <div className='row'>
@@ -78,9 +78,9 @@ const Step18: FC = () => {
               value='combination'
               id='kt_create_account_form_skin_sensitive_sometimes'
             /> */}
-            <label
-              className='btn btn-outline btn-outline-dashed btn-outline-default p-7 d-flex align-items-center mb-10'
-              htmlFor='kt_create_account_form_skin_sensitive_sometimes'
+            <span
+              className='d-flex align-items-center mb-10'
+              // htmlFor='kt_create_account_form_skin_sensitive_sometimes'
             >
               <img alt='Logo' src={toAbsoluteUrl('media/camera-guide/image 12.png')}
                 className='h-50px h-lg-50px' /> &nbsp;&nbsp;&nbsp;
@@ -90,7 +90,7 @@ const Step18: FC = () => {
                   Place your face inside the outline
                 </span>
               </span>
-            </label>
+            </span>
           </div>
         </div>
         <div className='d-flex flex-stack'>

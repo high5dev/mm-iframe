@@ -11,6 +11,7 @@ import { Step18 } from './steps/Step18'
 import { StepperComponent } from '../../../../_metronic/assets/ts/components'
 import { Form, Formik, FormikValues } from 'formik'
 import { createAccountSchemas, ICreateAccount, inits } from './CreateAccountWizardHelper'
+// import ProgressSteps from "./steps/StepProgress"
 import { Toolbar } from '../../../../_metronic/layout/components/toolbar/Toolbar'
 import { Content } from '../../../../_metronic/layout/components/Content'
 import './steps/styles.scss'
@@ -99,6 +100,7 @@ const Horizontal: FC = () => {
             </div>
             </>
           )}
+          {/* <ProgressSteps/> */}
           <div className=''>
             <div
               ref={stepperRef}
@@ -114,7 +116,6 @@ const Horizontal: FC = () => {
                     </div>
                   </div>
                   <div className='stepper-line-horizontal w-10px'></div>
-                  {/* <h3 className='stepper-title'>Name</h3> */}
                 </div>
 
                 <div className='stepper-item' data-kt-stepper-element='nav'>
@@ -124,7 +125,6 @@ const Horizontal: FC = () => {
                       <span className='stepper-number'></span>
                     </div>
                   </div>
-                  {/* <h3 className='stepper-title'>Email</h3> */}
                 </div>
 
                 <div className='stepper-item' data-kt-stepper-element='nav'>
@@ -134,7 +134,6 @@ const Horizontal: FC = () => {
                       <span className='stepper-number'></span>
                     </div>
                   </div>
-                  {/* <h3 className='stepper-title'>Age Group</h3> */}
                 </div>
 
                 <div className='stepper-item' data-kt-stepper-element='nav'>
@@ -144,7 +143,6 @@ const Horizontal: FC = () => {
                       <span className='stepper-number'></span>
                     </div>
                   </div>
-                  {/* <h3 className='stepper-title'>Gender</h3> */}
                 </div>
 
                 <div className='stepper-item' data-kt-stepper-element='nav'>
@@ -154,7 +152,6 @@ const Horizontal: FC = () => {
                       <span className='stepper-number'></span>
                     </div>
                   </div>
-                  {/* <h3 className='stepper-title'>Pregnancy</h3> */}
                 </div>
 
                 <div className='stepper-item' data-kt-stepper-element='nav'>
@@ -164,7 +161,6 @@ const Horizontal: FC = () => {
                       <span className='stepper-number'></span>
                     </div>
                   </div>
-                  {/* <h3 className='stepper-title'>Skin Type</h3> */}
                 </div>
 
                 <div className='stepper-item' data-kt-stepper-element='nav'>
@@ -174,7 +170,6 @@ const Horizontal: FC = () => {
                       <span className='stepper-number'></span>
                     </div>
                   </div>
-                  {/* <h3 className='stepper-title'>Skin Sensitivity</h3> */}
                 </div>
 
                 <div className='stepper-item' data-kt-stepper-element='nav'>
@@ -184,7 +179,6 @@ const Horizontal: FC = () => {
                       <span className='stepper-number'></span>
                     </div>
                   </div>
-                  {/* <h3 className='stepper-title'>Take photos</h3> */}
                 </div>
               </div>
 

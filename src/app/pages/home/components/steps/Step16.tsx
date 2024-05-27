@@ -34,10 +34,8 @@ const Step16: FC = () => {
               className='btn btn-block d-flex align-items-center fixed-width-xlg mb-5'
               htmlFor='kt_create_account_form_skin_type_dry'
             >
-              <div style={{ display: 'grid', gridTemplateColumns: 'auto auto', alignItems: 'center', position: 'relative', top: 0, left: 0 }}>
-                <img alt='Logo' src={toAbsoluteUrl('media/skin-types/normal.jpg')} className='h-78px w-82px' />
-                <span className='font-size-20 mb-2 text-center'>Normal Skin</span>
-              </div>
+                <img alt='Logo' src={toAbsoluteUrl('media/skin-types/dry.jpg')} className='h-78px w-82px' />
+                <div className='d-flex d-flex align-items-center mr-1 w-100 font-size-20 mb-2 justify-content-center '>Dry Skin</div>
               {/* <div className='row d-inline-flex justify-content-center'>
                 <div className='col-lg-4'>
                   <img alt='Logo' src={toAbsoluteUrl('media/skin-types/dry.jpg')}
@@ -66,7 +64,7 @@ const Step16: FC = () => {
             >
               <img alt='Logo' src={toAbsoluteUrl('media/skin-types/normal.jpg')}
                 className='h-78px w-82px' />
-              <span className='font-size-20 mb-2 text-center'>Normal Skin</span>
+              <span className='d-flex d-flex align-items-center mr-1 w-100 font-size-20 mb-2 justify-content-center '>Normal Skin</span>
             </label>
           </div>
         </div>
@@ -86,7 +84,7 @@ const Step16: FC = () => {
             >
               <img alt='Logo' src={toAbsoluteUrl('media/skin-types/combination.jpg')}
                 className='h-78px w-82px' />
-              <span className='font-size-20 mb-2 text-center'>Oily/Combination Skin</span>
+              <span className='d-flex d-flex align-items-center mr-1 w-100 font-size-20 mb-2 justify-content-center '>Oily / Combination Skin</span>
             </label>
           </div>
         </div>

@@ -19,7 +19,7 @@ const SelectDailyRoutinePage = () => {
                 <div className='d-flex flex-wrap my-2'>
                     <a
                         href='/skin-analysis'
-                        className='btn btn-primary btn-sm round-5'
+                        className='btn btn-top-back align-items-center p-0'
                         data-bs-target='#kt_modal_create_project'
                     >
                         Back

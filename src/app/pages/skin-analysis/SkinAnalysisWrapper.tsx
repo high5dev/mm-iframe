@@ -21,7 +21,7 @@ const SkinAnalysisPage = () => (
             </div>
         </div>
         <div className='row g-5 g-xl-8'>
-            <div className='card-p mt-n10 position-relative'>
+            <div className=''>
                 <div className='row g-0'>
                     <div className='col py-8 rounded-2  me-7 mb-7'>
                         <img
