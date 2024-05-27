@@ -1,11 +1,14 @@
 
-import { FC } from 'react'
+import { FC, useEffect } from 'react'
 import { KTIcon } from '../../../../../_metronic/helpers'
-import { ErrorMessage, Field } from 'formik'
+import { ErrorMessage, Field, useFormikContext } from 'formik'
 import { toAbsoluteUrl } from '../../../../../_metronic/helpers'
 import './styles.scss';
 
 const Step17: FC = () => {
+
+  const formik = useFormikContext();
+  console.log(formik);
   return (
     <div className='w-100 container'>
       <div className='pb-10 pb-lg-15'>

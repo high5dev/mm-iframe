@@ -150,20 +150,12 @@
 }
 
 
-.visually-hidden {
-    position: absolute;
-    clip: rect(1px, 1px, 1px, 1px);
-    padding: 0;
-    border: 0;
-    overflow: hidden;
-    white-space: nowrap;
-    -webkit-clip-path: inset(50%);
-    clip-path: inset(50%);
-    width: 1px;
-    height: 1px;
-  }
+.fixed-width-xlg:has(> .btn-check:checked) {
+    background-color: white;
+    color:black;
+}
 
-  .visually-hidden:checked + label {
-    background-color: blue; /* Change background color */
-    color: white; /* Change font color */
-  }
+.h-78px.w-82px {
+    width: 82px !important;
+    height: 78px !important;
+}

@@ -27,7 +27,7 @@ const Step13: FC = () => {
                 className='btn-check text-center'
                 name='ageGroup'
                 value='below18'
-                onChange={() => handleRadioChange('below18')}
+                onClick={() => handleRadioChange('below18')}
                 id='kt_create_account_form_age_group_1'
               />
               <label
@@ -43,7 +43,7 @@ const Step13: FC = () => {
                 className='btn-check text-center'
                 name='ageGroup'
                 value='18to24'
-                onChange={() => handleRadioChange('18to24')}
+                onClick={() => handleRadioChange('18to24')}
                 id='kt_create_account_form_age_group_2'
               />
               <label
@@ -61,7 +61,7 @@ const Step13: FC = () => {
                 className='btn-check text-center'
                 name='ageGroup'
                 value='25to30'
-                onChange={() => handleRadioChange('25to30')}
+                onClick={() => handleRadioChange('25to30')}
                 id='kt_create_account_form_age_group_3'
               />
               <label
@@ -77,7 +77,7 @@ const Step13: FC = () => {
                 className='btn-check text-center'
                 name='ageGroup'
                 value='30to34'
-                onChange={() => handleRadioChange('30to34')}
+                onClick={() => handleRadioChange('30to34')}
                 id='kt_create_account_form_age_group_4'
               />
               <label
@@ -95,7 +95,7 @@ const Step13: FC = () => {
                 className='btn-check text-center'
                 name='ageGroup'
                 value='34to40'
-                onChange={() => handleRadioChange('34to40')}
+                onClick={() => handleRadioChange('34to40')}
                 id='kt_create_account_form_age_group_5'
               />
               <label
@@ -111,7 +111,7 @@ const Step13: FC = () => {
                 className='btn-check text-center'
                 name='ageGroup'
                 value='above40'
-                onChange={() => handleRadioChange('above40')}
+                onClick={() => handleRadioChange('above40')}
                 id='kt_create_account_form_age_group_6'
               />
               <label

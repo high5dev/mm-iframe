@@ -16,7 +16,7 @@ const Step16: FC = () => {
   return (
     <div className='w-100 mb-120 container'>
       <div className='pb-7 pb-lg-15 text-center font-size-24'>
-          Your Skin Type?
+        Your Skin Type?
       </div>
 
       <div className='fv-row'>
@@ -27,16 +27,26 @@ const Step16: FC = () => {
               className='btn-check text-center'
               name='skinType'
               value='dry'
-              onChange={() => handleRadioChange('dry')}
+              onClick={() => handleRadioChange('dry')}
               id='kt_create_account_form_skin_type_dry'
             />
             <label
               className='btn btn-block d-flex align-items-center fixed-width-xlg mb-5'
               htmlFor='kt_create_account_form_skin_type_dry'
             >
-              <img alt='Logo' src={toAbsoluteUrl('media/skin-types/dry.jpg')}
-                className='h-35px h-lg-35px' />
-              <span className='font-size-20 mb-2 text-cente'>Dry Skin</span>
+              <div style={{ display: 'grid', gridTemplateColumns: 'auto auto', alignItems: 'center', position: 'relative', top: 0, left: 0 }}>
+                <img alt='Logo' src={toAbsoluteUrl('media/skin-types/normal.jpg')} className='h-78px w-82px' />
+                <span className='font-size-20 mb-2 text-center'>Normal Skin</span>
+              </div>
+              {/* <div className='row d-inline-flex justify-content-center'>
+                <div className='col-lg-4'>
+                  <img alt='Logo' src={toAbsoluteUrl('media/skin-types/dry.jpg')}
+                    className='h-35px h-lg-35px' />
+                </div>
+                <div className='col-lg-8'>
+                  <span className='font-size-20 mb-2 text-cente'>Dry Skin</span>
+                </div>
+              </div> */}
             </label>
           </div>
         </div>
@@ -47,7 +57,7 @@ const Step16: FC = () => {
               className='btn-check text-center'
               name='skinType'
               value='normal'
-              onChange={() => handleRadioChange('normal')}
+              onClick={() => handleRadioChange('normal')}
               id='kt_create_account_form_skin_type_normal'
             />
             <label
@@ -55,8 +65,8 @@ const Step16: FC = () => {
               htmlFor='kt_create_account_form_skin_type_normal'
             >
               <img alt='Logo' src={toAbsoluteUrl('media/skin-types/normal.jpg')}
-                className='h-35px h-lg-35px' />
-              <span className='font-size-20 mb-2 text-cente'>Normal Skin</span>
+                className='h-78px w-82px' />
+              <span className='font-size-20 mb-2 text-center'>Normal Skin</span>
             </label>
           </div>
         </div>
@@ -67,7 +77,7 @@ const Step16: FC = () => {
               className='btn-check text-center'
               name='skinType'
               value='combination'
-              onChange={() => handleRadioChange('combination')}
+              onClick={() => handleRadioChange('combination')}
               id='kt_create_account_form_skin_type_combination'
             />
             <label
@@ -75,8 +85,8 @@ const Step16: FC = () => {
               htmlFor='kt_create_account_form_skin_type_combination'
             >
               <img alt='Logo' src={toAbsoluteUrl('media/skin-types/combination.jpg')}
-                className='h-35px h-lg-35px' />
-              <span className='font-size-20 mb-2 text-cente'>Oily/Combination Skin</span>
+                className='h-78px w-82px' />
+              <span className='font-size-20 mb-2 text-center'>Oily/Combination Skin</span>
             </label>
           </div>
         </div>

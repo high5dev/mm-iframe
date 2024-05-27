@@ -28,7 +28,7 @@ const Step14: FC = () => {
               className='btn-check text-center'
               name='genderType'
               value='male'
-              onChange={() => handleRadioChange('male')}
+              onClick={() => handleRadioChange('male')}
               id='kt_create_account_form_gender_male'
             />
             <label
@@ -46,7 +46,7 @@ const Step14: FC = () => {
               className='btn-check text-center'
               name='genderType'
               value='female'
-              onChange={() => handleRadioChange('female')}
+              onClick={() => handleRadioChange('female')}
               id='kt_create_account_form_gender_female'
             />
             <label
@@ -64,7 +64,7 @@ const Step14: FC = () => {
               className='btn-check text-center'
               name='genderType'
               value='notSure'
-              onChange={() => handleRadioChange('notSure')}
+              onClick={() => handleRadioChange('notSure')}
               id='kt_create_account_form_gender_not_sure'
             />
             <label
