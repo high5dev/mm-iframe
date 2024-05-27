@@ -28,7 +28,7 @@ const Step15: FC = () => {
               className='btn-check text-center'
               name='pregnancy'
               value='pregnant'
-              onClick={() => handleRadioChange('pregnant')}
+              onChange={() => handleRadioChange('pregnant')}
               id='kt_create_account_form_pregnancy_yes'
             />
             <label
@@ -46,7 +46,7 @@ const Step15: FC = () => {
               className='btn-check text-center'
               name='pregnancy'
               value='notPregnant'
-              onClick={() => handleRadioChange('notPregnant')}
+              onChange={() => handleRadioChange('notPregnant')}
               id='kt_create_account_form_pregnancy_not'
             />
             <label

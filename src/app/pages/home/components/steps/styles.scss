@@ -5,7 +5,9 @@
     box-sizing: border-box;
     border: none;
     border-radius: 0;
-    border-bottom: 2px solid rgb(5, 5, 5);
+    border-bottom: 2px solid black;
+    font-size: 20px;
+    color: black;
     width: 70%;
 }
 
@@ -133,6 +135,9 @@
     display: flex !important;
     // margin-top: 119px;
     border-radius: 0;
+    background-color: #000000;
+    color: #ffffff;
+    border: none;
 
 }
 
@@ -144,6 +149,21 @@
     justify-content: center;
 }
 
-.stepper.stepper-pills.stepper-column .stepper-line {
-    
-}
+
+.visually-hidden {
+    position: absolute;
+    clip: rect(1px, 1px, 1px, 1px);
+    padding: 0;
+    border: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    -webkit-clip-path: inset(50%);
+    clip-path: inset(50%);
+    width: 1px;
+    height: 1px;
+  }
+
+  .visually-hidden:checked + label {
+    background-color: blue; /* Change background color */
+    color: white; /* Change font color */
+  }

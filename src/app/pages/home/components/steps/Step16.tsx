@@ -27,7 +27,7 @@ const Step16: FC = () => {
               className='btn-check text-center'
               name='skinType'
               value='dry'
-              onClick={() => handleRadioChange('dry')}
+              onChange={() => handleRadioChange('dry')}
               id='kt_create_account_form_skin_type_dry'
             />
             <label
@@ -47,7 +47,7 @@ const Step16: FC = () => {
               className='btn-check text-center'
               name='skinType'
               value='normal'
-              onClick={() => handleRadioChange('normal')}
+              onChange={() => handleRadioChange('normal')}
               id='kt_create_account_form_skin_type_normal'
             />
             <label
@@ -67,7 +67,7 @@ const Step16: FC = () => {
               className='btn-check text-center'
               name='skinType'
               value='combination'
-              onClick={() => handleRadioChange('combination')}
+              onChange={() => handleRadioChange('combination')}
               id='kt_create_account_form_skin_type_combination'
             />
             <label

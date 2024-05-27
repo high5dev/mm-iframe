@@ -85,7 +85,7 @@ const Horizontal: FC = () => {
             <button
               onClick={prevStep}
               type='button'
-              className='btn btn-top-back btn-dark align-items-center p-0'
+              className='btn btn-top-back align-items-center p-0'
               data-kt-stepper-action='previous'
             >
               <span className='indicator-label font-size-12'>{'<'} Back</span>
@@ -231,7 +231,7 @@ const Horizontal: FC = () => {
                           <button
                             onClick={prevStep}
                             type='button'
-                            className='btn btn-next-md btn-dark align-items-center'
+                            className='btn-next-md align-items-center'
                             data-kt-stepper-action='previous'
                           >
                             <span className='indicator-label font-size-20'>Back</span>

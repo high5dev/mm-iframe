@@ -13,7 +13,7 @@ const Step18: FC = () => {
   }
 
   return (
-    <div className='w-100'>
+    <div className='w-100 container'>
       <div className='pb-10 pb-lg-15'>
         <h2 className='fw-bolder text-center font-size-16'>
           How to take your picture for skin analysis?
@@ -30,9 +30,9 @@ const Step18: FC = () => {
               value='dry'
               id='kt_create_account_form_skin_sensitive_yes'
             /> */}
-            <label
-              className='btn btn-outline btn-outline-dashed btn-outline-default p-7 d-flex align-items-center mb-10'
-              htmlFor='kt_create_account_form_skin_sensitive_yes'
+            <span
+              className='p-7 d-flex align-items-center mb-10'
+              // htmlFor='kt_create_account_form_skin_sensitive_yes'
             >
               <img alt='Logo' src={toAbsoluteUrl('media/camera-guide/image 14.png')}
                 className='h-50px h-lg-50px' /> &nbsp;&nbsp;&nbsp;
@@ -42,7 +42,7 @@ const Step18: FC = () => {
                   Remove make-up. Take-off your glasses. Pull your hair back & tie it.
                 </span>
               </span>
-            </label>
+            </span>
           </div>
         </div>
         <div className='row'>

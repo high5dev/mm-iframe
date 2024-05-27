@@ -22,7 +22,7 @@ const Step11: FC = () => {
       </div>
       <div className='mb-10 row button-alignment'>
         <button type='submit' className='btn btn-lg btn-primary btn-next-lg align-items-center'>
-          <span className='indicator-label font-size-24'>Next
+          <span className='indicator-label font-size-20'>Next
           </span>
         </button>
       </div>

@@ -59,7 +59,7 @@ const Step17: FC = () => {
           <div className='col d-flex justify-content-center'>
             <Field
               type='radio'
-              className='btn-check text-center'
+              className='btn-check text-center visually-hidden'
               name='skinSensible'
               value='sometimesSensible'
               id='kt_create_account_form_skin_sensitive_sometimes'
