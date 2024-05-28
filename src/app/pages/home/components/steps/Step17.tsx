@@ -1,5 +1,5 @@
 
-import { FC, useEffect } from 'react'
+import { FC, useEffect, useState } from 'react'
 import { KTIcon } from '../../../../../_metronic/helpers'
 import { ErrorMessage, Field, useFormikContext } from 'formik'
 import { toAbsoluteUrl } from '../../../../../_metronic/helpers'
@@ -7,8 +7,12 @@ import './styles.scss';
 
 const Step17: FC = () => {
 
+  const [isChecked, setIsChecked] = useState(false)
+  const handleRadioChange = (value: string) => {
+    setIsChecked(true);
+  };
+
   const formik = useFormikContext();
-  console.log(formik);
   return (
     <div className='w-100 container'>
       <div className='pb-10 pb-lg-15'>
@@ -25,10 +29,11 @@ const Step17: FC = () => {
               className='btn-check text-center'
               name='skinSensible'
               value='sensitive'
+              checked={isChecked}
               id='kt_create_account_form_skin_sensitive_yes'
             />
             <label
-              className='btn btn-block d-flex align-items-center fixed-width-lg mb-5 active'
+              className='btn btn-block d-flex align-items-center fixed-width-lg mb-5'
               htmlFor='kt_create_account_form_skin_sensitive_yes'
             >
                 <span className='font-size-20 mb-2 text-cente'>Yes</span>
@@ -42,10 +47,11 @@ const Step17: FC = () => {
               className='btn-check text-center'
               name='skinSensible'
               value='notSensitive'
+              checked={isChecked}
               id='kt_create_account_form_skin_sensitive_no'
             />
             <label
-              className='btn btn-block d-flex align-items-center fixed-width-lg mb-5'
+              className={'btn btn-block d-flex align-items-center fixed-width-lg mb-5' + (isChecked ? 'btn-checked': '')}
               htmlFor='kt_create_account_form_skin_sensitive_no'
             >
 
@@ -60,6 +66,7 @@ const Step17: FC = () => {
               className='btn-check text-center visually-hidden'
               name='skinSensible'
               value='sometimesSensible'
+              checked={isChecked}
               id='kt_create_account_form_skin_sensitive_sometimes'
             />
             <label
@@ -75,13 +82,10 @@ const Step17: FC = () => {
         </div> */}
 
         <div className='row button-alignment justify-content-center mt-16 mb-5'>
-          {/* <div className='col d-flex justify-content-center'> */}
             <button type='submit' className='btn btn-lg btn-primary align-items-center w-203 rounded-0'>
               <span className='indicator-label font-size-20'>Take a selfie
-                {/* <KTIcon iconName='arrow-right' className='fs-3 ms-2 me-0' /> */}
               </span>
             </button>
-          {/* </div> */}
         </div>
       </div>
     </div>

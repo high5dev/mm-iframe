@@ -3,102 +3,44 @@ import { PageTitle } from '../../../_metronic/layout/core'
 import { Content } from '../../../_metronic/layout/components/Content'
 import { toAbsoluteUrl } from '../../../_metronic/helpers'
 import './styles.scss'
+import { ImageContainer } from './ImageContainer'
 
 const SkinAnalysisPage = () => (
     <>
-        <div className='row g-5 g-xl-8'>
-            <div className='col-xl-6'>
-                <h1 className='fw-bolder d-flex align-items-center text-gray-900'>
-                    Skin Analysis
-                </h1>
+        <div className=''>
+            <div className='d-flex align-items-center margin-top-65 font-size-25 margin-left-20'>
+                Skin Analysis
+            </div>
+        </div>
+        <div className=''>
+            <div className='card-319-90 margin-left-20 d-flex'>
+                <div className='d-flex align-items-center justify-content-center font-size-18'>Eye Age, Perceived Age & Skin tone</div>
+            </div>
+        </div>
+        <div className=''>
+            <div className='row g-0'>
+                <ImageContainer/>
+                <ImageContainer/>
             </div>
         </div>
         <div className='row g-5 g-xl-8'>
-            <div className='col-xl-12'>
-                <div className='card pb-10 pb--md-15'>
-                    <h3 className='fw-bolder d-flex align-items-center text-gray-900 px-5 py-5'>Eye Age, Perceived Age & Skin tone</h3>
-                </div>
+            <div className='row button-alignment justify-content-center pt-15 mb-5'>
+                <a
+                    href="/daily-routine"
+                    className="btn btn-lg btn-primary align-items-center w-203 rounded-0"
+                >
+                    <span className='indicator-label font-size-20'>Your Routine
+                    </span>
+
+                </a>
             </div>
-        </div>
-        <div className='row g-5 g-xl-8'>
-            <div className=''>
-                <div className='row g-0'>
-                    <div className='col py-8 rounded-2  me-7 mb-7'>
-                        <img
-                            src={toAbsoluteUrl('media/stock/600x400/img-1.jpg')}
-                            alt=""
-                            className="w-100 h-250px rounded"
-                        />
-                        <div className='row g-0'>
-                            <div className='col py-0 px-4'>
-                                <a
-                                    href="/daily-routine"
-                                    className="btn btn-block btn-dark fixed-height-button"
-                                >
-                                    Concern
-                                </a>
-                            </div>
-                            <div className='col py-0 px-0'>
-                                <a
-                                    href="/daily-routine"
-                                    className=" btn btn-block btn-light-dark fixed-height-button"
-                                >
-                                    Lowest Score
-                                </a>
-                            </div>
-
-
-                        </div>
-                    </div>
-                    <div className='col py-8 rounded-2  mb-7'>
-                        <img
-                            src={toAbsoluteUrl('media/stock/600x400/img-1.jpg')}
-                            alt=""
-                            className="w-100 h-250px rounded"
-                        />
-                        <div className='row g-0'>
-                            <div className='col py-0 px-4'>
-                                <a
-                                    href="/daily-routine"
-                                    className="btn btn-block btn-dark fixed-height-button"
-                                >
-                                    Concern
-                                </a>
-                            </div>
-                            <div className='col py-0 px-0'>
-                                <a
-                                    href="/daily-routine"
-                                    className=" btn btn-block btn-light-dark fixed-height-button"
-                                >
-                                    Lowest Score
-                                </a>
-                            </div>
-
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div className='row g-5 g-xl-8'>
-            <div className='pt-15'>
-                <div className='row'>
-                    <a
-                        href="/daily-routine"
-                        className="btn btn-block btn-primary me-150 mr-150 btn-shadow"
-                    >
-                        Your Routine
-                    </a>
-                    {/* <button className='btn btn-block btn-primary me-3 ms-2'>Your Routine</button> */}
-                </div>
-                <div className='mt-10 row'>
-                    <a
-                        href="/"
-                        className="btn btn-dark"
-                    >
-                        Retake Photo
-                    </a>
-                </div>
+            <div className='mt-10 row button-alignment justify-content-center mb-15'>
+                <a
+                    href="/"
+                    className="btn-next-md align-items-center"
+                >
+                    <span className='indicator-label font-size-20 text-center'>Retake Photo</span>
+                </a>
             </div>
         </div>
 

@@ -221,7 +221,7 @@ const Horizontal: FC = () => {
 
                     <div className='mx-auto mw-600px w-100 pt-2 pb-10'>
                       <div className='mr-2 row button-alignment'>
-                        {stepper?.currentStepIndex !== 1 && stepper?.currentStepIndex !== 2 ? (
+                        {stepper?.currentStepIndex !== 1 && stepper?.currentStepIndex !== 2 && stepper?.currentStepIndex !== 7 ? (
                           <button
                             onClick={prevStep}
                             type='button'

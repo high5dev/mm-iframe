@@ -1,9 +1,25 @@
-.fixed-height-button {
-    height: 4em;
-    /* Height in em units */
+.fixed-height-button-1 {
+    height: 61px !important;
     font-size: 1em;
-    padding: 0.5em 1em;
-    width: 10em;
+    width: 109px !important;
+    background-color: #000000;
+    color: #ffffff;
+    position: absolute;
+    top: 240px; /* Adjust as needed */
+    left: 20px; /* Adjust as needed */
+    z-index: 1; /* Ensure the button appears above the image */
+}
+
+.fixed-height-button-2 {
+    height: 61px !important;
+    font-size: 1em;
+    width: 84px !important;
+    background-color: #D9D9D9;
+    color: #000000;
+    position: absolute;
+    top: 240px; /* Adjust as needed */
+    left: 130px; /* Adjust as needed */
+    z-index: 1; /* Ensure the button appears above the image */
 }
 
 .btn-top-back {
@@ -18,4 +34,48 @@
     background-color: #ffffff !important;
     color: #000000 !important;
     border: #000000 solid 1px !important;
+}
+
+.margin-top-65 {
+    margin-top: 65px !important;
+}
+
+.font-size-25 {
+    font-size: 25px !important;
+}
+.font-size-18 {
+    font-size: 18px !important;
+}
+
+.margin-left-20 {
+    margin-left: 20px !important;
+}
+
+.card-319-90 {
+    width: 319px !important;
+    height: 90px !important;
+    background-color: #D9D9D9;
+}
+
+.img-193-298 {
+    width: 195px !important;
+    height: 300px !important;
+}
+
+.image-container{
+  position: relative;
+  display: inline-block;
+}
+
+.img-31-31 {
+    width: 31px !important;
+    height: 31px !important;
+    position: absolute;
+    top: 10px; /* Adjust as needed */
+    left: 168px; /* Adjust as needed */
+    z-index: 1; /* Ensure the button appears above the image */
+}
+
+.w-203 {
+    width: 203px;
 }

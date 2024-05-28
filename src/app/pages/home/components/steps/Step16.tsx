@@ -1,5 +1,5 @@
 
-import { FC } from 'react'
+import { FC, useState } from 'react'
 import { KTIcon } from '../../../../../_metronic/helpers'
 import { ErrorMessage, Field, useFormikContext } from 'formik'
 import { toAbsoluteUrl } from '../../../../../_metronic/helpers'
@@ -35,16 +35,7 @@ const Step16: FC = () => {
               htmlFor='kt_create_account_form_skin_type_dry'
             >
                 <img alt='Logo' src={toAbsoluteUrl('media/skin-types/dry.jpg')} className='h-78px w-82px' />
-                <div className='d-flex d-flex align-items-center mr-1 w-100 font-size-20 mb-2 justify-content-center '>Dry Skin</div>
-              {/* <div className='row d-inline-flex justify-content-center'>
-                <div className='col-lg-4'>
-                  <img alt='Logo' src={toAbsoluteUrl('media/skin-types/dry.jpg')}
-                    className='h-35px h-lg-35px' />
-                </div>
-                <div className='col-lg-8'>
-                  <span className='font-size-20 mb-2 text-cente'>Dry Skin</span>
-                </div>
-              </div> */}
+                <span className='d-flex d-flex align-items-center mr-1 w-100 font-size-20 mb-2 justify-content-center '>Dry Skin</span>
             </label>
           </div>
         </div>

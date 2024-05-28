@@ -9,6 +9,9 @@ import './styles.scss';
 import { CardItem } from './CardItem'
 import { CardItem2 } from './CardItem2'
 import { CardItem3 } from './CardItem3'
+import { Nav } from 'react-bootstrap'
+import { Tab } from 'react-bootstrap'
+
 
 const SelectDailyRoutinePage = () => {
     const [tab, setTab] = useState('Essentials')
@@ -16,105 +19,49 @@ const SelectDailyRoutinePage = () => {
     return (
         <>
             <div className='d-flex flex-wrap flex-stack mb-6'>
-                <div className='d-flex flex-wrap my-2'>
+                <div className='d-flex flex-wrap'>
                     <a
                         href='/skin-analysis'
                         className='btn btn-top-back align-items-center p-0'
                         data-bs-target='#kt_modal_create_project'
                     >
-                        Back
+                        {'<'}Back
                     </a>
                 </div>
             </div>
             <div className='d-flex flex-wrap flex-stack mb-6'>
-                <h3 className='fw-bolder my-2'>
+                <div className='my-2 font-size-14 font-weight-400'>
                     Hi, customer
-                </h3>
+                </div>
+                <span className='font-size-14 ms-1 font-weight-400'>Based on your Primary 2 concerns (concern 1 & concern 2), AI has picked the best daily routine for you.</span>
             </div>
-            <div className='d-flex flex-wrap flex-stack mb-6'>
-                <span className='fs-6 text-gray-500 fw-bold ms-1'>Based on your Primary 2 concerns (concern 1 & concern 2), AI has picked the best daily routine for you.</span>
-            </div>
-            <div className='card'>
-                <div className='card-header card-header-stretch overflow-auto'>
-                    <ul
-                        className='nav nav-stretch nav-pills nav-line-tabs fw-bold border-transparent flex-nowrap'
-                        role='tablist'
-                    >
-                        <li className='nav-item'>
-                            <a
-                                className={clsx(`nav-link cursor-pointer`, { active: tab === 'Essentials' })}
-                                onClick={() => setTab('Essentials')}
-                                role='tab'
-                            >
-                                Essentials
-                            </a>
-                        </li>
-
-                        <li className='nav-item'>
-                            <a
-                                className={clsx(`nav-link cursor-pointer`, { active: tab === 'Boosters' })}
-                                onClick={() => setTab('Boosters')}
-                                role='tab'
-                            >
-                                Boosters
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-                <div className='card-body'>
-                    <div className='tab-content pt-3'>
-                        <div className={clsx('tab-pane', { active: tab === 'Essentials' })}>
-                            <div className='card'>
-                                <CardItem productIndex='Product 1' productName='item1' whenTouse='22:60 AM' price='$1.5' />
-                                <div className='separator mb-4'></div>
-                                <CardItem productIndex='Product 2' productName='item2' whenTouse='22:60 AM' price='$1.7' />
-                                <div className='separator mb-4'></div>
-                                <CardItem3 className=''/>
-                            </div>
-                        </div>
+            <div>
+                <Tab.Container id="left-tabs-example" defaultActiveKey="first">
+                    <div className='d-flex justify-content-center '>
+                        <Nav variant="pills" className="d-flex border-primary border" justify style={{ width: "max-content" }}>
+                            <Nav.Item className='mx-0 font-size-16'>
+                                <Nav.Link eventKey="first">Essentials</Nav.Link>
+                            </Nav.Item>
+                            <Nav.Item className='mx-0 font-size-16'>
+                                <Nav.Link eventKey="second">Boosters</Nav.Link>
+                            </Nav.Item>
+                        </Nav>
                     </div>
-                    <div className='tab-content pt-3'>
-                        <div className={clsx('tab-pane', { active: tab === 'Boosters' })}>
-                            <div className='card'>
-                                <CardItem productIndex='Step 1' productName='item1' whenTouse='22:60 AM' price='$1.5' />
-                                <div className='separator mb-4'></div>
-                                <CardItem productIndex='Step 2' productName='item2' whenTouse='23:60 AM' price='$1.7' />
-                                <div className='separator mb-4'></div>
-                                <CardItem productIndex='Step 3' productName='item3' whenTouse='00:60 AM' price='$1.9' />
-                                <div className='separator mb-4'></div>
-                                <CardItem productIndex='Step 4' productName='item4' whenTouse='03:60 AM' price='$2.3' />
-                                <div className='separator mb-4'></div>
-                                <CardItem productIndex='Step 5' productName='item5' whenTouse='06:60 AM' price='$2.5' />
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div className='card-header card-header-stretch overflow-auto'>
-                    <ul
-                        className='nav nav-stretch nav-pills nav-line-tabs fw-bold border-transparent flex-nowrap'
-                        role='tablist'
-                    >
-                        <li className='nav-item'>
-                            <a
-                                className={clsx(`nav-link cursor-pointer`, { active: tab === 'Essentials' })}
-                                onClick={() => setTab('Essentials')}
-                                role='tab'
-                            >
-                                
-                            </a>
-                        </li>
-
-                        <li className='nav-item'>
-                            <a
-                                className={clsx(`nav-link cursor-pointer`, { active: tab === 'Boosters' })}
-                                onClick={() => setTab('Boosters')}
-                                role='tab'
-                            >
-                                
-                            </a>
-                        </li>
-                    </ul>
-                </div>
+                    <Tab.Content>
+                        <Tab.Pane eventKey="first">
+                            <CardItem productIndex='Product 1' productName='item1' whenTouse='22:60 AM' price='$1.5' />
+                            <CardItem productIndex='Product 2' productName='item2' whenTouse='22:60 AM' price='$1.7' />
+                            <CardItem3 className='' />
+                        </Tab.Pane>
+                        <Tab.Pane eventKey="second">
+                            <CardItem productIndex='Step 1' productName='item1' whenTouse='22:60 AM' price='$1.5' />
+                            <CardItem productIndex='Step 2' productName='item2' whenTouse='23:60 AM' price='$1.7' />
+                            <CardItem productIndex='Step 3' productName='item3' whenTouse='00:60 AM' price='$1.9' />
+                            <CardItem productIndex='Step 4' productName='item4' whenTouse='03:60 AM' price='$2.3' />
+                            <CardItem productIndex='Step 5' productName='item5' whenTouse='06:60 AM' price='$2.5' />
+                        </Tab.Pane>
+                    </Tab.Content>
+                </Tab.Container>
             </div>
             <div className='row g-5 g-xl-8'>
                 <div className='card-p position-relative'>

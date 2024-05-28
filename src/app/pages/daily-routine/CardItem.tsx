@@ -11,20 +11,22 @@ type Props = {
 const CardItem: React.FC<Props> = ({ productIndex, productName, whenTouse, price }) => {
     return (
         <>
-            <div className='card-body item-card mb-3'>
-                <span className='text-muted d-block fw-semibold'>{productIndex}</span>
-                <div className='d-flex align-items-center'>                    
-                    <div className='symbol symbol-50px me-5'>
-                        <img src={toAbsoluteUrl('media/avatars/300-6.jpg')} className='' alt='' />
+            <span className='d-block font-size-18 ml-18'>{productIndex}</span>
+            <div className='item-card mb-5 p-1'>
+                <div className='d-flex'>                    
+                    <div className='symbol symbol-50px me-2'>
+                        <img src={toAbsoluteUrl('media/avatars/300-6.jpg')} className='img-product' />
                     </div>
-                    <div className='flex-grow-1'>
-                        <span className='text-gray-900 fw-bold text-hover-primary fs-6'>
-                            {productName}
-                        </span>
-                        <span className='text-muted d-block fw-semibold'>When to use: {whenTouse}</span>
-                        <div className='row d-flex align-items-center'>
-                            <span className='col text-muted d-block fw-semibold'>Price: {price}</span>
-                            <button className='col btn btn-sm btn-light btn-color-muted btn-active-light-danger rounded-10'>Add to Cart</button>
+                    <div className='font-size-14 w-100 d-flex row'>
+                        <div>
+                            <span className='text-hover-primary'>
+                                {productName}
+                            </span>
+                            <span className='d-block'>When to use: {whenTouse}</span>
+                        </div>
+                        <div className='row d-flex align-items-center align-self-end'>
+                            <div className='d-block' style={{maxWidth: "fit-content"}}>Price: {price}</div>
+                            <button className='add-cart-button rounded-10 align-items-center pt-0 px-50' style={{minWidth: "fit-content"}}>Add to Cart</button>
                         </div>
                     </div>
                 </div>
