@@ -4,6 +4,28 @@ import { Content } from '../../../_metronic/layout/components/Content'
 import { toAbsoluteUrl } from '../../../_metronic/helpers'
 import './styles.scss'
 import { ImageContainer } from './ImageContainer'
+import { ImageContainer2 } from './ImageContainer2'
+import { ImageContainer3 } from './ImageContainer3'
+import Carousel from "react-multi-carousel";
+import "react-multi-carousel/lib/styles.css";
+
+const responsive = {
+    desktop: {
+        breakpoint: { max: 3000, min: 1024 },
+        items: 3,
+        slidesToSlide: 3 // optional, default to 1.
+    },
+    tablet: {
+        breakpoint: { max: 1024, min: 464 },
+        items: 2,
+        slidesToSlide: 2 // optional, default to 1.
+    },
+    mobile: {
+        breakpoint: { max: 464, min: 0 },
+        items: 1,
+        slidesToSlide: 1 // optional, default to 1.
+    }
+};
 
 const SkinAnalysisPage = () => (
     <>
@@ -18,9 +40,37 @@ const SkinAnalysisPage = () => (
             </div>
         </div>
         <div className=''>
-            <div className='row g-0'>
-                <ImageContainer/>
-                <ImageContainer/>
+            <div>
+                <Carousel
+                    swipeable={true}
+                    draggable={false}
+                    showDots={false}
+                    responsive={responsive}
+                    ssr={true} // means to render carousel on server-side.
+                    infinite={true}
+                    autoPlay={true}
+                    autoPlaySpeed={10000}
+                    keyBoardControl={true}
+                    customTransition="all .5"
+                    transitionDuration={500}
+                    containerClass="carousel-container"
+                    removeArrowOnDeviceType={["tablet", "mobile"]}
+                    // deviceType={this.props.deviceType}
+                    dotListClass="custom-dot-list-style"
+                    itemClass="carousel-item-padding-40-px"
+                >
+                    <div  className='d-flex justify-content-center'>
+                        <ImageContainer />
+                    </div >
+                    <div  className='d-flex justify-content-center'>
+                        <ImageContainer2 />
+                    </div>
+                    <div  className='d-flex justify-content-center'>
+                        <ImageContainer3 />
+                    </div>
+                </Carousel>
+                {/* <ImageContainer />
+                <ImageContainer /> */}
             </div>
         </div>
         <div className='row g-5 g-xl-8'>

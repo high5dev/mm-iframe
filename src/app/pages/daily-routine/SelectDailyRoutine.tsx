@@ -14,8 +14,6 @@ import { Tab } from 'react-bootstrap'
 
 
 const SelectDailyRoutinePage = () => {
-    const [tab, setTab] = useState('Essentials')
-
     return (
         <>
             <div className='d-flex flex-wrap flex-stack mb-6'>
@@ -37,6 +35,7 @@ const SelectDailyRoutinePage = () => {
             </div>
             <div>
                 <Tab.Container id="left-tabs-example" defaultActiveKey="first">
+                    <div className='d-flex justify-content-center font-size-20'>Your Daily Routine</div>
                     <div className='d-flex justify-content-center '>
                         <Nav variant="pills" className="d-flex border-primary border" justify style={{ width: "max-content" }}>
                             <Nav.Item className='mx-0 font-size-16'>
@@ -63,16 +62,14 @@ const SelectDailyRoutinePage = () => {
                     </Tab.Content>
                 </Tab.Container>
             </div>
-            <div className='row g-5 g-xl-8'>
-                <div className='card-p position-relative'>
-                    <span className='d-flex text-center'>You may also like</span>
-                    <div className='row g-0'>
-                        <div className='col py-8 rounded-2  me-7 mb-7'>
-                            <CardItem2 className='' />
-                        </div>
-                        <div className='col py-8 rounded-2  me-7 mb-7'>
-                            <CardItem2 className='' />
-                        </div>
+            <div className=''>
+                <span className='d-flex justify-content-center text-center font-size-18'>You may also like</span>
+                <div className='row'>
+                    <div className='col py-8 rounded-2  mb-7 mr-1'>
+                        <CardItem2 className='' />
+                    </div>
+                    <div className='col py-8 rounded-2  mb-7 ml-1'>
+                        <CardItem2 className='' />
                     </div>
                 </div>
             </div>

@@ -1,12 +1,12 @@
 import { FC, useEffect, useState } from 'react'
 import { toAbsoluteUrl } from '../../../_metronic/helpers'
 
-const ImageContainer: FC = () => {
+const ImageContainer3: FC = () => {
 
     return (
         <div className='image-container mt-10 rounded-9'>
                     <img
-                        src={toAbsoluteUrl('media/stock/600x400/img-4.jpg')}
+                        src={toAbsoluteUrl('media/stock/600x400/img-3.jpg')}
                         alt=""
                         className="img-193-298"
                     />
@@ -40,4 +40,4 @@ const ImageContainer: FC = () => {
 
 }
 
-export { ImageContainer}
+export { ImageContainer3}

@@ -6,7 +6,7 @@
     color: #ffffff;
     position: absolute;
     top: 240px; /* Adjust as needed */
-    left: 20px; /* Adjust as needed */
+    left: 0px; /* Adjust as needed */
     z-index: 1; /* Ensure the button appears above the image */
 }
 
@@ -18,7 +18,7 @@
     color: #000000;
     position: absolute;
     top: 240px; /* Adjust as needed */
-    left: 130px; /* Adjust as needed */
+    right: 0px; /* Adjust as needed */
     z-index: 1; /* Ensure the button appears above the image */
 }
 
@@ -72,7 +72,7 @@
     height: 31px !important;
     position: absolute;
     top: 10px; /* Adjust as needed */
-    left: 168px; /* Adjust as needed */
+    left: 148px; /* Adjust as needed */
     z-index: 1; /* Ensure the button appears above the image */
 }
 
