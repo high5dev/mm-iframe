@@ -73,7 +73,7 @@ const SkinAnalysisPage = () => (
                 <ImageContainer /> */}
             </div>
         </div>
-        <div className='row g-5 g-xl-8'>
+        <div className=''>
             <div className='row button-alignment justify-content-center pt-15 mb-5'>
                 <a
                     href="/daily-routine"
