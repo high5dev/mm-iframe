@@ -13,7 +13,8 @@ const Step18: FC = () => {
   }
 
   return (
-    <div className='w-100'>
+    <div className='w-100'
+    style={{backgroundImage: `url('${toAbsoluteUrl('media/minimalist/image 16.png')}')`}}>
       <div className='pb-10 pb-lg-15'>
         <h2 className='text-center font-size-16'>
           How to take your picture for skin analysis?

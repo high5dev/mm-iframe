@@ -22,7 +22,6 @@ const Horizontal: FC = () => {
   const [currentSchema, setCurrentSchema] = useState(createAccountSchemas[0])
   const [initValues] = useState<ICreateAccount>(inits)
   const [isSubmitButton, setSubmitButton] = useState(false)
-  const [ageGroup, setAgeGroup] = useState('');
 
   const navigate = useNavigate();
 
@@ -53,7 +52,7 @@ const Horizontal: FC = () => {
       console.log(stepper)
       stepper.goNext()
     } else {
-      alert(values.customerName + '`s result will sent to' + values.customerEmail + ".After Form submitted")
+      alert(values.name + '`s result will sent to' + values.email + ".After Form submitted")
       navigate('/api-to-haut')
       setTimeout(() => {
         navigate('/skin-analysis')
@@ -221,7 +220,7 @@ const Horizontal: FC = () => {
 
                     <div className='mx-auto mw-600px w-100 pt-2 pb-10'>
                       <div className='mr-2 row button-alignment'>
-                        {stepper?.currentStepIndex !== 1 && stepper?.currentStepIndex !== 2 && stepper?.currentStepIndex !== 7 ? (
+                        {stepper?.currentStepIndex !== 1 && stepper?.currentStepIndex !== 2 && stepper?.currentStepIndex !== 8 ? (
                           <button
                             onClick={prevStep}
                             type='button'

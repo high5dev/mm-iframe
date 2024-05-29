@@ -8,7 +8,7 @@ const Step13: FC = () => {
 
   const formik = useFormikContext();
   const handleRadioChange = (value: string) => {
-    formik.setFieldValue('ageGroup', value);
+    formik.setFieldValue('age', value);
     formik.submitForm();
   };
   return (
@@ -25,7 +25,7 @@ const Step13: FC = () => {
               <Field
                 type='radio'
                 className='btn-check text-center'
-                name='ageGroup'
+                name='age'
                 value='below18'
                 onClick={() => handleRadioChange('below18')}
                 id='kt_create_account_form_age_group_1'
@@ -41,7 +41,7 @@ const Step13: FC = () => {
               <Field
                 type='radio'
                 className='btn-check text-center'
-                name='ageGroup'
+                name='age'
                 value='18to24'
                 onClick={() => handleRadioChange('18to24')}
                 id='kt_create_account_form_age_group_2'
@@ -59,7 +59,7 @@ const Step13: FC = () => {
               <Field
                 type='radio'
                 className='btn-check text-center'
-                name='ageGroup'
+                name='age'
                 value='25to30'
                 onClick={() => handleRadioChange('25to30')}
                 id='kt_create_account_form_age_group_3'
@@ -75,7 +75,7 @@ const Step13: FC = () => {
               <Field
                 type='radio'
                 className='btn-check text-center'
-                name='ageGroup'
+                name='age'
                 value='30to34'
                 onClick={() => handleRadioChange('30to34')}
                 id='kt_create_account_form_age_group_4'
@@ -93,7 +93,7 @@ const Step13: FC = () => {
               <Field
                 type='radio'
                 className='btn-check text-center'
-                name='ageGroup'
+                name='age'
                 value='34to40'
                 onClick={() => handleRadioChange('34to40')}
                 id='kt_create_account_form_age_group_5'
@@ -109,7 +109,7 @@ const Step13: FC = () => {
               <Field
                 type='radio'
                 className='btn-check text-center'
-                name='ageGroup'
+                name='age'
                 value='above40'
                 onClick={() => handleRadioChange('above40')}
                 id='kt_create_account_form_age_group_6'

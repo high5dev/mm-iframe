@@ -8,7 +8,7 @@ const Step14: FC = () => {
 
   const formik = useFormikContext();
   const handleRadioChange = (value: string) => {
-    formik.setFieldValue('genderType', value);
+    formik.setFieldValue('gender', value);
     formik.submitForm();
   };
 
@@ -26,7 +26,7 @@ const Step14: FC = () => {
             <Field
               type='radio'
               className='btn-check text-center'
-              name='genderType'
+              name='gender'
               value='male'
               onClick={() => handleRadioChange('male')}
               id='kt_create_account_form_gender_male'
@@ -44,7 +44,7 @@ const Step14: FC = () => {
             <Field
               type='radio'
               className='btn-check text-center'
-              name='genderType'
+              name='gender'
               value='female'
               onClick={() => handleRadioChange('female')}
               id='kt_create_account_form_gender_female'
@@ -62,7 +62,7 @@ const Step14: FC = () => {
             <Field
               type='radio'
               className='btn-check text-center'
-              name='genderType'
+              name='gender'
               value='notSure'
               onClick={() => handleRadioChange('notSure')}
               id='kt_create_account_form_gender_not_sure'

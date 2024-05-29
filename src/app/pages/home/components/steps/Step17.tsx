@@ -27,7 +27,7 @@ const Step17: FC = () => {
             <Field
               type='radio'
               className='btn-check text-center'
-              name='skinSensible'
+              name='skinSensitivity'
               value='sensitive'
               checked={isChecked}
               id='kt_create_account_form_skin_sensitive_yes'
@@ -45,7 +45,7 @@ const Step17: FC = () => {
             <Field
               type='radio'
               className='btn-check text-center'
-              name='skinSensible'
+              name='skinSensitivity'
               value='notSensitive'
               checked={isChecked}
               id='kt_create_account_form_skin_sensitive_no'
@@ -64,7 +64,7 @@ const Step17: FC = () => {
             <Field
               type='radio'
               className='btn-check text-center visually-hidden'
-              name='skinSensible'
+              name='skinSensitivity'
               value='sometimesSensible'
               checked={isChecked}
               id='kt_create_account_form_skin_sensitive_sometimes'
@@ -78,7 +78,7 @@ const Step17: FC = () => {
           </div>
         </div>
         {/* <div className='text-danger mt-2'>
-          <ErrorMessage name='skinSensible' />
+          <ErrorMessage name='skinSensitivity' />
         </div> */}
 
         <div className='row button-alignment justify-content-center mt-16 mb-5'>
