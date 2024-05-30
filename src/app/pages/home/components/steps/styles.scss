@@ -40,6 +40,15 @@
     justify-content: center;
 }
 
+.fixed-width-lg-md {
+    background-color: #000000;
+    color: #ffffff;
+    line-height: 24.2px;
+    border-radius: 0;
+    border: #000000 1px solid !important;
+    justify-content: center;
+}
+
 .btn-203-66 {
     width: 203px !important;
     height: 66px !important;
@@ -164,10 +173,10 @@
     justify-content: center;
 }
 
-
-.fixed-width-xlg:has(> .btn-check:checked) {
+.fixed-width-lg-md:has(> .btn-check:checked) {
     background-color: white;
     color: black;
+    border: #000000 1px solid !important;
 }
 
 .h-78px.w-82px {

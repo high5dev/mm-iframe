@@ -33,7 +33,7 @@ const Step17: FC = () => {
               id='kt_create_account_form_skin_sensitive_yes'
             />
             <label
-              className='btn btn-block d-flex align-items-center fixed-width-lg mb-5 btn-203-66'
+              className='btn btn-block d-flex align-items-center fixed-width-lg-md mb-5 btn-203-66'
               htmlFor='kt_create_account_form_skin_sensitive_yes'
             >
                 <span className='font-size-20 mb-2 text-cente'>Yes</span>
@@ -51,7 +51,7 @@ const Step17: FC = () => {
               id='kt_create_account_form_skin_sensitive_no'
             />
             <label
-              className='btn btn-block d-flex align-items-center fixed-width-lg mb-5 btn-203-66'
+              className='btn btn-block d-flex align-items-center fixed-width-lg-md mb-5 btn-203-66'
               htmlFor='kt_create_account_form_skin_sensitive_no'
             >
 
@@ -70,7 +70,7 @@ const Step17: FC = () => {
               id='kt_create_account_form_skin_sensitive_sometimes'
             />
             <label
-              className='btn btn-block d-flex align-items-center fixed-width-lg btn-203-66 mb-5'
+              className='btn btn-block d-flex align-items-center fixed-width-lg-md btn-203-66 mb-5'
               htmlFor='kt_create_account_form_skin_sensitive_sometimes'
             >
                 <span className='font-size-20 mb-2 text-cente'>Sometimes</span>
