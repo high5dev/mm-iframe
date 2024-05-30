@@ -5,11 +5,11 @@ import './styles.scss'
 
 const Step13: FC = () => {
 
-  const { setFieldValue, submitForm, values } = useFormikContext<{ age: string }>();
+  const { setFieldValue, handleSubmit, values } = useFormikContext<{ age: string }>();
 
   const handleButtonClick = (value: string) => {
-    setFieldValue('age', value);
-    submitForm();
+    setFieldValue('age', value, false);
+    handleSubmit();
   };
 
   return (

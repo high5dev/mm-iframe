@@ -32,14 +32,27 @@
     border-radius: 0;
 }
 
-.btn.btn-block.d-flex.fixed-width-lg {
-    width: 203px !important;
-    height: 66px !important;
-    background-color: #000000;
+.fixed-width-lg {
+    background-color: #000000 !important;
     color: #ffffff;
     line-height: 24.2px;
     border-radius: 0;
     justify-content: center;
+}
+
+.btn-203-66 {
+    width: 203px !important;
+    height: 66px !important;
+}
+
+.fixed-width-checked {
+    border: #000000 1px solid;
+    background-color: #ffffff !important;
+    color: #000000;
+    line-height: 24.2px;
+    border-radius: 0;
+    justify-content: center;
+
 }
 
 

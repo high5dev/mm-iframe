@@ -21,7 +21,7 @@ const ImageContainer2: FC = () => {
                         <div className='col py-0 px-4'>
                             <a
                                 href="/daily-routine"
-                                className="btn fixed-height-button-1 rounded-0"
+                                className="btn fixed-height-button-1 rounded-0 d-flex align-items-center"
                             >
                                 Concern
                             </a>
@@ -29,7 +29,7 @@ const ImageContainer2: FC = () => {
                         <div className='col py-0 px-0'>
                             <a
                                 href="/daily-routine"
-                                className=" btn fixed-height-button-2 rounded-0"
+                                className=" btn fixed-height-button-2 rounded-0 d-flex align-items-center"
                             >
                                 Lowest Score
                             </a>

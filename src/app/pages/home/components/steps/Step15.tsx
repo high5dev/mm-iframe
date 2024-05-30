@@ -26,7 +26,7 @@ const Step15: FC = () => {
           <div className='col d-flex justify-content-center'>
             <button
               type='button'
-              className={`btn btn-block d-flex align-items-center fixed-width-lg mb-5 ${values.pregnancy === 'pregnant' ? 'btn-primary' : 'btn-outline-primary'}`}
+              className={`btn btn-block d-flex align-items-center fixed-width-lg btn-203-66 mb-5 ${values.pregnancy === 'pregnant' ? 'btn-primary' : 'btn-outline-primary'}`}
               onClick={() => handleButtonClick('pregnant')}
             >
               <span className='font-size-20 mb-2 text-center'>Yes</span>
@@ -35,23 +35,9 @@ const Step15: FC = () => {
         </div>
         <div className='row'>
           <div className='col d-flex justify-content-center'>
-            {/* <Field
-              type='radio'
-              className='btn-check text-center'
-              name='pregnancy'
-              value='notPregnant'
-              onClick={() => handleRadioChange('notPregnant')}
-              id='kt_create_account_form_pregnancy_not'
-            />
-            <label
-              className='btn btn-block d-flex align-items-center fixed-width-lg mb-5'
-              htmlFor='kt_create_account_form_pregnancy_not'
-            >
-              <span className='font-size-20 mb-2 text-cente'>No</span>
-            </label> */}
             <button
               type='button'
-              className={`btn btn-block d-flex align-items-center fixed-width-lg mb-5 ${values.pregnancy === 'notPregnant' ? 'btn-primary' : 'btn-outline-primary'}`}
+              className={`btn btn-block d-flex align-items-center fixed-width-lg btn-203-66 mb-5 ${values.pregnancy === 'notPregnant' ? 'btn-primary' : 'btn-outline-primary'}`}
               onClick={() => handleButtonClick('notPregnant')}
             >
               <span className='font-size-20 mb-2 text-center'>No</span>

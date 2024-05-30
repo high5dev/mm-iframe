@@ -143,6 +143,7 @@ const Horizontal: FC = () => {
         navigate('/skin-analysis');
       }, 5000);
       actions.resetForm();
+      console.log(values);
     } else {
       setActiveStep((prevActiveStep) => prevActiveStep + 1);
       setCurrentSchema(createAccountSchemas[activeStep + 1]);
