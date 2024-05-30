@@ -7,10 +7,11 @@ import './styles.scss'
 
 const Step16: FC = () => {
 
-  const formik = useFormikContext();
-  const handleRadioChange = (value: string) => {
-    formik.setFieldValue('skinType', value);
-    formik.submitForm();
+  const { setFieldValue, submitForm, values } = useFormikContext<{ skinType: string }>();
+
+  const handleButtonClick = (value: string) => {
+    setFieldValue('skinType', value);
+    submitForm();
   };
 
   return (
@@ -22,61 +23,38 @@ const Step16: FC = () => {
       <div className='fv-row'>
         <div className='row'>
           <div className='col d-flex justify-content-center'>
-            <Field
-              type='radio'
-              className='btn-check text-center'
-              name='skinType'
-              value='dry'
-              onClick={() => handleRadioChange('dry')}
-              id='kt_create_account_form_skin_type_dry'
-            />
-            <label
-              className='btn btn-block d-flex align-items-center fixed-width-xlg mb-5'
-              htmlFor='kt_create_account_form_skin_type_dry'
+            <button
+              type='button'
+              className={`btn btn-block d-flex align-items-center fixed-width-xlg mb-5 ${values.skinType === 'dry' ? 'btn-primary' : 'btn-outline-primary'}`}
+              onClick={() => handleButtonClick('dry')}
             >
-                <img alt='Logo' src={toAbsoluteUrl('media/skin-types/dry.jpg')} className='h-78px w-82px' />
-                <span className='d-flex d-flex align-items-center mr-1 w-100 font-size-20 mb-2 justify-content-center '>Dry Skin</span>
-            </label>
+              <img alt='Logo' src={toAbsoluteUrl('media/skin-types/dry.jpg')} className='h-78px w-82px' />
+              <span className='d-flex d-flex align-items-center mr-1 w-100 font-size-20 mb-2 justify-content-center '>Dry Skin</span>
+            </button>
           </div>
         </div>
         <div className='row'>
           <div className='col d-flex justify-content-center'>
-            <Field
-              type='radio'
-              className='btn-check text-center'
-              name='skinType'
-              value='normal'
-              onClick={() => handleRadioChange('normal')}
-              id='kt_create_account_form_skin_type_normal'
-            />
-            <label
-              className='btn btn-block d-flex align-items-center fixed-width-xlg mb-5'
-              htmlFor='kt_create_account_form_skin_type_normal'
+            <button
+              type='button'
+              className={`btn btn-block d-flex align-items-center fixed-width-xlg mb-5 ${values.skinType === 'normal' ? 'btn-primary' : 'btn-outline-primary'}`}
+              onClick={() => handleButtonClick('normal')}
             >
-              <img alt='Logo' src={toAbsoluteUrl('media/skin-types/normal.jpg')}
-                className='h-78px w-82px' />
+              <img alt='Logo' src={toAbsoluteUrl('media/skin-types/normal.jpg')} className='h-78px w-82px' />
               <span className='d-flex d-flex align-items-center mr-1 w-100 font-size-20 mb-2 justify-content-center '>Normal Skin</span>
-            </label>
+            </button>
           </div>
         </div>
         <div className='row'>
           <div className='col d-flex justify-content-center'>
-            <Field
-              type='radio'
-              className='btn-check text-center'
-              name='skinType'
-              value='combination'
-              onClick={() => handleRadioChange('combination')}
-              id='kt_create_account_form_skin_type_combination'
-            />
-            <label
-              className='btn btn-block d-flex align-items-center fixed-width-xlg mb-5'
-              htmlFor='kt_create_account_form_skin_type_combination'
+            <button
+              type='button'
+              className={`btn btn-block d-flex align-items-center fixed-width-xlg mb-5 ${values.skinType === 'combination' ? 'btn-primary' : 'btn-outline-primary'}`}
+              onClick={() => handleButtonClick('combination')}
             >
-              <img alt='Logo' src={toAbsoluteUrl('media/skin-types/combination.jpg')}
-                className='h-78px w-82px' />
+              <img alt='Logo' src={toAbsoluteUrl('media/skin-types/combination.jpg')} className='h-78px w-82px' />
               <span className='d-flex d-flex align-items-center mr-1 w-100 font-size-20 mb-2 justify-content-center '>Oily / Combination Skin</span>
-            </label>
+            </button>
           </div>
         </div>
       </div>

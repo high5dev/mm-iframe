@@ -1,4 +1,5 @@
 import { FC, useEffect, useRef, useState } from 'react'
+import PropTypes from 'prop-types';
 import { useNavigate } from 'react-router-dom';
 import { Step11 } from './steps/Step11'
 import { Step12 } from './steps/Step12'
@@ -14,9 +15,102 @@ import { createAccountSchemas, ICreateAccount, inits } from './CreateAccountWiza
 // import ProgressSteps from "./steps/StepProgress"
 import { Toolbar } from '../../../../_metronic/layout/components/toolbar/Toolbar'
 import { Content } from '../../../../_metronic/layout/components/Content'
+import { styled } from '@mui/material/styles';
+import Stepper from '@mui/material/Stepper';
+import Step from '@mui/material/Step';
+import StepLabel from '@mui/material/StepLabel';
+import { StepIconProps } from '@mui/material';
+import StepConnector, { stepConnectorClasses } from '@mui/material/StepConnector';
 import './steps/styles.scss'
+import { right } from '@popperjs/core';
+
+const ColorlibConnector = styled(StepConnector)(() => ({
+  [`&.${stepConnectorClasses.alternativeLabel}`]: {
+    top: 3,
+    left: 'calc(-50% + 3px)',
+    right: 'calc(50% + 3px)',
+
+  },
+  [`&.${stepConnectorClasses.active}`]: {
+    [`& .${stepConnectorClasses.line}`]: {
+      backgroundImage:
+        'linear-gradient( 95deg,rgb(0,0,0) 0%,rgb(0,0,0) 50%,rgb(0,0,0) 100%)',
+    },
+  },
+  [`&.${stepConnectorClasses.completed}`]: {
+    [`& .${stepConnectorClasses.line}`]: {
+      backgroundImage:
+        'linear-gradient( 95deg,rgb(0,0,0) 0%,rgb(0,0,0) 50%,rgb(0,0,0) 100%)',
+    },
+  },
+  [`& .${stepConnectorClasses.line}`]: {
+    height: 5,
+    border: 'solid 1px black',
+    backgroundColor: '#ffffff',
+    borderRadius: 1,
+  },
+}));
+
+interface QontoStepIconRootProps {
+  ownerState: { active?: boolean; completed?: boolean };
+}
+
+const ColorlibStepIconRoot = styled('div')<QontoStepIconRootProps>(({ ownerState }) => ({
+  backgroundColor: '#ffffff',
+  zIndex: 1,
+  color: '#fff',
+  width: 11,
+  height: 11,
+  border: 'solid 1px black',
+  display: 'flex',
+  borderRadius: '50%',
+  justifyContent: 'center',
+  alignItems: 'center',
+  ...(ownerState.active && {
+    backgroundImage:
+      'linear-gradient( 136deg, rgb(0,0,0) 0%, rgb(0,0,0) 50%, rgb(0,0,0) 100%)',
+    boxShadow: '0 4px 10px 0 rgba(0,0,0,.25)',
+  }),
+  ...(ownerState.completed && {
+    backgroundImage:
+      'linear-gradient( 136deg, rgb(0,0,0) 0%, rgb(0,0,0) 50%, rgb(0,0,0) 100%)',
+  }),
+}));
+
+interface ColorlibStepIconProps extends StepIconProps {
+  active?: boolean;
+  completed?: boolean;
+}
+const ColorlibStepIcon: React.FC<ColorlibStepIconProps> = (props) => {
+  const { active, completed, className } = props;
+
+  return (
+    <ColorlibStepIconRoot ownerState={{ completed, active }} className={className}>
+      {/* Icons can be added here */}
+    </ColorlibStepIconRoot>
+  );
+}
+
+ColorlibStepIcon.propTypes = {
+  active: PropTypes.bool,
+  completed: PropTypes.bool,
+  className: PropTypes.string,
+};
+
+
+const steps = [
+  'Step 1',
+  'Step 2',
+  'Step 3',
+  'Step 4',
+  'Step 5',
+  'Step 6',
+  'Step 7',
+  'Step 8',
+];
 
 const Horizontal: FC = () => {
+  const [activeStep, setActiveStep] = useState(0);
   const stepperRef = useRef<HTMLDivElement | null>(null)
   const [stepper, setStepper] = useState<StepperComponent | null>(null)
   const [currentSchema, setCurrentSchema] = useState(createAccountSchemas[0])
@@ -40,6 +134,29 @@ const Horizontal: FC = () => {
 
     setSubmitButton(stepper.currentStepIndex === stepper.totalStepsNumber)
   }
+
+  const handleNext = (values: ICreateAccount, actions: FormikValues) => {
+    if (activeStep === steps.length - 1) {
+      alert(values.name + '`s result will be sent to ' + values.email + ". After Form submitted");
+      navigate('/api-to-haut');
+      setTimeout(() => {
+        navigate('/skin-analysis');
+      }, 5000);
+      actions.resetForm();
+    } else {
+      setActiveStep((prevActiveStep) => prevActiveStep + 1);
+      setCurrentSchema(createAccountSchemas[activeStep + 1]);
+    }
+    setSubmitButton(activeStep === steps.length - 1);
+  };
+
+  const handleBack = () => {
+    if (activeStep === 0) {
+      alert("The previous step isn't implemented yet");      
+    }
+    setActiveStep((prevActiveStep) => prevActiveStep - 1);
+    setCurrentSchema(createAccountSchemas[activeStep - 1]);
+  };
 
 
   const submitStep = (values: ICreateAccount, actions: FormikValues) => {
@@ -79,168 +196,63 @@ const Horizontal: FC = () => {
   return (
     <>
       {/* <Toolbar /> */}
-      {/* <Content> */}
-        <div className=''>
-          {stepper?.currentStepIndex === 1 || stepper?.currentStepIndex === 2 ? (
-            <button
-              onClick={prevStep}
-              type='button'
-              className='btn btn-top-back align-items-center p-0'
-              data-kt-stepper-action='previous'
-            >
-              <span className='indicator-label font-size-12'>{'<'} Back</span>
-            </button>
-          ) : (
-            <>
+      <div className=''>
+        {activeStep === 0 || activeStep === 1 ? (
+          <button
+            onClick={handleBack}
+            type='button'
+            className='btn btn-top-back align-items-center p-0'
+            data-kt-stepper-action='previous'
+          >
+            <span className='indicator-label font-size-12'>{'<'} Back</span>
+          </button>
+        ) : (
+          <>
             <div
               hidden
               className='btn-top-back-hidden align-items-center'
             >
             </div>
-            </>
-          )}
-          {/* <ProgressSteps/> */}
-          <div className=''>
-            <div
-              ref={stepperRef}
-              className='stepper stepper-pills d-flex flex-column pt-5'
-              id='kt_create_account_stepper'
-            >
-              <div className='stepper-nav mb-5'>
-                <div className='stepper-item current' data-kt-stepper-element='nav'>
-                  <div className='stepper-wrapper'>
-                    <div className='stepper-icon w-15px h-15px'>
-                      <i className='stepper-check fas fa-check'></i>
-                      <span className='stepper-number'></span>
-                    </div>
-                  </div>
-                  <div className='stepper-line-horizontal w-10px'></div>
-                </div>
-
-                <div className='stepper-item' data-kt-stepper-element='nav'>
-                  <div className='stepper-wrapper'>
-                    <div className='stepper-icon w-15px h-15px'>
-                      <i className='stepper-check fas fa-check'></i>
-                      <span className='stepper-number'></span>
-                    </div>
-                  </div>
-                </div>
-
-                <div className='stepper-item' data-kt-stepper-element='nav'>
-                  <div className='stepper-wrapper'>
-                    <div className='stepper-icon w-15px h-15px'>
-                      <i className='stepper-check fas fa-check'></i>
-                      <span className='stepper-number'></span>
-                    </div>
-                  </div>
-                </div>
-
-                <div className='stepper-item' data-kt-stepper-element='nav'>
-                  <div className='stepper-wrapper'>
-                    <div className='stepper-icon w-15px h-15px'>
-                      <i className='stepper-check fas fa-check'></i>
-                      <span className='stepper-number'></span>
-                    </div>
-                  </div>
-                </div>
-
-                <div className='stepper-item' data-kt-stepper-element='nav'>
-                  <div className='stepper-wrapper'>
-                    <div className='stepper-icon w-15px h-15px'>
-                      <i className='stepper-check fas fa-check'></i>
-                      <span className='stepper-number'></span>
-                    </div>
-                  </div>
-                </div>
-
-                <div className='stepper-item' data-kt-stepper-element='nav'>
-                  <div className='stepper-wrapper'>
-                    <div className='stepper-icon w-15px h-15px'>
-                      <i className='stepper-check fas fa-check'></i>
-                      <span className='stepper-number'></span>
-                    </div>
-                  </div>
-                </div>
-
-                <div className='stepper-item' data-kt-stepper-element='nav'>
-                  <div className='stepper-wrapper'>
-                    <div className='stepper-icon w-15px h-15px'>
-                      <i className='stepper-check fas fa-check'></i>
-                      <span className='stepper-number'></span>
-                    </div>
-                  </div>
-                </div>
-
-                <div className='stepper-item' data-kt-stepper-element='nav'>
-                  <div className='stepper-wrapper'>
-                    <div className='stepper-icon w-15px h-15px'>
-                      <i className='stepper-check fas fa-check'></i>
-                      <span className='stepper-number'></span>
-                    </div>
-                  </div>
+          </>
+        )}
+        <Stepper className='mt-10 mb-10' alternativeLabel activeStep={activeStep} connector={<ColorlibConnector />}>
+          {steps.map((label, index) => (
+            <Step key={index}>
+              <StepLabel StepIconComponent={ColorlibStepIcon}></StepLabel>
+            </Step>
+          ))}
+        </Stepper>
+        <Formik validationSchema={currentSchema} initialValues={initValues} onSubmit={handleNext}>
+          {({ values }) => (
+            <Form className='form-wrapper' placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
+              {activeStep === 0 && <Step11 />}
+              {activeStep === 1 && <Step12 />}
+              {activeStep === 2 && <Step13 />}
+              {activeStep === 3 && <Step14 />}
+              {activeStep === 4 && <Step15 />}
+              {activeStep === 5 && <Step16 />}
+              {activeStep === 6 && <Step17 />}
+              {activeStep === 7 && <Step18 prevStep={handleBack} />}
+              <div className='mx-auto mw-600px w-100 pt-2 pb-10'>
+                <div className='mr-2 row button-alignment'>
+                  {activeStep !== 0 && activeStep !== 1 && activeStep !== 7 ? (
+                    <button
+                      onClick={handleBack}
+                      type='button'
+                      className='btn-next-md align-items-center'
+                      data-kt-stepper-action='previous'
+                    >
+                      <span className='indicator-label font-size-20'>Back</span>
+                    </button>
+                  ) : (
+                    <></>
+                  )}
                 </div>
               </div>
-
-              <Formik validationSchema={currentSchema} initialValues={initValues} onSubmit={submitStep}>
-                {() => (
-                  <Form className='mx-auto mw-600px w-100 pt-15 pb-10' id='kt_create_account_form' placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
-
-                    <div className='current' data-kt-stepper-element='content'>
-                      <Step11 />
-                    </div>
-
-                    <div data-kt-stepper-element='content'>
-                      <Step12 />
-                    </div>
-
-
-                    <div data-kt-stepper-element='content'>
-                      <Step13 />
-                    </div>
-
-                    <div data-kt-stepper-element='content'>
-                      <Step14 />
-                    </div>
-
-                    <div data-kt-stepper-element='content'>
-                      <Step15 />
-                    </div>
-
-                    <div data-kt-stepper-element='content'>
-                      <Step16 />
-                    </div>
-
-                    <div data-kt-stepper-element='content'>
-                      <Step17 />
-                    </div>
-
-                    <div data-kt-stepper-element='content'>
-                      <Step18 />
-                    </div>
-
-                    <div className='mx-auto mw-600px w-100 pt-2 pb-10'>
-                      <div className='mr-2 row button-alignment'>
-                        {stepper?.currentStepIndex !== 1 && stepper?.currentStepIndex !== 2 && stepper?.currentStepIndex !== 8 ? (
-                          <button
-                            onClick={prevStep}
-                            type='button'
-                            className='btn-next-md align-items-center'
-                            data-kt-stepper-action='previous'
-                          >
-                            <span className='indicator-label font-size-20'>Back</span>
-                          </button>
-                        ) : (
-                          <></>
-                        )}
-                      </div>
-                    </div>
-                  </Form>
-                )}
-              </Formik>
-            </div>
-          </div>
-        </div>
-      {/* </Content> */}
+            </Form>
+          )}
+        </Formik>
+      </div>
     </>
   )
 }

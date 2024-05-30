@@ -62,6 +62,7 @@
     font-size: 24px !important;
     font-weight: 400 !important;
 }
+
 .font-size-16 {
     font-size: 16px !important;
     font-weight: 400 !important;
@@ -71,6 +72,7 @@
     font-size: 12px !important;
     font-weight: 400 !important;
 }
+
 .font-size-9 {
     font-size: 9px !important;
     font-weight: 400 !important;
@@ -83,7 +85,7 @@
     }
 }
 
-.btn-next-lg {    
+.btn-next-lg {
     height: 43px !important;
     width: 202px !important;
     justify-content: center !important;
@@ -128,7 +130,7 @@
     height: 55px !important;
 }
 
-.btn-next-md {    
+.btn-next-md {
     height: 55px !important;
     width: 117px !important;
     justify-content: center !important;
@@ -152,7 +154,7 @@
 
 .fixed-width-xlg:has(> .btn-check:checked) {
     background-color: white;
-    color:black;
+    color: black;
 }
 
 .h-78px.w-82px {
@@ -164,8 +166,46 @@
     margin-left: 30px;
 }
 
-.btn-check:checked + .btn, :not(.btn-check) + .btn:active, .btn:first-child:active, .btn.active, .btn.show {
+.btn-check:checked+.btn,
+:not(.btn-check)+.btn:active,
+.btn:first-child:active,
+.btn.active,
+.btn.show {
     background-color: #ffffff !important;
     color: #000000 !important;
     border: solid 1px#000000 !important;
+}
+
+.background-image-container {
+    position: relative;
+    background-size: cover;
+    background-position: center;
+}
+
+.background-image-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: inherit;
+    opacity: 0.5;
+    /* Adjust this value for the desired opacity */
+    z-index: 0;
+}
+
+.background-image-container .content {
+    position: relative;
+    z-index: 1;
+}
+
+.img-63-66 {
+    width: 63px !important;
+    height: 66px !important;
+}
+
+.img-42-42 {
+    width: 31px !important;
+    height: 31px !important;
 }

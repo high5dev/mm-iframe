@@ -6,10 +6,11 @@ import './styles.scss'
 
 const Step14: FC = () => {
 
-  const formik = useFormikContext();
-  const handleRadioChange = (value: string) => {
-    formik.setFieldValue('gender', value);
-    formik.submitForm();
+  const { setFieldValue, submitForm, values } = useFormikContext<{ gender: string }>();
+
+  const handleButtonClick = (value: string) => {
+    setFieldValue('gender', value);
+    submitForm();
   };
 
   return (
@@ -23,57 +24,35 @@ const Step14: FC = () => {
       <div className='fv-row'>
         <div className='row'>
           <div className='col d-flex justify-content-center'>
-            <Field
-              type='radio'
-              className='btn-check text-center'
-              name='gender'
-              value='male'
-              onClick={() => handleRadioChange('male')}
-              id='kt_create_account_form_gender_male'
-            />
-            <label
-              className='btn btn-block d-flex align-items-center fixed-width-lg mb-5'
-              htmlFor='kt_create_account_form_gender_male'
+            <button
+              type='button'
+              className={`btn btn-block d-flex align-items-center fixed-width-lg mb-5 ${values.gender === 'male' ? 'btn-primary' : 'btn-outline-primary'}`}
+              onClick={() => handleButtonClick('male')}
             >
               <span className='font-size-20 mb-2 text-center'>Male</span>
-            </label>
+            </button>
           </div>
         </div>
         <div className='row'>
           <div className='col d-flex justify-content-center'>
-            <Field
-              type='radio'
-              className='btn-check text-center'
-              name='gender'
-              value='female'
-              onClick={() => handleRadioChange('female')}
-              id='kt_create_account_form_gender_female'
-            />
-            <label
-              className='btn btn-block d-flex align-items-center fixed-width-lg mb-5'
-              htmlFor='kt_create_account_form_gender_female'
+            <button
+              type='button'
+              className={`btn btn-block d-flex align-items-center fixed-width-lg mb-5 ${values.gender === 'female' ? 'btn-primary' : 'btn-outline-primary'}`}
+              onClick={() => handleButtonClick('female')}
             >
               <span className='font-size-20 mb-2 text-center'>Female</span>
-            </label>
+            </button>
           </div>
         </div>
         <div className='row'>
           <div className='col d-flex justify-content-center'>
-            <Field
-              type='radio'
-              className='btn-check text-center'
-              name='gender'
-              value='notSure'
-              onClick={() => handleRadioChange('notSure')}
-              id='kt_create_account_form_gender_not_sure'
-            />
-            <label
-              // className='btn btn-outline btn-outline-dashed btn-outline-default p-7 d-block align-items-center mb-10'
-              className='btn btn-block d-flex align-items-center fixed-width-lg mb-15'
-              htmlFor='kt_create_account_form_gender_not_sure'
+            <button
+              type='button'
+              className={`btn btn-block d-flex align-items-center fixed-width-lg mb-5 ${values.gender === 'notSure' ? 'btn-primary' : 'btn-outline-primary'}`}
+              onClick={() => handleButtonClick('notSure')}
             >
               <span className='font-size-20 mb-2 text-center'>Prefer not to say</span>
-            </label>
+            </button>
           </div>
         </div>
       </div>

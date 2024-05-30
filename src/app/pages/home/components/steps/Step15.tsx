@@ -6,10 +6,11 @@ import './styles.scss'
 
 const Step15: FC = () => {
 
-  const formik = useFormikContext();
-  const handleRadioChange = (value: string) => {
-    formik.setFieldValue('pregnancy', value);
-    formik.submitForm();
+  const { setFieldValue, submitForm, values } = useFormikContext<{ pregnancy: string }>();
+
+  const handleButtonClick = (value: string) => {
+    setFieldValue('pregnancy', value);
+    submitForm();
   };
 
   return (
@@ -23,25 +24,18 @@ const Step15: FC = () => {
       <div className='fv-row'>
         <div className='row'>
           <div className='col d-flex justify-content-center'>
-            <Field
-              type='radio'
-              className='btn-check text-center'
-              name='pregnancy'
-              value='pregnant'
-              onClick={() => handleRadioChange('pregnant')}
-              id='kt_create_account_form_pregnancy_yes'
-            />
-            <label
-              className='btn btn-block d-flex align-items-center fixed-width-lg mb-5'
-              htmlFor='kt_create_account_form_pregnancy_yes'
+            <button
+              type='button'
+              className={`btn btn-block d-flex align-items-center fixed-width-lg mb-5 ${values.pregnancy === 'pregnant' ? 'btn-primary' : 'btn-outline-primary'}`}
+              onClick={() => handleButtonClick('pregnant')}
             >
-              <span className='font-size-20 mb-2 text-cente'>Yes</span>
-            </label>
+              <span className='font-size-20 mb-2 text-center'>Yes</span>
+            </button>
           </div>
         </div>
         <div className='row'>
           <div className='col d-flex justify-content-center'>
-            <Field
+            {/* <Field
               type='radio'
               className='btn-check text-center'
               name='pregnancy'
@@ -54,7 +48,14 @@ const Step15: FC = () => {
               htmlFor='kt_create_account_form_pregnancy_not'
             >
               <span className='font-size-20 mb-2 text-cente'>No</span>
-            </label>
+            </label> */}
+            <button
+              type='button'
+              className={`btn btn-block d-flex align-items-center fixed-width-lg mb-5 ${values.pregnancy === 'notPregnant' ? 'btn-primary' : 'btn-outline-primary'}`}
+              onClick={() => handleButtonClick('notPregnant')}
+            >
+              <span className='font-size-20 mb-2 text-center'>No</span>
+            </button>
           </div>
         </div>
       </div>
