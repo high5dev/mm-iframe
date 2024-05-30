@@ -13,17 +13,20 @@ const responsive = {
     desktop: {
         breakpoint: { max: 3000, min: 1024 },
         items: 3,
-        slidesToSlide: 3 // optional, default to 1.
+        slidesToSlide: 3, // optional, default to 1.,
+        partialVisibilityGutter: 40
     },
     tablet: {
         breakpoint: { max: 1024, min: 464 },
         items: 2,
-        slidesToSlide: 2 // optional, default to 1.
+        slidesToSlide: 2,
+        partialVisibilityGutter: 40 // optional, default to 1.
     },
     mobile: {
         breakpoint: { max: 464, min: 0 },
         items: 1,
-        slidesToSlide: 1 // optional, default to 1.
+        slidesToSlide: 1,
+        partialVisibilityGutter: 40 // optional, default to 1.
     }
 };
 
@@ -43,29 +46,31 @@ const SkinAnalysisPage = () => (
             <div>
                 <Carousel
                     swipeable={true}
-                    draggable={false}
+                    draggable={true}
                     showDots={false}
+                    centerMode={false}
                     responsive={responsive}
-                    ssr={true} // means to render carousel on server-side.
+                    focusOnSelect
                     infinite={true}
-                    autoPlay={true}
+                    autoPlay={false}
                     autoPlaySpeed={10000}
                     keyBoardControl={true}
                     customTransition="all .5"
                     transitionDuration={500}
                     containerClass="carousel-container"
+                    partialVisible={true}
                     removeArrowOnDeviceType={["tablet", "mobile"]}
-                    // deviceType={this.props.deviceType}
                     dotListClass="custom-dot-list-style"
-                    itemClass="carousel-item-padding-40-px"
+                    rewind={true}
+                    itemClass="carousel-item-padding-10-px d-flex justify-content-start carousel-item-width-220-px"
                 >
-                    <div  className='d-flex justify-content-center'>
+                    <div  className=''>
                         <ImageContainer />
                     </div >
-                    <div  className='d-flex justify-content-center'>
+                    <div  className=''>
                         <ImageContainer2 />
                     </div>
-                    <div  className='d-flex justify-content-center'>
+                    <div  className=''>
                         <ImageContainer3 />
                     </div>
                 </Carousel>
@@ -89,7 +94,7 @@ const SkinAnalysisPage = () => (
                     href="/"
                     className="btn-next-md align-items-center"
                 >
-                    <span className='indicator-label font-size-20 text-center'>Retake Photo</span>
+                    <span className='indicator-label font-size-20 text-center line-height-24'>Retake Photo</span>
                 </a>
             </div>
         </div>
