@@ -139,9 +139,6 @@ const Horizontal: FC = () => {
     if (activeStep === steps.length - 1) {
       alert(values.name + '`s result will be sent to ' + values.email + ". After Form submitted");
       navigate('/api-to-haut');
-      setTimeout(() => {
-        navigate('/skin-analysis');
-      }, 5000);
       actions.resetForm();
       console.log(values);
     } else {

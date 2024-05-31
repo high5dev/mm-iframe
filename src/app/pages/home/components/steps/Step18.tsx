@@ -40,16 +40,8 @@ const Step18: FC<Step18Props> = ({ prevStep }) => {
         <div className='fv-row' style={{ padding: "10px" }}>
           <div className='row'>
             <div className='col-md-12'>
-              {/* <Field
-              type='radio'
-              className='btn-check'
-              name='skinSensible'
-              value='dry'
-              id='kt_create_account_form_skin_sensitive_yes'
-            /> */}
               <span
                 className='d-flex align-items-center mb-10'
-              // htmlFor='kt_create_account_form_skin_sensitive_yes'
               >
                 <img alt='Logo' src={toAbsoluteUrl('media/camera-guide/image 14.png')}
                   className='img-63-66' /> &nbsp;&nbsp;&nbsp;
@@ -64,16 +56,8 @@ const Step18: FC<Step18Props> = ({ prevStep }) => {
           </div>
           <div className='row'>
             <div className='col-md-12'>
-              {/* <Field
-              type='radio'
-              className='btn-check'
-              name='skinSensible'
-              value='normal'
-              id='kt_create_account_form_skin_sensitive_no'
-            /> */}
               <span
                 className='d-flex align-items-center mb-10'
-              // htmlFor='kt_create_account_form_skin_sensitive_no'
               >
                 <img alt='Logo' src={toAbsoluteUrl('media/camera-guide/image 15.png')}
                   className='img-63-66' /> &nbsp;&nbsp;&nbsp;
@@ -88,16 +72,8 @@ const Step18: FC<Step18Props> = ({ prevStep }) => {
           </div>
           <div className='row'>
             <div className='col-md-12'>
-              {/* <Field
-              type='radio'
-              className='btn-check'
-              name='skinSensible'
-              value='combination'
-              id='kt_create_account_form_skin_sensitive_sometimes'
-            /> */}
               <span
                 className='d-flex align-items-center mb-10'
-              // htmlFor='kt_create_account_form_skin_sensitive_sometimes'
               >
                 <img alt='Logo' src={toAbsoluteUrl('media/camera-guide/image 12.png')}
                   className='img-63-66' /> &nbsp;&nbsp;&nbsp;
@@ -121,20 +97,12 @@ const Step18: FC<Step18Props> = ({ prevStep }) => {
                   and I expressly consent to the scanning and save my image, face, facial geometry, and biometric data.
                 </div>
               </label>
-              {/* <label className='form-check form-check-sm form-check-custom form-check-solid me-5'>
-              <input className='form-check-input' type='checkbox' value='1' checked={isChecked} onChange={checkHandler} />
-              <span className='form-check-label'>By clicking the box and clicking the “Proceed” button below, I agree to the Minimalist’s terms & Conditions, and I expressly consent to the scanning and save my image, face, facial geometry, and biometric data.</span>
-            </label> */}
             </div>
           </div>
-          {/* <div className='text-danger mt-2'>
-          <ErrorMessage name='termsAccept' />
-        </div> */}
 
           <div className='mt-10 row justify-content-center'>
             <button type='submit' className='btn btn-md btn-primary w-203 h-55 rounded-0'>
               <span className='indicator-label font-size-20'>Proceed
-                {/* <KTIcon iconName='arrow-right' className='fs-3 ms-2 me-0' /> */}
               </span>
             </button>
           </div>

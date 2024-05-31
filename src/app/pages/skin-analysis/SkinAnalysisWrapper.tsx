@@ -74,8 +74,6 @@ const SkinAnalysisPage = () => (
                         <ImageContainer3 />
                     </div>
                 </Carousel>
-                {/* <ImageContainer />
-                <ImageContainer /> */}
             </div>
         </div>
         <div className=''>
@@ -91,7 +89,7 @@ const SkinAnalysisPage = () => (
             </div>
             <div className='mt-10 row button-alignment justify-content-center mb-15'>
                 <a
-                    href="/"
+                    href="/api-to-haut"
                     className="btn-next-md align-items-center"
                 >
                     <span className='indicator-label font-size-20 text-center line-height-24'>Retake Photo</span>
