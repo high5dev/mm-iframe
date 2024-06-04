@@ -6,11 +6,13 @@ import './styles.scss'
 
 const Step15: FC = () => {
 
-  const { setFieldValue, submitForm, values } = useFormikContext<{ pregnancy: string }>();
+  const { setFieldValue, handleSubmit, values } = useFormikContext<{ pregnancy: string }>();
 
   const handleButtonClick = (value: string) => {
     setFieldValue('pregnancy', value);
-    submitForm();
+    setTimeout(() => {
+      handleSubmit();
+    }, 0);
   };
 
   return (

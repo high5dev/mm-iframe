@@ -8,8 +8,10 @@ const Step13: FC = () => {
   const { setFieldValue, handleSubmit, values } = useFormikContext<{ age: string }>();
 
   const handleButtonClick = (value: string) => {
-    setFieldValue('age', value, false);
-    handleSubmit();
+    setFieldValue('age', value, false);    
+    setTimeout(() => {
+      handleSubmit();
+    }, 0);
   };
 
   return (

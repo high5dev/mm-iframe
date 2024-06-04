@@ -7,11 +7,13 @@ import './styles.scss'
 
 const Step16: FC = () => {
 
-  const { setFieldValue, submitForm, values } = useFormikContext<{ skinType: string }>();
+  const { setFieldValue, handleSubmit, values } = useFormikContext<{ skinType: string }>();
 
   const handleButtonClick = (value: string) => {
     setFieldValue('skinType', value);
-    submitForm();
+    setTimeout(() => {
+      handleSubmit();
+    }, 0);
   };
 
   return (
