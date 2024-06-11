@@ -1,6 +1,6 @@
 import axios, { AxiosResponse } from "axios";
 
-const API_URL = 'http://localhost:3000/haut'
+const API_URL = import.meta.env.BACKEND_API;
 const IMG_SEND_URL = `${API_URL}/image-upload/`;
 const GET_SCORE_URL = `${API_URL}/get-score/`;
 
