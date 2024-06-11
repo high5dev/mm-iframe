@@ -1,18 +1,30 @@
 import { FC, useEffect, useState } from 'react'
 import { toAbsoluteUrl } from '../../../_metronic/helpers'
+import { useSelector, useDispatch } from 'react-redux';
+import { RootState } from "../../store/store"
 
-const ImageContainer2: FC = () => {
+type Props = {
+    name?: string
+    score?: string
+}
+
+const ImageContainer2: FC<Props> = ({name, score}) => {
+    const imageURL = useSelector((state: RootState) => state.imgSrc);
+
+    useEffect(()=>{
+        console.log(imageURL)
+    })
 
     return (
         <div className='image-container mt-10 rounded-9'>
                     <img
-                        src={toAbsoluteUrl('media/stock/600x400/img-2.jpg')}
+                        src={imageURL?.image_src}
                         alt=""
                         className="img-193-298"
                     />
 
                     <a
-                        href="/daily-routine"
+                        href="#"
                     >
                         <img alt='Logo' src={toAbsoluteUrl('media/minimalist/zoom.png')}
                             className="img-31-31" />
@@ -20,18 +32,18 @@ const ImageContainer2: FC = () => {
                     <div className='row g-0'>
                         <div className='col py-0 px-4'>
                             <a
-                                href="/daily-routine"
+                                href="#"
                                 className="btn fixed-height-button-1 rounded-0 d-flex align-items-center"
                             >
-                                Concern
+                                {name}
                             </a>
                         </div>
                         <div className='col py-0 px-0'>
                             <a
-                                href="/daily-routine"
+                                href="#"
                                 className=" btn fixed-height-button-2 rounded-0 d-flex align-items-center"
                             >
-                                Lowest Score
+                                {score}
                             </a>
                         </div>
                     </div>

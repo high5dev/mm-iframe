@@ -1,4 +1,5 @@
 import { useIntl } from 'react-intl'
+import { useNavigate } from 'react-router-dom';
 // import { CardItem } from '../../../_metronic/partials/content/cards/CardItem'
 import { PageTitle } from '../../../_metronic/layout/core'
 import { RoutineModel } from './RoutineModels'
@@ -14,17 +15,23 @@ import { Tab } from 'react-bootstrap'
 
 
 const SelectDailyRoutinePage = () => {
+
+    const navigate = useNavigate();
+
+    const handleBack = () => {
+        navigate('/skin-analysis', { replace: true });
+    };
     return (
         <>
             <div className='d-flex flex-wrap flex-stack mb-6'>
                 <div className='d-flex flex-wrap'>
-                    <a
-                        href='/skin-analysis'
+                    <button
+                        onClick={handleBack}
                         className='btn btn-top-back align-items-center p-0'
                         data-bs-target='#kt_modal_create_project'
                     >
                         {'<'}Back
-                    </a>
+                    </button>
                 </div>
             </div>
             <div className='d-flex flex-wrap flex-stack mb-6'>

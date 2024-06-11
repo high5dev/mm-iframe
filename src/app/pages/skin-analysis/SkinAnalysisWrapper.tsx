@@ -1,17 +1,13 @@
 import { useEffect } from 'react'
+import { useNavigate } from 'react-router-dom';
 import { useIntl } from 'react-intl'
 import { PageTitle } from '../../../_metronic/layout/core'
-import { Content } from '../../../_metronic/layout/components/Content'
-import { toAbsoluteUrl } from '../../../_metronic/helpers'
 import './styles.scss'
-import { ImageContainer } from './ImageContainer'
 import { ImageContainer2 } from './ImageContainer2'
-import { ImageContainer3 } from './ImageContainer3'
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import { useSelector, useDispatch } from 'react-redux';
 import { RootState } from "../../store/store"
-import { getScoreFromHaut } from "../request/sass"
 
 const responsive = {
     desktop: {
@@ -34,91 +30,112 @@ const responsive = {
     }
 };
 
-const SkinAnalysisPage = () => (
-    <>
-        <div className=''>
-            <div className='d-flex align-items-center margin-top-65 font-size-25 margin-left-20'>
-                Skin Analysis
-            </div>
-        </div>
-        <div className=''>
-            <div className='card-319-90 margin-left-20 d-flex'>
-                <div className='d-flex align-items-center justify-content-center font-size-18'>Eye Age, Perceived Age & Skin tone</div>
-            </div>
-        </div>
-        <div className=''>
-            <div>
-                <Carousel
-                    swipeable={true}
-                    draggable={true}
-                    showDots={false}
-                    centerMode={false}
-                    responsive={responsive}
-                    focusOnSelect
-                    infinite={true}
-                    autoPlay={false}
-                    autoPlaySpeed={10000}
-                    keyBoardControl={true}
-                    customTransition="all .5"
-                    transitionDuration={500}
-                    containerClass="carousel-container"
-                    partialVisible={true}
-                    removeArrowOnDeviceType={["tablet", "mobile"]}
-                    dotListClass="custom-dot-list-style"
-                    rewind={true}
-                    itemClass="carousel-item-padding-10-px d-flex justify-content-start carousel-item-width-220-px"
-                >
-                    <div className=''>
-                        <ImageContainer />
-                    </div >
-                    <div className=''>
-                        <ImageContainer2 />
-                    </div>
-                    <div className=''>
-                        <ImageContainer3 />
-                    </div>
-                </Carousel>
-            </div>
-        </div>
-        <div className=''>
-            <div className='row button-alignment justify-content-center pt-15 mb-5'>
-                <a
-                    href="/daily-routine"
-                    className="btn btn-lg btn-primary align-items-center w-203 rounded-0"
-                >
-                    <span className='indicator-label font-size-20'>Your Routine
-                    </span>
-
-                </a>
-            </div>
-            <div className='mt-10 row button-alignment justify-content-center mb-15'>
-                <a
-                    href="/take-selfie"
-                    className="btn-next-md align-items-center"
-                >
-                    <span className='indicator-label font-size-20 text-center line-height-24'>Retake Photo</span>
-                </a>
-            </div>
-        </div>
-
-
-
-    </>
-)
 
 const SkinAnalysisWrapper = () => {
-    const dataset = useSelector((state: RootState) => state.dataset);
-    useEffect(() => {
-        getScoreFromHaut(dataset).then((res) => {
-            console.log(res)
-        })
-    })
+    const score = useSelector((state: RootState) => state.score);
+
+    const navigate = useNavigate();
+
+    const handleBack = () => {
+        navigate('/take-selfie', { replace: true });
+    };
+
+    const handleForward = () => {
+        navigate('/daily-routine', { replace: true });
+    };
+
     const intl = useIntl()
     return (
         <>
             {/* <PageTitle breadcrumbs={[]}>{intl.formatMessage({id: 'MENU.DASHBOARD'})}</PageTitle> */}
             <PageTitle breadcrumbs={[]}>Skin Analysis</PageTitle>
-            <SkinAnalysisPage />
+
+            <div className=''>
+                <div className='d-flex align-items-center margin-top-65 font-size-25 margin-left-20'>
+                    Skin Analysis
+                </div>
+            </div>
+            <div className=''>
+                <div className='card-319-90 d-flex'>
+                    <div className='row align-items-center justify-content-center font-size-18 px-7'>
+                        <span>Age: {score.age}</span>
+                        <span>Eyes Age: {score.skinTone}</span>
+                        <span>Skin tone:{score.eyeAge}</span>
+                    </div>
+                </div>
+            </div>
+            <div className=''>
+                <div>
+                    <Carousel
+                        swipeable={true}
+                        draggable={true}
+                        showDots={false}
+                        centerMode={false}
+                        responsive={responsive}
+                        focusOnSelect
+                        infinite={true}
+                        autoPlay={false}
+                        autoPlaySpeed={10000}
+                        keyBoardControl={true}
+                        customTransition="all .5"
+                        transitionDuration={500}
+                        containerClass="carousel-container"
+                        partialVisible={true}
+                        removeArrowOnDeviceType={["tablet", "mobile"]}
+                        dotListClass="custom-dot-list-style"
+                        rewind={true}
+                        itemClass="carousel-item-padding-10-px d-flex justify-content-start carousel-item-width-220-px"
+                    >
+                        <div className=''>
+                            <ImageContainer2 score={score.acne} name='Acne' />
+                        </div >
+                        <div className=''>
+                            <ImageContainer2 score={score.hydration} name='Hydration' />
+                        </div>
+                        <div className=''>
+                            <ImageContainer2 score={score.lines} name='Lines' />
+                        </div>
+                        <div className=''>
+                            <ImageContainer2 score={score.eyeBags} name='Eye bags' />
+                        </div >
+                        <div className=''>
+                            <ImageContainer2 score={score.pigmentation} name='Pigmentation' />
+                        </div>
+                        <div className=''>
+                            <ImageContainer2 score={score.pores} name='Pores' />
+                        </div>
+                        <div className=''>
+                            <ImageContainer2 score={score.redness} name='Redness' />
+                        </div >
+                        <div className=''>
+                            <ImageContainer2 score={score.translucency} name='Translucency' />
+                        </div>
+                        <div className=''>
+                            <ImageContainer2 score={score.uniformness} name='Uniformness' />
+                        </div>
+                    </Carousel>
+                </div>
+            </div>
+            <div className=''>
+                <div className='row button-alignment justify-content-center pt-15 mb-5'>
+                    <button
+                        onClick={handleForward}
+                        className="btn btn-lg btn-primary align-items-center w-203 rounded-0"
+                    >
+                        <span className='indicator-label font-size-20'>Your Routine
+                        </span>
+
+                    </button>
+                </div>
+                <div className='mt-10 row button-alignment justify-content-center mb-15'>
+                    <button
+                        onClick={handleBack}
+                        className="btn-next-md align-items-center"
+                    >
+                        <span className='indicator-label font-size-20 text-center line-height-24'>Retake Photo</span>
+                    </button>
+                </div>
+            </div>
         </>
     )
 }

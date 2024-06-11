@@ -9,7 +9,8 @@ import CameraswitchIcon from '@mui/icons-material/Cameraswitch';
 import { sendImgToHaut } from "../request/sass"
 import { useSelector, useDispatch } from 'react-redux';
 import { RootState } from "../../store/store"
-import { setDataSet } from '../../store/slices/dataSetSlice';
+import { setScore } from '../../store/slices/scoreSlice';
+import { setImgSource } from '../../store/slices/imgSourceSlice';
 
 const videoConstraints = {
     width: 375,
@@ -20,7 +21,7 @@ const videoConstraints = {
 const Camera: FC = () => {
     const webcamRef = useRef<Webcam>(null);
     const [imgSrc, setImgSrc] = useState<string | null>(null);
-    const navigate = useNavigate();  
+    const navigate = useNavigate();
     
     const customer = useSelector((state: RootState) => state.user);
     const dispatch = useDispatch();
@@ -43,23 +44,28 @@ const Camera: FC = () => {
     const sendImage = () => {
         if (imgSrc !== null && customer.email !== '') {
             sendImgToHaut(imgSrc, customer).then((res)=> {
-                dispatch(setDataSet({
-                    access_token: res?.access_token,
-                    company_id: res?.company_id,
-                    dataset_id: res?.dataset_id,
-                    subject_id: res?.subject_id,
-                    batch_id: res?.batch_id,
-                    image_id: res?.image_id,
-                    success: 2
+                dispatch(setScore({
+                    acne: res.acne,
+                    age: res.age,
+                    eyeAge: res.eyeAge,
+                    eyeBags:res.eyeBags,
+                    redness:res.redness,
+                    uniformness: res.uniformness,
+                    hydration: res.hydration,
+                    skinTone: res.skinTone,
+                    pigmentation: res.pigmentation,
+                    lines: res.lines,
+                    pores: res.pores,
+                    translucency: res.translucency
+                }))
+                dispatch(setImgSource({
+                    image_src: imgSrc
                 }))
                 navigate('/skin-analysis',{ replace: true })
             })
         } else {
             alert('please provide your detailed information or take a selfie')
         }
-        // login('gaurav.singh@beminimalist.co', 'Minimalist@4321').then((data) => {
-        //     console.log(data)
-        // })
     }
 
     return (

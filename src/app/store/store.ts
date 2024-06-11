@@ -1,12 +1,14 @@
 // src/store/store.ts
 import { configureStore } from '@reduxjs/toolkit';
 import userReducer from './slices/custermInfoSlice';
-import dataSetState from './slices/dataSetSlice'
+import imgSrcSlice from './slices/imgSourceSlice'
+import scoreReducer from './slices/scoreSlice'
 
 const store = configureStore({
   reducer: {
     user: userReducer,
-    dataset: dataSetState
+    imgSrc: imgSrcSlice,
+    score: scoreReducer
   },
 });
 
