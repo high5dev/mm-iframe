@@ -4,13 +4,21 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 interface UserState {
   name: string;
   email: string;
-  id: string;
+  age: string;
+  gender: string;
+  pregnancy: string;
+  skinType: string;
+  skinSensitivity: string;
 }
 
 const initialState: UserState = {
   name: '',
   email: '',
-  id: ''
+  age: '',
+  gender: '',
+  pregnancy: '',
+  skinType: '',
+  skinSensitivity: ''
 };
 
 const userSlice = createSlice({
@@ -20,12 +28,20 @@ const userSlice = createSlice({
     setUser(state, action: PayloadAction<UserState>) {
       state.name = action.payload.name;
       state.email = action.payload.email;
-      state.id = action.payload.id;
+      state.age = action.payload.age;
+      state.gender = action.payload.gender;
+      state.pregnancy = action.payload.pregnancy;
+      state.skinType = action.payload.skinType;
+      state.skinSensitivity = action.payload.skinSensitivity;
     },
     clearUser(state) {
       state.name = '';
       state.email = '';
-      state.id = '';
+      state.age = '';
+      state.gender = '';
+      state.pregnancy = '';
+      state.skinType = '';
+      state.skinSensitivity = '';
     },
   },
 });

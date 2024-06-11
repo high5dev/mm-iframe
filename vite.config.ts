@@ -8,4 +8,14 @@ export default defineConfig({
   build: {
     chunkSizeWarningLimit: 3000,
   },
+  server: {
+    host: '0.0.0.0',
+    proxy: {
+      '/api': {
+        target: 'https://saas.haut.ai',
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/api/, ''),
+      },
+    },
+  },
 })

@@ -29,7 +29,7 @@ const PrivateRoutes = () => {
         {/* Pages */}
         <Route path='dashboard' element={<DashboardWrapper />} />
         <Route path='home' element={<HomeWrapper />} />
-        <Route path='api-to-haut' element={<HautAIWrapper />} />
+        <Route path='take-selfie' element={<HautAIWrapper />} />
         <Route path='skin-analysis' element={<SkinAnalysisWrapper />} />
         <Route path='daily-routine' element={<SelectDailyRoutineWrapper />} />
         <Route

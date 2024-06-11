@@ -23,6 +23,9 @@ import { StepIconProps } from '@mui/material';
 import StepConnector, { stepConnectorClasses } from '@mui/material/StepConnector';
 import './steps/styles.scss'
 import { right } from '@popperjs/core';
+import { useSelector, useDispatch } from 'react-redux';
+import { RootState } from "../../../store/store"
+import { setUser } from '../../../store/slices/custermInfoSlice';
 
 const ColorlibConnector = styled(StepConnector)(() => ({
   [`&.${stepConnectorClasses.alternativeLabel}`]: {
@@ -111,36 +114,33 @@ const steps = [
 
 const Horizontal: FC = () => {
   const [activeStep, setActiveStep] = useState(0);
-  const stepperRef = useRef<HTMLDivElement | null>(null)
   const [stepper, setStepper] = useState<StepperComponent | null>(null)
   const [currentSchema, setCurrentSchema] = useState(createAccountSchemas[0])
   const [initValues] = useState<ICreateAccount>(inits)
   const [isSubmitButton, setSubmitButton] = useState(false)
 
+  const customer = useSelector((state: RootState) => state.user);
+  const dispatch = useDispatch();
+
   const navigate = useNavigate();
 
-  const loadStepper = () => {
-    setStepper(StepperComponent.createInsance(stepperRef.current as HTMLDivElement))
-  }
-
-  const prevStep = () => {
-    if (!stepper) {
-      return
-    }
-
-    stepper.goPrev()
-
-    setCurrentSchema(createAccountSchemas[stepper.currentStepIndex - 1])
-
-    setSubmitButton(stepper.currentStepIndex === stepper.totalStepsNumber)
-  }
+  useEffect(() => {
+    console.log(customer)
+  })
 
   const handleNext = (values: ICreateAccount, actions: FormikValues) => {
     if (activeStep === steps.length - 1) {
-      alert(values.name + '`s result will be sent to ' + values.email + ". After Form submitted");
-      navigate('/api-to-haut');
+      dispatch(setUser({
+        name: values.name,
+        email: values.email,
+        age: values.age,
+        gender: values.gender,
+        pregnancy: values.pregnancy,
+        skinType: values.skinType,
+        skinSensitivity: values.skinSensitivity
+      }))
+      navigate('/take-selfie',{ replace: true });
       actions.resetForm();
-      console.log(values);
     } else {
       setActiveStep((prevActiveStep) => prevActiveStep + 1);
       setCurrentSchema(createAccountSchemas[activeStep + 1]);
@@ -156,40 +156,6 @@ const Horizontal: FC = () => {
     setCurrentSchema(createAccountSchemas[activeStep - 1]);
   };
 
-
-  const submitStep = (values: ICreateAccount, actions: FormikValues) => {
-    if (!stepper) {
-      return
-    }
-
-    if (stepper.currentStepIndex !== stepper.totalStepsNumber) {
-      console.log(values)
-      console.log(stepper)
-      stepper.goNext()
-    } else {
-      alert(values.name + '`s result will sent to' + values.email + ".After Form submitted")
-      navigate('/api-to-haut')
-      setTimeout(() => {
-        navigate('/skin-analysis')
-      }, 5000);
-      // stepper.goto(1)
-      actions.resetForm()
-    }
-
-    setSubmitButton(stepper.currentStepIndex === stepper.totalStepsNumber)
-
-    console.log(values);
-
-    setCurrentSchema(createAccountSchemas[stepper.currentStepIndex - 1])
-  }
-
-  useEffect(() => {
-    if (!stepperRef.current) {
-      return
-    }
-
-    loadStepper()
-  }, [stepperRef])
 
   return (
     <>

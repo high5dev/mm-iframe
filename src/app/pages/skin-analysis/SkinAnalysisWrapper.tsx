@@ -1,3 +1,4 @@
+import { useEffect } from 'react'
 import { useIntl } from 'react-intl'
 import { PageTitle } from '../../../_metronic/layout/core'
 import { Content } from '../../../_metronic/layout/components/Content'
@@ -8,6 +9,9 @@ import { ImageContainer2 } from './ImageContainer2'
 import { ImageContainer3 } from './ImageContainer3'
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
+import { useSelector, useDispatch } from 'react-redux';
+import { RootState } from "../../store/store"
+import { getScoreFromHaut } from "../request/sass"
 
 const responsive = {
     desktop: {
@@ -64,13 +68,13 @@ const SkinAnalysisPage = () => (
                     rewind={true}
                     itemClass="carousel-item-padding-10-px d-flex justify-content-start carousel-item-width-220-px"
                 >
-                    <div  className=''>
+                    <div className=''>
                         <ImageContainer />
                     </div >
-                    <div  className=''>
+                    <div className=''>
                         <ImageContainer2 />
                     </div>
-                    <div  className=''>
+                    <div className=''>
                         <ImageContainer3 />
                     </div>
                 </Carousel>
@@ -89,7 +93,7 @@ const SkinAnalysisPage = () => (
             </div>
             <div className='mt-10 row button-alignment justify-content-center mb-15'>
                 <a
-                    href="/api-to-haut"
+                    href="/take-selfie"
                     className="btn-next-md align-items-center"
                 >
                     <span className='indicator-label font-size-20 text-center line-height-24'>Retake Photo</span>
@@ -103,6 +107,12 @@ const SkinAnalysisPage = () => (
 )
 
 const SkinAnalysisWrapper = () => {
+    const dataset = useSelector((state: RootState) => state.dataset);
+    useEffect(() => {
+        getScoreFromHaut(dataset).then((res) => {
+            console.log(res)
+        })
+    })
     const intl = useIntl()
     return (
         <>
