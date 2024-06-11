@@ -1,6 +1,6 @@
 import axios, { AxiosResponse } from "axios";
 
-const API_URL = import.meta.env.BACKEND_API;
+const API_URL = 'https://minimalist-backend-1.onrender.com/';
 const IMG_SEND_URL = `${API_URL}/image-upload/`;
 const GET_SCORE_URL = `${API_URL}/get-score/`;
 
