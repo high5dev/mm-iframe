@@ -124,10 +124,6 @@ const Horizontal: FC = () => {
 
   const navigate = useNavigate();
 
-  useEffect(() => {
-    console.log(customer)
-  })
-
   const handleNext = (values: ICreateAccount, actions: FormikValues) => {
     if (activeStep === steps.length - 1) {
       dispatch(setUser({

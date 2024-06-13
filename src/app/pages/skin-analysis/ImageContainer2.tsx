@@ -10,11 +10,7 @@ type Props = {
 
 const ImageContainer2: FC<Props> = ({name, score}) => {
     const imageURL = useSelector((state: RootState) => state.imgSrc);
-
-    useEffect(()=>{
-        console.log(imageURL)
-    })
-
+    
     return (
         <div className='image-container mt-10 rounded-9'>
                     <img

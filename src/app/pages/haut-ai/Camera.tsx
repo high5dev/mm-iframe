@@ -31,7 +31,7 @@ const Camera: FC = () => {
             const imageSrc = webcamRef.current.getScreenshot();
             setImgSrc(imageSrc);
         } else {
-            console.log(webcamRef)
+            console.log("web camera reference returns null")
         }
     }, [webcamRef, setImgSrc]);
 
@@ -44,19 +44,20 @@ const Camera: FC = () => {
     const sendImage = () => {
         if (imgSrc !== null && customer.email !== '') {
             sendImgToHaut(imgSrc, customer).then((res)=> {
+                const hautScore = res?.haut[0]
                 dispatch(setScore({
-                    acne: res.acne,
-                    age: res.age,
-                    eyeAge: res.eyeAge,
-                    eyeBags:res.eyeBags,
-                    redness:res.redness,
-                    uniformness: res.uniformness,
-                    hydration: res.hydration,
-                    skinTone: res.skinTone,
-                    pigmentation: res.pigmentation,
-                    lines: res.lines,
-                    pores: res.pores,
-                    translucency: res.translucency
+                    acne: hautScore.acne,
+                    age: hautScore.age,
+                    eyeAge: hautScore.eyeAge,
+                    eyeBags:hautScore.eyeBags,
+                    redness:hautScore.redness,
+                    uniformness: hautScore.uniformness,
+                    hydration: hautScore.hydration,
+                    skinTone: hautScore.skinTone,
+                    pigmentation: hautScore.pigmentation,
+                    lines: hautScore.lines,
+                    pores: hautScore.pores,
+                    translucency: hautScore.translucency
                 }))
                 dispatch(setImgSource({
                     image_src: imgSrc
