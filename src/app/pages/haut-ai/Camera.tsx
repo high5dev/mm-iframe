@@ -11,6 +11,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { RootState } from "../../store/store"
 import { setScore } from '../../store/slices/scoreSlice';
 import { setImgSource } from '../../store/slices/imgSourceSlice';
+import './styles.scss'
 
 const videoConstraints = {
     width: 375,
@@ -21,8 +22,9 @@ const videoConstraints = {
 const Camera: FC = () => {
     const webcamRef = useRef<Webcam>(null);
     const [imgSrc, setImgSrc] = useState<string | null>(null);
+    const [isSending, setIsSending] = useState(false);
     const navigate = useNavigate();
-    
+
     const customer = useSelector((state: RootState) => state.user);
     const dispatch = useDispatch();
 
@@ -41,16 +43,18 @@ const Camera: FC = () => {
         }, [setImgSrc]
     )
 
-    const sendImage = () => {
+    const sendImage = async () => {
         if (imgSrc !== null && customer.email !== '') {
-            sendImgToHaut(imgSrc, customer).then((res)=> {
-                const hautScore = res?.haut[0]
+            setIsSending(true);
+            try {
+                const res = await sendImgToHaut(imgSrc, customer);
+                const hautScore = res?.haut[0];
                 dispatch(setScore({
                     acne: hautScore.acne,
                     age: hautScore.age,
                     eyeAge: hautScore.eyeAge,
-                    eyeBags:hautScore.eyeBags,
-                    redness:hautScore.redness,
+                    eyeBags: hautScore.eyeBags,
+                    redness: hautScore.redness,
                     uniformness: hautScore.uniformness,
                     hydration: hautScore.hydration,
                     skinTone: hautScore.skinTone,
@@ -58,14 +62,19 @@ const Camera: FC = () => {
                     lines: hautScore.lines,
                     pores: hautScore.pores,
                     translucency: hautScore.translucency
-                }))
+                }));
                 dispatch(setImgSource({
                     image_src: imgSrc
-                }))
-                navigate('/skin-analysis',{ replace: true })
-            })
+                }));
+                navigate('/skin-analysis', { replace: true });
+            } catch (error) {
+                console.error('Error sending image:', error);
+                alert('There was an error processing your request. Please try again.');
+            } finally {
+                setIsSending(false);
+            }
         } else {
-            alert('please provide your detailed information or take a selfie')
+            alert('Please provide your detailed information or take a selfie');
         }
     }
 
@@ -99,8 +108,17 @@ const Camera: FC = () => {
                         </IconButton>
                     </Tooltip>
                     <Tooltip title="Send">
-                        <IconButton aria-label="delete" size="large" onClick={sendImage} >
-                            <SendIcon fontSize="large" />
+                        <IconButton
+                            aria-label="send"
+                            size="large"
+                            onClick={sendImage}
+                            disabled={isSending}
+                        >
+                            {isSending ? (
+                                <div className="spinner"></div>
+                            ) : (
+                                <SendIcon fontSize="large" />
+                            )}
                         </IconButton>
                     </Tooltip>
                 </>)}
