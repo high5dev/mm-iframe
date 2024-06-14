@@ -151,23 +151,13 @@ const Horizontal: FC = () => {
   const handleBack = () => {
     if (activeStep === 0) {
       alert("The previous step isn't implemented yet");
+    } else if (activeStep === 5) {
+      setActiveStep(3); // Set to Step 14
+      setCurrentSchema(createAccountSchemas[3]); // Set schema for Step 14
+    } else {
+      setActiveStep((prevActiveStep) => prevActiveStep - 1);
+      setCurrentSchema(createAccountSchemas[activeStep - 1]);
     }
-
-    // Reset gender and pregnancy values based on activeStep
-    if (activeStep === 4) { // Step 14
-      setCurrentSchema(createAccountSchemas[activeStep - 1]); // Set previous schema
-      setSubmitButton(false); // Reset submit button state
-    } else if (activeStep === 5) { // Step 15
-      setCurrentSchema(createAccountSchemas[activeStep - 1]); // Set previous schema
-      setSubmitButton(false); // Reset submit button state
-    } else if (activeStep === 6) { // Step 16
-      // Reset gender and pregnancy to initial values
-      setCurrentSchema(createAccountSchemas[activeStep - 1]); // Set previous schema
-      setSubmitButton(false); // Reset submit button state
-    }
-
-    setActiveStep((prevActiveStep) => prevActiveStep - 1);
-    // setCurrentSchema(createAccountSchemas[activeStep - 1]);
   };
 
 
