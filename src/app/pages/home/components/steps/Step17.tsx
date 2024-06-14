@@ -7,9 +7,9 @@ import './styles.scss';
 
 const Step17: FC = () => {
 
-  const [isChecked, setIsChecked] = useState(false)
+  const [isChecked, setIsChecked] = useState<string | null>(null);
   const handleRadioChange = (value: string) => {
-    setIsChecked(true);
+    setIsChecked(value);
   };
 
   const formik = useFormikContext();
@@ -29,14 +29,15 @@ const Step17: FC = () => {
               className='btn-check text-center'
               name='skinSensitivity'
               value='sensitive'
-              checked={isChecked}
+              checked={isChecked === 'sensitive'}
               id='kt_create_account_form_skin_sensitive_yes'
+              onChange={() => handleRadioChange('sensitive')}
             />
             <label
               className='btn btn-block d-flex align-items-center fixed-width-lg-md mb-5 btn-203-66'
               htmlFor='kt_create_account_form_skin_sensitive_yes'
             >
-                <span className='font-size-20 mb-2 text-cente'>Yes</span>
+                <span className='font-size-20 mb-2 text-center'>Yes</span>
             </label>
           </div>
         </div>
@@ -47,15 +48,16 @@ const Step17: FC = () => {
               className='btn-check text-center'
               name='skinSensitivity'
               value='notSensitive'
-              checked={isChecked}
+              checked={isChecked === 'notSensitive'}
               id='kt_create_account_form_skin_sensitive_no'
+              onChange={() => handleRadioChange('notSensitive')}
             />
             <label
               className='btn btn-block d-flex align-items-center fixed-width-lg-md mb-5 btn-203-66'
               htmlFor='kt_create_account_form_skin_sensitive_no'
             >
 
-                <span className='font-size-20 mb-2 text-cente'>No</span>
+                <span className='font-size-20 mb-2 text-center'>No</span>
             </label>
           </div>
         </div>
@@ -66,14 +68,15 @@ const Step17: FC = () => {
               className='btn-check text-center visually-hidden'
               name='skinSensitivity'
               value='sometimesSensible'
-              checked={isChecked}
+              checked={isChecked === 'sometimesSensible'}
               id='kt_create_account_form_skin_sensitive_sometimes'
+              onChange={() => handleRadioChange('sometimesSensible')}
             />
             <label
               className='btn btn-block d-flex align-items-center fixed-width-lg-md btn-203-66 mb-5'
               htmlFor='kt_create_account_form_skin_sensitive_sometimes'
             >
-                <span className='font-size-20 mb-2 text-cente'>Sometimes</span>
+                <span className='font-size-20 mb-2 text-center'>Sometimes</span>
             </label>
           </div>
         </div>
