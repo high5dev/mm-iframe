@@ -1,11 +1,15 @@
 
-import { FC } from 'react'
+import { FC, useEffect } from 'react'
 import { useFormikContext } from 'formik'
 import './styles.scss'
 
 const Step14: FC = () => {
 
   const { setFieldValue, handleSubmit, values } = useFormikContext<{ gender: string }>();
+
+  useEffect(() => {
+    setFieldValue('pregnancy', ''); // Reset pregnancy to empty string
+  }, [setFieldValue]);
 
   const handleButtonClick = (value: string) => {
     setFieldValue('gender', value);

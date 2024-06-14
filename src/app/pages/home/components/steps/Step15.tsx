@@ -6,14 +6,10 @@ import './styles.scss'
 const Step15: FC = () => {
 
   const { setFieldValue, handleSubmit, values } = useFormikContext<{ pregnancy: string, gender: string }>();
+
   useEffect(() => {
-    if(values?.gender === 'male') {
-      setFieldValue('pregnancy', 'notPregnant');
-      setTimeout(() => {
-        handleSubmit();
-      }, 0);
-    }
-  }, []);
+    setFieldValue('pregnancy', ''); // Reset pregnancy to empty string
+  }, [setFieldValue]);
 
   const handleButtonClick = (value: string) => {
     setFieldValue('pregnancy', value);

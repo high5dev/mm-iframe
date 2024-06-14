@@ -6,13 +6,10 @@ import { toAbsoluteUrl } from '../../../../../_metronic/helpers'
 import './styles.scss';
 
 const Step17: FC = () => {
-
-  const [isChecked, setIsChecked] = useState<string | null>(null);
+  const { values, setFieldValue } = useFormikContext<any>();
   const handleRadioChange = (value: string) => {
-    setIsChecked(value);
+    setFieldValue('skinSensitivity', value);
   };
-
-  const formik = useFormikContext();
   return (
     <div className='w-100 container'>
       <div className='pb-10 pb-lg-15'>
@@ -29,7 +26,7 @@ const Step17: FC = () => {
               className='btn-check text-center'
               name='skinSensitivity'
               value='sensitive'
-              checked={isChecked === 'sensitive'}
+              checked={values.skinSensitivity === 'sensitive'}
               id='kt_create_account_form_skin_sensitive_yes'
               onChange={() => handleRadioChange('sensitive')}
             />
@@ -48,7 +45,7 @@ const Step17: FC = () => {
               className='btn-check text-center'
               name='skinSensitivity'
               value='notSensitive'
-              checked={isChecked === 'notSensitive'}
+              checked={values.skinSensitivity === 'notSensitive'}
               id='kt_create_account_form_skin_sensitive_no'
               onChange={() => handleRadioChange('notSensitive')}
             />
@@ -68,7 +65,7 @@ const Step17: FC = () => {
               className='btn-check text-center visually-hidden'
               name='skinSensitivity'
               value='sometimesSensible'
-              checked={isChecked === 'sometimesSensible'}
+              checked={values.skinSensitivity === 'sometimesSensible'}
               id='kt_create_account_form_skin_sensitive_sometimes'
               onChange={() => handleRadioChange('sometimesSensible')}
             />

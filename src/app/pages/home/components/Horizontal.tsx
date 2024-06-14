@@ -140,16 +140,34 @@ const Horizontal: FC = () => {
     } else {
       setActiveStep((prevActiveStep) => prevActiveStep + 1);
       setCurrentSchema(createAccountSchemas[activeStep + 1]);
+      if (activeStep === 3 && values.gender === 'male') {
+        setActiveStep((prevActiveStep) => prevActiveStep + 1);
+        setCurrentSchema(createAccountSchemas[activeStep + 2]);
+      }
     }
     setSubmitButton(activeStep === steps.length - 1);
   };
 
   const handleBack = () => {
     if (activeStep === 0) {
-      alert("The previous step isn't implemented yet");      
+      alert("The previous step isn't implemented yet");
     }
+
+    // Reset gender and pregnancy values based on activeStep
+    if (activeStep === 4) { // Step 14
+      setCurrentSchema(createAccountSchemas[activeStep - 1]); // Set previous schema
+      setSubmitButton(false); // Reset submit button state
+    } else if (activeStep === 5) { // Step 15
+      setCurrentSchema(createAccountSchemas[activeStep - 1]); // Set previous schema
+      setSubmitButton(false); // Reset submit button state
+    } else if (activeStep === 6) { // Step 16
+      // Reset gender and pregnancy to initial values
+      setCurrentSchema(createAccountSchemas[activeStep - 1]); // Set previous schema
+      setSubmitButton(false); // Reset submit button state
+    }
+
     setActiveStep((prevActiveStep) => prevActiveStep - 1);
-    setCurrentSchema(createAccountSchemas[activeStep - 1]);
+    // setCurrentSchema(createAccountSchemas[activeStep - 1]);
   };
 
 
@@ -200,7 +218,6 @@ const Horizontal: FC = () => {
                       onClick={handleBack}
                       type='button'
                       className='btn-next-md align-items-center'
-                      data-kt-stepper-action='previous'
                     >
                       <span className='indicator-label font-size-20'>Back</span>
                     </button>
