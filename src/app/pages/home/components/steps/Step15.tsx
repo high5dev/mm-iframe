@@ -1,12 +1,19 @@
 
-import { FC } from 'react'
-import { KTIcon } from '../../../../../_metronic/helpers'
-import { ErrorMessage, Field, useFormikContext} from 'formik'
+import { FC, useEffect } from 'react'
+import { useFormikContext} from 'formik'
 import './styles.scss'
 
 const Step15: FC = () => {
 
-  const { setFieldValue, handleSubmit, values } = useFormikContext<{ pregnancy: string }>();
+  const { setFieldValue, handleSubmit, values } = useFormikContext<{ pregnancy: string, gender: string }>();
+  useEffect(() => {
+    if(values?.gender === 'male') {
+      setFieldValue('pregnancy', 'notPregnant');
+      setTimeout(() => {
+        handleSubmit();
+      }, 0);
+    }
+  }, []);
 
   const handleButtonClick = (value: string) => {
     setFieldValue('pregnancy', value);

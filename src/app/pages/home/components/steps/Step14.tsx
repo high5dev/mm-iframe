@@ -1,7 +1,6 @@
 
 import { FC } from 'react'
-import { KTIcon } from '../../../../../_metronic/helpers'
-import { ErrorMessage, Field, useFormikContext } from 'formik'
+import { useFormikContext } from 'formik'
 import './styles.scss'
 
 const Step14: FC = () => {
