@@ -14,8 +14,8 @@ import { setImgSource } from '../../store/slices/imgSourceSlice';
 import './styles.scss'
 
 const videoConstraints = {
-    width: 375,
-    height: 667,
+    width: 640,
+    height: 480,
     facingMode: "user"
 };
 
@@ -30,7 +30,7 @@ const Camera: FC = () => {
 
     const capture = useCallback(() => {
         if (webcamRef.current) {
-            const imageSrc = webcamRef.current.getScreenshot();
+            const imageSrc = webcamRef.current.getScreenshot({width: 640, height: 480});
             setImgSrc(imageSrc);
         } else {
             console.log("web camera reference returns null")
@@ -74,7 +74,7 @@ const Camera: FC = () => {
                 setIsSending(false);
             }
         } else {
-            alert('Please provide your detailed information or take a selfie');
+            alert('Please provide your detailed information and take a selfie again');
         }
     }
 
@@ -84,9 +84,10 @@ const Camera: FC = () => {
                 {!imgSrc ? (<>
                     <Webcam
                         audio={false}
-                        height={540}
+                        height={480}
                         screenshotFormat="image/jpeg"
-                        width={1280}
+                        screenshotQuality={0.9} // Adjusted quality
+                        width={640}
                         ref={webcamRef}
                         videoConstraints={videoConstraints}
                     >
