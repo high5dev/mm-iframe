@@ -6,15 +6,15 @@ import { RootState } from "../../store/store"
 type Props = {
     name?: string
     score?: string
+    imageURL?: string
 }
 
-const ImageContainer2: FC<Props> = ({name, score}) => {
-    const imageURL = useSelector((state: RootState) => state.imgSrc);
+const ImageContainer2: FC<Props> = ({name, score, imageURL}) => {
     
     return (
         <div className='image-container mt-10 rounded-9'>
                     <img
-                        src={imageURL?.image_src}
+                        src={imageURL}
                         alt=""
                         className="img-193-298"
                     />

@@ -10,7 +10,7 @@ import { sendImgToHaut } from "../request/sass"
 import { useSelector, useDispatch } from 'react-redux';
 import { RootState } from "../../store/store"
 import { setScore } from '../../store/slices/scoreSlice';
-import { setImgSource } from '../../store/slices/imgSourceSlice';
+import { setUser } from '../../store/slices/custermInfoSlice';
 import './styles.scss'
 
 const videoConstraints = {
@@ -63,8 +63,15 @@ const Camera: FC = () => {
                     pores: hautScore.pores,
                     translucency: hautScore.translucency
                 }));
-                dispatch(setImgSource({
-                    image_src: imgSrc
+                dispatch(setUser({
+                    name: res?.name,
+                    email: res?.email,
+                    age: res?.age,
+                    gender: res?.gender,
+                    pregnancy: res?.pregnancy,
+                    skinType: res?.skinType,
+                    skinSensitivity: res?.skinSensitivity,
+                    imageURL: res?.imageUri
                 }));
                 navigate('/skin-analysis', { replace: true });
             } catch (error) {

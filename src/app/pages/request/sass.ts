@@ -1,6 +1,7 @@
 import axios, { AxiosResponse } from "axios";
 
-const API_URL = 'https://minimalist-backend-1.onrender.com/haut';
+// const API_URL = 'https://minimalist-backend-1.onrender.com/haut';
+const API_URL = 'http://localhost:3000/haut';
 const IMG_SEND_URL = `${API_URL}/image-upload/`;
 const GET_SCORE_URL = `${API_URL}/get-score/`;
 

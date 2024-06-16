@@ -9,6 +9,7 @@ interface UserState {
   pregnancy: string;
   skinType: string;
   skinSensitivity: string;
+  imageURL?: string
 }
 
 const initialState: UserState = {
@@ -18,7 +19,8 @@ const initialState: UserState = {
   gender: '',
   pregnancy: '',
   skinType: '',
-  skinSensitivity: ''
+  skinSensitivity: '',
+  imageURL: ''
 };
 
 const userSlice = createSlice({
@@ -33,6 +35,7 @@ const userSlice = createSlice({
       state.pregnancy = action.payload.pregnancy;
       state.skinType = action.payload.skinType;
       state.skinSensitivity = action.payload.skinSensitivity;
+      state.imageURL = action.payload.imageURL;
     },
     clearUser(state) {
       state.name = '';

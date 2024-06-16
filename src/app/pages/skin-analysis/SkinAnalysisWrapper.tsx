@@ -33,6 +33,7 @@ const responsive = {
 
 const SkinAnalysisWrapper = () => {
     const score = useSelector((state: RootState) => state.score);
+    const customer = useSelector((state:RootState) => state.user)
 
     const navigate = useNavigate();
 
@@ -87,31 +88,31 @@ const SkinAnalysisWrapper = () => {
                         itemClass="carousel-item-padding-10-px d-flex justify-content-start carousel-item-width-220-px"
                     >
                         <div className=''>
-                            <ImageContainer2 score={score.acne} name='Acne' />
+                            <ImageContainer2 imageURL={customer?.imageURL} score={score.acne} name='Acne' />
                         </div >
                         <div className=''>
-                            <ImageContainer2 score={score.hydration} name='Hydration' />
+                            <ImageContainer2 imageURL={customer?.imageURL} score={score.hydration} name='Hydration' />
                         </div>
                         <div className=''>
-                            <ImageContainer2 score={score.lines} name='Lines' />
+                            <ImageContainer2 imageURL={customer?.imageURL} score={score.lines} name='Lines' />
                         </div>
                         <div className=''>
-                            <ImageContainer2 score={score.eyeBags} name='Eye bags' />
+                            <ImageContainer2 imageURL={customer?.imageURL} score={score.eyeBags} name='Eye bags' />
                         </div >
                         <div className=''>
-                            <ImageContainer2 score={score.pigmentation} name='Pigmentation' />
+                            <ImageContainer2 imageURL={customer?.imageURL} score={score.pigmentation} name='Pigmentation' />
                         </div>
                         <div className=''>
-                            <ImageContainer2 score={score.pores} name='Pores' />
+                            <ImageContainer2 imageURL={customer?.imageURL} score={score.pores} name='Pores' />
                         </div>
                         <div className=''>
-                            <ImageContainer2 score={score.redness} name='Redness' />
+                            <ImageContainer2 imageURL={customer?.imageURL} score={score.redness} name='Redness' />
                         </div >
                         <div className=''>
-                            <ImageContainer2 score={score.translucency} name='Translucency' />
+                            <ImageContainer2 imageURL={customer?.imageURL} score={score.translucency} name='Translucency' />
                         </div>
                         <div className=''>
-                            <ImageContainer2 score={score.uniformness} name='Uniformness' />
+                            <ImageContainer2 imageURL={customer?.imageURL} score={score.uniformness} name='Uniformness' />
                         </div>
                     </Carousel>
                 </div>
