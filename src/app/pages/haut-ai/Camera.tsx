@@ -48,20 +48,21 @@ const Camera: FC = () => {
             setIsSending(true);
             try {
                 const res = await sendImgToHaut(imgSrc, customer);
+                console.log(res?.msg)
                 const hautScore = res?.haut[0];
                 dispatch(setScore({
-                    acne: hautScore.acne,
-                    age: hautScore.age,
-                    eyeAge: hautScore.eyeAge,
-                    eyeBags: hautScore.eyeBags,
-                    redness: hautScore.redness,
-                    uniformness: hautScore.uniformness,
-                    hydration: hautScore.hydration,
-                    skinTone: hautScore.skinTone,
-                    pigmentation: hautScore.pigmentation,
-                    lines: hautScore.lines,
-                    pores: hautScore.pores,
-                    translucency: hautScore.translucency
+                    acne: hautScore?.acne,
+                    age: hautScore?.age,
+                    eyeAge: hautScore?.eyeAge,
+                    eyeBags: hautScore?.eyeBags,
+                    redness: hautScore?.redness,
+                    uniformness: hautScore?.uniformness,
+                    hydration: hautScore?.hydration,
+                    skinTone: hautScore?.skinTone,
+                    pigmentation: hautScore?.pigmentation,
+                    lines: hautScore?.lines,
+                    pores: hautScore?.pores,
+                    translucency: hautScore?.translucency
                 }));
                 dispatch(setUser({
                     name: res?.name,
@@ -76,7 +77,7 @@ const Camera: FC = () => {
                 navigate('/skin-analysis', { replace: true });
             } catch (error) {
                 console.error('Error sending image:', error);
-                alert('There was an error processing your request. Please try again.');
+                // alert('There was an error processing your request. Please try again.');
             } finally {
                 setIsSending(false);
             }
