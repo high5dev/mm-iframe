@@ -2,7 +2,7 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 interface ScoreState {
     acne: string;
-    age: string;
+    perceivedAge: string;
     eyeAge: string;
     eyeBags: string;
     hydration: string
@@ -13,11 +13,13 @@ interface ScoreState {
     skinTone: string
     translucency: string
     uniformness: string
+    primaryConcern: any
+    secondaryConcern: any
 }
 
 const initialState: ScoreState = {
     acne: '',
-    age: '',
+    perceivedAge: '',
     eyeAge: '',
     eyeBags: '',
     hydration: '',
@@ -27,7 +29,9 @@ const initialState: ScoreState = {
     redness: '',
     skinTone: '',
     translucency: '',
-    uniformness: ''
+    uniformness: '',
+    primaryConcern: null,
+    secondaryConcern: null
 };
 
 const ScoreSlice = createSlice({
@@ -36,7 +40,7 @@ const ScoreSlice = createSlice({
     reducers: {
       setScore(state, action: PayloadAction<ScoreState>) {
         state.acne = action.payload.acne;
-        state.age = action.payload.age;
+        state.perceivedAge = action.payload.perceivedAge;
         state.eyeAge = action.payload.eyeAge;
         state.eyeBags = action.payload.eyeBags;
         state.hydration = action.payload.hydration;
@@ -47,10 +51,12 @@ const ScoreSlice = createSlice({
         state.skinTone = action.payload.skinTone;
         state.translucency = action.payload.translucency;
         state.uniformness = action.payload.uniformness;
+        state.primaryConcern = action.payload.primaryConcern
+        state.secondaryConcern = action.payload.secondaryConcern
       },
       clearScore(state) {
         state.acne = '';
-        state.age = '';
+        state.perceivedAge = '';
         state.eyeAge = '';
         state.eyeBags = '';
         state.hydration = '';
@@ -61,6 +67,8 @@ const ScoreSlice = createSlice({
         state.skinTone = '';
         state.translucency = '';
         state.uniformness = '';
+        state.primaryConcern = null;
+        state.secondaryConcern = null;
       },
     },
   });

@@ -141,6 +141,7 @@ const Horizontal: FC = () => {
       setActiveStep((prevActiveStep) => prevActiveStep + 1);
       setCurrentSchema(createAccountSchemas[activeStep + 1]);
       if (activeStep === 3 && values.gender === 'male') {
+        values.pregnancy = 'notPregnant'
         setActiveStep((prevActiveStep) => prevActiveStep + 1);
         setCurrentSchema(createAccountSchemas[activeStep + 2]);
       }

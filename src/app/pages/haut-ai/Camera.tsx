@@ -52,7 +52,7 @@ const Camera: FC = () => {
                 const hautScore = res?.haut[0];
                 dispatch(setScore({
                     acne: hautScore?.acne,
-                    age: hautScore?.age,
+                    perceivedAge: hautScore?.perceivedAge,
                     eyeAge: hautScore?.eyeAge,
                     eyeBags: hautScore?.eyeBags,
                     redness: hautScore?.redness,
@@ -62,7 +62,9 @@ const Camera: FC = () => {
                     pigmentation: hautScore?.pigmentation,
                     lines: hautScore?.lines,
                     pores: hautScore?.pores,
-                    translucency: hautScore?.translucency
+                    translucency: hautScore?.translucency,
+                    primaryConcern: hautScore?.lowestMetric,
+                    secondaryConcern: hautScore?.secondLowestMetric
                 }));
                 dispatch(setUser({
                     name: res?.name,
