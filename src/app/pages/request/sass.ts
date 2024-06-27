@@ -1,9 +1,10 @@
 import axios, { AxiosResponse } from "axios";
+import { error } from "console";
 
-const API_URL = 'https://minimalist-backend-1.onrender.com/haut';
-// const API_URL = 'http://localhost:3000/haut';
-const IMG_SEND_URL = `${API_URL}/image-upload/`;
-const GET_SCORE_URL = `${API_URL}/get-score/`;
+const BACKEND_API = import.meta.env.VITE_APP_THEME_API_URL;
+// const BACKEND_API = 'http://localhost:3000';
+const IMG_SEND_URL = `${BACKEND_API}/haut/image-upload/`;
+const GET_SCORE_URL = `${BACKEND_API}/haut/get-score/`;
 
 
 interface LoginResponse {
@@ -14,7 +15,10 @@ interface LoginResponse {
 const sendImgToHaut = (imgSrc: string, cutomerInfo: any): Promise<any> => {
     return axios
         .post(`${IMG_SEND_URL}`, { imgSrc, cutomerInfo })
-        .then((d: AxiosResponse<any>) => d.data);
+        .then((d: AxiosResponse<any>) => d.data)
+        .catch((error) => {
+            console.log(error)
+        });
 };
 
 const getScoreFromHaut = (apiData: any): Promise<any> => {
