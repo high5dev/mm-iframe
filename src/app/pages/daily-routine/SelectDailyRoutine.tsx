@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import { PageTitle } from '../../../_metronic/layout/core'
 import { RoutineModel } from './RoutineModels'
 import clsx from 'clsx'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { toAbsoluteUrl } from '../../../_metronic/helpers/AssetHelpers'
 import './styles.scss';
 import { CardItem } from './CardItem'
@@ -12,15 +12,23 @@ import { CardItem2 } from './CardItem2'
 import { CardItem3 } from './CardItem3'
 import { Nav } from 'react-bootstrap'
 import { Tab } from 'react-bootstrap'
+import { useSelector, useDispatch } from 'react-redux';
+import { RootState } from "../../store/store"
 
 
 const SelectDailyRoutinePage = () => {
+    const score = useSelector((state: RootState) => state.score);
+    const customer = useSelector((state: RootState) => state.user)
 
     const navigate = useNavigate();
-
     const handleBack = () => {
         navigate('/skin-analysis', { replace: true });
     };
+
+    useEffect(()=> {
+        console.log(score)
+        console.log(customer)
+    })
     return (
         <>
             <div className='d-flex flex-wrap flex-stack mb-6'>
@@ -95,53 +103,3 @@ const SelectDailyRoutineWrapper = () => {
 }
 
 export { SelectDailyRoutineWrapper }
-
-const users1: Array<RoutineModel> = [
-    { name: 'Emma Smith', image: 'media/avatars/300-6.jpg' },
-    { name: 'Rudy Stone', image: 'media/avatars/300-1.jpg' },
-    { name: 'Susan Redwood', price: 'S', whenToUse: 'primary' },
-]
-
-const users2 = [
-    { name: 'Alan Warden', price: 'A', whenToUse: 'warning' },
-    { name: 'Brian Cox', image: 'media/avatars/300-5.jpg' },
-]
-
-const users3 = [
-    { name: 'Mad Masy', image: 'media/avatars/300-6.jpg' },
-    { name: 'Cris Willson', image: 'media/avatars/300-1.jpg' },
-    { name: 'Mike Garcie', price: 'M', whenToUse: 'info' },
-]
-
-const users4 = [
-    { name: 'Nich Warden', price: 'N', whenToUse: 'warning' },
-    { name: 'Rob Otto', price: 'R', whenToUse: 'success' },
-]
-
-const users5 = [
-    { name: 'Francis Mitcham', image: 'media/avatars/300-20.jpg' },
-    { name: 'Michelle Swanston', image: 'media/avatars/300-7.jpg' },
-    { name: 'Susan Redwood', price: 'S', whenToUse: 'primary' },
-]
-
-const users6 = [
-    { name: 'Emma Smith', image: 'media/avatars/300-6.jpg' },
-    { name: 'Rudy Stone', image: 'media/avatars/300-1.jpg' },
-    { name: 'Susan Redwood', price: 'S', whenToUse: 'primary' },
-]
-
-const users7 = [
-    { name: 'Meloday Macy', image: 'media/avatars/300-2.jpg' },
-    { name: 'Rabbin Watterman', price: 'S', whenToUse: 'success' },
-]
-
-const users8 = [
-    { name: 'Emma Smith', image: 'media/avatars/300-6.jpg' },
-    { name: 'Rudy Stone', image: 'media/avatars/300-1.jpg' },
-    { name: 'Susan Redwood', price: 'S', whenToUse: 'primary' },
-]
-
-const users9 = [
-    { name: 'Meloday Macy', image: 'media/avatars/300-2.jpg' },
-    { name: 'Rabbin Watterman', price: 'S', whenToUse: 'danger' },
-]
