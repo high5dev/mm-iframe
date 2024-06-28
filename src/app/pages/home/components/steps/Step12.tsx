@@ -13,8 +13,9 @@ const Step12: FC = () => {
       <div className='d-flex justify-content-center fv-row mb-120'>
         <Field
           type='text'
-          className='form-control form-control-lg border-bottom-only'
+          className='rounded-input-box form-control form-control-lg border-bottom-only'
           name='email'
+          placeholder="Email ID"
         />
         {/* <div className='text-danger mt-2'>
           <ErrorMessage name='email' />

@@ -124,15 +124,6 @@ const Horizontal: FC = () => {
 
   const navigate = useNavigate();
 
-
-  const handlePointerEnter = (event: React.PointerEvent<HTMLDivElement>) => {
-    console.log('Pointer entered the element');
-  };
-
-  const handlePointerEnterCapture = (event: React.PointerEvent<HTMLDivElement>) => {
-    console.log('Pointer entered the element (capturing phase)');
-  };
-
   const handleNext = (values: ICreateAccount, actions: FormikValues) => {
     if (activeStep === steps.length - 1) {
       dispatch(setUser({
@@ -144,13 +135,12 @@ const Horizontal: FC = () => {
         skinType: values.skinType,
         skinSensitivity: values.skinSensitivity
       }))
-      navigate('/take-selfie', { replace: true });
+      navigate('/take-selfie',{ replace: true });
       actions.resetForm();
     } else {
       setActiveStep((prevActiveStep) => prevActiveStep + 1);
       setCurrentSchema(createAccountSchemas[activeStep + 1]);
       if (activeStep === 3 && values.gender === 'male') {
-        values.pregnancy = 'notPregnant'
         setActiveStep((prevActiveStep) => prevActiveStep + 1);
         setCurrentSchema(createAccountSchemas[activeStep + 2]);
       }
@@ -202,8 +192,7 @@ const Horizontal: FC = () => {
         </Stepper>
         <Formik validationSchema={currentSchema} initialValues={initValues} onSubmit={handleNext}>
           {({ values }) => (
-            <Form className='form-wrapper'
-              placeholder={undefined}>
+            <Form className='form-wrapper' placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
               {activeStep === 0 && <Step11 />}
               {activeStep === 1 && <Step12 />}
               {activeStep === 2 && <Step13 />}

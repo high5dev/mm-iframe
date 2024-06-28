@@ -1,6 +1,7 @@
 import { useIntl } from 'react-intl'
 import { Content } from '../../../_metronic/layout/components/Content'
 import { Camera } from './Camera'
+import { TakeASelfie } from './LIQA'
 
 const APIPageToHautAI = () => (
   <Content>
@@ -9,7 +10,8 @@ const APIPageToHautAI = () => (
         <h2 className='d-flex align-items-center justify-content-center'>
           Take a selfie
         </h2>
-        <Camera/>
+        {/* <Camera/> */}
+        <TakeASelfie />
       </div>
     </div>
   </Content>

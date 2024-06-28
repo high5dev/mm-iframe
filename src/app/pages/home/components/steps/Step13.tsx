@@ -22,12 +22,12 @@ const Step13: FC = () => {
         </h2>
       </div>
       <div className='p-0'>
-        <div className='mt-n10 position-relative'>
+        <div className='age-selection-container'>
           <div className='row g-0'>
             <div className='col pb-8 rounded-2'>
               <button
                 type='button'
-                className={`btn btn-block d-block align-items-center fixed-width ${values.age === 'below18' ? 'btn-primary' : 'btn-outline-primary'}`}
+                className={`transparent-button btn btn-block d-block align-items-center fixed-width ${values.age === 'below18' ? 'btn-primary' : 'btn-outline-primary'}`}
                 onClick={() => handleButtonClick('below18')}
               >
                 <span className='font-size-20 mb-2 text-center'>Below 18</span>

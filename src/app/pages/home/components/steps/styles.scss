@@ -24,12 +24,16 @@
 }
 
 .btn.btn-block.d-block.fixed-width {
-    width: 136px !important;
-    height: 41px !important;
-    background-color: #000000;
-    color: #ffffff;
+    width: 275px;
+    color: #000000;
     line-height: 24.2px;
-    border-radius: 0;
+    border-radius: 15px;
+    border: 1px solid #000 !important;
+    background-color: transparent;
+    padding: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .fixed-width-lg {
@@ -234,4 +238,21 @@
 
 .container {
     max-width: 405px !important;
+}
+
+.rounded-input-box {
+    border: 1px solid black;
+    border-radius: 100px;
+}
+
+.age-selection-container {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.transparent-button {
+    border: 1px solid #000;
+    background-color: transparent;
+    padding: 38px;
 }

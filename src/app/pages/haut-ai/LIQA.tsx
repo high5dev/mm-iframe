@@ -1,5 +1,4 @@
 import React, { FC, useCallback, useRef, useState, useEffect } from 'react'
-import Webcam from "react-webcam";
 import { useNavigate } from 'react-router-dom';
 import Tooltip from '@mui/material/Tooltip';
 import IconButton from '@mui/material/IconButton';
@@ -13,14 +12,9 @@ import { setScore } from '../../store/slices/scoreSlice';
 import { setUser } from '../../store/slices/custermInfoSlice';
 import './styles.scss'
 
-const videoConstraints = {
-    width: 640,
-    height: 480,
-    facingMode: "user"
-};
 
-const Camera: FC = () => {
-    const webcamRef = useRef<Webcam>(null);
+const TakeASelfie: FC = () => {
+    const webcamRef = useRef<HTMLHautAiLiqaElement>(null);
     const [imgSrc, setImgSrc] = useState<string | null>(null);
     const [isSending, setIsSending] = useState(false);
     const navigate = useNavigate();
@@ -28,14 +22,13 @@ const Camera: FC = () => {
     const customer = useSelector((state: RootState) => state.user);
     const dispatch = useDispatch();
 
-    const capture = useCallback(() => {
-        if (webcamRef.current) {
-            const imageSrc = webcamRef.current.getScreenshot({width: 640, height: 480});
-            setImgSrc(imageSrc);
-        } else {
-            console.log("web camera reference returns null")
-        }
-    }, [webcamRef, setImgSrc]);
+    function blobToBase64(blob: Blob): Promise<string | null> {
+        return new Promise((resolve) => {
+            const reader = new FileReader();
+            reader.onloadend = () => resolve(reader.result as string | null);
+            reader.readAsDataURL(blob);
+        });
+    }
 
     const recapture = useCallback(
         () => {
@@ -85,31 +78,39 @@ const Camera: FC = () => {
         }
     }
 
+    useEffect(() => {
+        const takeASelfie = async (event: CustomEvent) => {
+            const capture = event.detail;
+            const image: Blob = await capture.blob();
+            const base64 = await blobToBase64(image);
+            console.log(base64);
+            setTimeout(() => {
+                if (base64) {
+                    setImgSrc(base64);
+                }
+            }, 100);
+        };
+
+        const liqaElement = webcamRef.current;
+        if (liqaElement) {
+            liqaElement.addEventListener('capture', takeASelfie);
+        }
+        return () => {
+            if (liqaElement) {
+                liqaElement.removeEventListener('capture', takeASelfie);
+            }
+        };
+    }, []);
+
     return (
-        <div className='w-100 container'>
-            <div className='mb-10 row button-alignment'>
-                {!imgSrc ? (<>
-                    <Webcam
-                        audio={false}
-                        height={480}
-                        screenshotFormat="image/jpeg"
-                        screenshotQuality={0.9} // Adjusted quality
-                        width={640}
-                        ref={webcamRef}
-                        videoConstraints={videoConstraints}
-                    >
-                    </Webcam>
-                    <Tooltip title="Take a Selfie">
-                        <IconButton aria-label="delete" size="large" onClick={capture} >
-                            <PhotoCameraIcon fontSize="large" />
-                        </IconButton>
-                    </Tooltip>
-                </>) : (<>
-                    <img
-                        src={imgSrc}
-                        alt="Captured"
-                        className='mb-20 mt-20'
-                    />
+        <>
+            {!imgSrc ? (
+                <div className="mt-20">
+                    <hautai-liqa ref={webcamRef} license="eyJpZCI6IkhFS04tOTA1Mi0wIn0="></hautai-liqa>
+                </div>) : (
+                <>
+                    <img src={imgSrc} alt="Selfie"
+                        className='mb-20 mt-20' />
                     <Tooltip title="Retake">
                         <IconButton aria-label="delete" size="large" onClick={recapture} >
                             <CameraswitchIcon fontSize="large" />
@@ -129,10 +130,10 @@ const Camera: FC = () => {
                             )}
                         </IconButton>
                     </Tooltip>
-                </>)}
-            </div>
-        </div>
-    )
-}
+                </>
+            )}
+        </>
+    );
+};
 
-export { Camera }
+export { TakeASelfie };
