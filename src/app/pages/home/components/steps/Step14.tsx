@@ -49,7 +49,7 @@ const Step14: FC = () => {
             </button>
           </div>
         </div>
-        <div className='row'>
+        {/* <div className='row'>
           <div className='col d-flex justify-content-center'>
             <button
               type='button'
@@ -59,7 +59,7 @@ const Step14: FC = () => {
               <span className='font-size-20 mb-2 text-center'>Prefer not to say</span>
             </button>
           </div>
-        </div>
+        </div> */}
       </div>
     </div>
   )

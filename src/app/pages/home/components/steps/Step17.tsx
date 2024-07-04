@@ -58,7 +58,7 @@ const Step17: FC = () => {
             </label>
           </div>
         </div>
-        <div className='row'>
+        {/* <div className='row'>
           <div className='col d-flex justify-content-center'>
             <Field
               type='radio'
@@ -76,7 +76,7 @@ const Step17: FC = () => {
                 <span className='font-size-20 mb-2 text-center'>Sometimes</span>
             </label>
           </div>
-        </div>
+        </div> */}
         {/* <div className='text-danger mt-2'>
           <ErrorMessage name='skinSensitivity' />
         </div> */}
