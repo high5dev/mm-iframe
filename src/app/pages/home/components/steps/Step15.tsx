@@ -31,8 +31,8 @@ const Step15: FC = () => {
           <div className='col d-flex justify-content-center'>
             <button
               type='button'
-              className={`btn btn-block d-flex align-items-center fixed-width-lg btn-203-66 mb-5 ${values.pregnancy === 'pregnant' ? 'btn-primary' : 'btn-outline-primary'}`}
-              onClick={() => handleButtonClick('pregnant')}
+              className={`btn btn-block d-flex align-items-center fixed-width-lg btn-203-66 mb-5 ${values.pregnancy === 'Yes' ? 'btn-primary' : 'btn-outline-primary'}`}
+              onClick={() => handleButtonClick('Yes')}
             >
               <span className='font-size-20 mb-2 text-center'>Yes</span>
             </button>
@@ -42,8 +42,8 @@ const Step15: FC = () => {
           <div className='col d-flex justify-content-center'>
             <button
               type='button'
-              className={`btn btn-block d-flex align-items-center fixed-width-lg btn-203-66 mb-5 ${values.pregnancy === 'notPregnant' ? 'btn-primary' : 'btn-outline-primary'}`}
-              onClick={() => handleButtonClick('notPregnant')}
+              className={`btn btn-block d-flex align-items-center fixed-width-lg btn-203-66 mb-5 ${values.pregnancy === 'No' ? 'btn-primary' : 'btn-outline-primary'}`}
+              onClick={() => handleButtonClick('No')}
             >
               <span className='font-size-20 mb-2 text-center'>No</span>
             </button>

@@ -31,8 +31,8 @@ const Step14: FC = () => {
           <div className='col d-flex justify-content-center'>
             <button
               type='button'
-              className={`btn btn-block d-flex align-items-center fixed-width-lg btn-203-66 mb-5 ${values.gender === 'male' ? 'btn-primary' : 'btn-outline-primary'}`}
-              onClick={() => handleButtonClick('male')}
+              className={`btn btn-block d-flex align-items-center fixed-width-lg btn-203-66 mb-5 ${values.gender === 'Male' ? 'btn-primary' : 'btn-outline-primary'}`}
+              onClick={() => handleButtonClick('Male')}
             >
               <span className='font-size-20 mb-2 text-center'>Male</span>
             </button>
@@ -42,8 +42,8 @@ const Step14: FC = () => {
           <div className='col d-flex justify-content-center'>
             <button
               type='button'
-              className={`btn btn-block d-flex align-items-center fixed-width-lg btn-203-66 mb-5 ${values.gender === 'female' ? 'btn-primary' : 'btn-outline-primary'}`}
-              onClick={() => handleButtonClick('female')}
+              className={`btn btn-block d-flex align-items-center fixed-width-lg btn-203-66 mb-5 ${values.gender === 'Female' ? 'btn-primary' : 'btn-outline-primary'}`}
+              onClick={() => handleButtonClick('Female')}
             >
               <span className='font-size-20 mb-2 text-center'>Female</span>
             </button>

@@ -25,10 +25,10 @@ const Step17: FC = () => {
               type='radio'
               className='btn-check text-center'
               name='skinSensitivity'
-              value='sensitive'
-              checked={values.skinSensitivity === 'sensitive'}
+              value='Yes'
+              checked={values.skinSensitivity === 'Yes'}
               id='kt_create_account_form_skin_sensitive_yes'
-              onChange={() => handleRadioChange('sensitive')}
+              onChange={() => handleRadioChange('Yes')}
             />
             <label
               className='btn btn-block d-flex align-items-center fixed-width-lg-md mb-5 btn-203-66'
@@ -44,10 +44,10 @@ const Step17: FC = () => {
               type='radio'
               className='btn-check text-center'
               name='skinSensitivity'
-              value='notSensitive'
-              checked={values.skinSensitivity === 'notSensitive'}
+              value='No'
+              checked={values.skinSensitivity === 'No'}
               id='kt_create_account_form_skin_sensitive_no'
-              onChange={() => handleRadioChange('notSensitive')}
+              onChange={() => handleRadioChange('No')}
             />
             <label
               className='btn btn-block d-flex align-items-center fixed-width-lg-md mb-5 btn-203-66'
@@ -64,10 +64,10 @@ const Step17: FC = () => {
               type='radio'
               className='btn-check text-center visually-hidden'
               name='skinSensitivity'
-              value='sometimesSensible'
-              checked={values.skinSensitivity === 'sometimesSensible'}
+              value='Sometimes'
+              checked={values.skinSensitivity === 'Sometimes'}
               id='kt_create_account_form_skin_sensitive_sometimes'
-              onChange={() => handleRadioChange('sometimesSensible')}
+              onChange={() => handleRadioChange('Sometimes')}
             />
             <label
               className='btn btn-block d-flex align-items-center fixed-width-lg-md btn-203-66 mb-5'

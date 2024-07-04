@@ -20,7 +20,7 @@ const Step14: FC = () => {
               type='radio'
               className='btn-check text-center'
               name='genderType'
-              value='male'
+              value='Male'
               id='kt_create_account_form_gender_male'
             />
             <label
@@ -41,7 +41,7 @@ const Step14: FC = () => {
               type='radio'
               className='btn-check text-center'
               name='genderType'
-              value='female'
+              value='Female'
               id='kt_create_account_form_gender_female'
             />
             <label

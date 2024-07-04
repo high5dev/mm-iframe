@@ -27,8 +27,8 @@ const Step16: FC = () => {
           <div className='col d-flex justify-content-center'>
             <button
               type='button'
-              className={`btn btn-block d-flex align-items-center fixed-width-xlg mb-5 ${values.skinType === 'dry' ? 'btn-primary' : 'btn-outline-primary'}`}
-              onClick={() => handleButtonClick('dry')}
+              className={`btn btn-block d-flex align-items-center fixed-width-xlg mb-5 ${values.skinType === 'Dry' ? 'btn-primary' : 'btn-outline-primary'}`}
+              onClick={() => handleButtonClick('Dry')}
             >
               <img alt='Logo' src={toAbsoluteUrl('media/skin-types/dry.jpg')} className='h-78px w-82px' />
               <span className='d-flex d-flex align-items-center mr-1 w-100 font-size-20 mb-2 justify-content-center '>Dry Skin</span>
@@ -39,8 +39,8 @@ const Step16: FC = () => {
           <div className='col d-flex justify-content-center'>
             <button
               type='button'
-              className={`btn btn-block d-flex align-items-center fixed-width-xlg mb-5 ${values.skinType === 'normal' ? 'btn-primary' : 'btn-outline-primary'}`}
-              onClick={() => handleButtonClick('normal')}
+              className={`btn btn-block d-flex align-items-center fixed-width-xlg mb-5 ${values.skinType === 'Normal' ? 'btn-primary' : 'btn-outline-primary'}`}
+              onClick={() => handleButtonClick('Normal')}
             >
               <img alt='Logo' src={toAbsoluteUrl('media/skin-types/normal.jpg')} className='h-78px w-82px' />
               <span className='d-flex d-flex align-items-center mr-1 w-100 font-size-20 mb-2 justify-content-center '>Normal Skin</span>

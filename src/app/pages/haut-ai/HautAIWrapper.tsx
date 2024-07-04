@@ -10,8 +10,8 @@ const APIPageToHautAI = () => (
         <h2 className='d-flex align-items-center justify-content-center'>
           Take a selfie
         </h2>
-        {/* <Camera/> */}
-        <TakeASelfie />
+        <Camera/>
+        {/* <TakeASelfie /> */}
       </div>
     </div>
   </Content>
