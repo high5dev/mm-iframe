@@ -2,7 +2,7 @@ import React from 'react'
 import { KTIcon, toAbsoluteUrl } from '../../../_metronic/helpers'
 
 type Props = {
-    productIndex: string
+    productIndex?: string
     productName: string
     whenTouse: string
     price: string
@@ -15,7 +15,7 @@ const CardItem: React.FC<Props> = ({ productIndex, productName, whenTouse, price
         <>
             <span className='d-block font-size-18 ml-18'>{productIndex}</span>
             <div className='item-card mb-5 p-1'>
-                <div className='d-flex'>                    
+                <div className='d-flex'>
                     <div className='symbol symbol-50px me-2'>
                         <img src={imageSrc} className='img-product' />
                     </div>

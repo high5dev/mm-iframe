@@ -47,7 +47,7 @@ const TakeASelfie: FC = () => {
                 const secondaryConcernProduct = res?.secondaryConcernProduct
                 dispatch(setScore({
                     acne: hautScore.acne,
-                    age: hautScore.age,
+                    age: hautScore.perceivedAge,
                     eyeAge: hautScore.eyeAge,
                     eyeBags: hautScore.eyeBags,
                     redness: hautScore.redness,

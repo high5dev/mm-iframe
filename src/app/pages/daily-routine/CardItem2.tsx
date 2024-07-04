@@ -26,7 +26,7 @@ const CardItem2: FC<Props> = ({ productIndex, productName, whenTouse, price, ima
         </div>
         <div className='d-flex justify-content-around'>
           <span className='font-size-10'>Price:₹{price}</span>
-          <a href={productLink} target='_blank' className='add-cart-button2 font-size-10' style={{minWidth: "fit-content"}}>Add to Cart</a>
+          <a href={productLink} target='_blank' className='add-cart-button2 font-size-10 align-items-center text-center' style={{minWidth: "fit-content"}}>Add to Cart</a>
         </div>
       </div>
     </div>

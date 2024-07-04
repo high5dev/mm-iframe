@@ -137,28 +137,37 @@ const SelectDailyRoutinePage = () => {
                                     <CardItem3 imageSrc={treatment2[0].imageUri} productName={treatment2[0].title} concern={secondaryConcernKey}/>
                                 </div>
                             </Carousel>
-
                         </Tab.Pane>
                         <Tab.Pane eventKey="second">
-                            {/* Check if cleanse1[0] exists before accessing its properties */}
                             {cleanse1[0] && (
                                 <CardItem productIndex='Step 1: Cleanse' imageSrc={cleanse1[0].imageUri} productName={cleanse1[0].title} whenTouse={cleanse1[0].whenToUse} price={cleanse1[0].price} productLink={`https://global.beminimalist.co/products/${cleanse1[0].handle}`}/>
                             )}
-                            {/* Check if toner1[0] exists before accessing its properties */}
+                            {cleanse2[0] && (
+                                <CardItem imageSrc={cleanse2[0].imageUri} productName={cleanse2[0].title} whenTouse={cleanse2[0].whenToUse} price={cleanse2[0].price} productLink={`https://global.beminimalist.co/products/${cleanse2[0].handle}`}/>
+                            )}
                             {toner1[0] && (
                                 <CardItem productIndex='Step 2: Tone' imageSrc={toner1[0].imageUri} productName={toner1[0].title} whenTouse={toner1[0].whenToUse} price={toner1[0].price} productLink={`https://global.beminimalist.co/products/${toner1[0].handle}`}/>
                             )}
-                            {/* Check if mustHave1[0] exists before accessing its properties */}
+                            {toner2[0] && (
+                                <CardItem imageSrc={toner2[0].imageUri} productName={toner2[0].title} whenTouse={toner2[0].whenToUse} price={toner2[0].price} productLink={`https://global.beminimalist.co/products/${toner2[0].handle}`}/>
+                            )}
                             {treatment1[0] && (
                                 <CardItem productIndex='Step 3: Treatment' imageSrc={treatment1[0].imageUri} productName={treatment1[0].title} whenTouse={treatment1[0].whenToUse} price={treatment1[0].price} productLink={`https://global.beminimalist.co/products/${treatment1[0].handle}`}/>
                             )}
-                            {/* Check if moisturize1[0] exists before accessing its properties */}
+                            {treatment2[0] && (
+                                <CardItem imageSrc={treatment2[0].imageUri} productName={treatment2[0].title} whenTouse={treatment2[0].whenToUse} price={treatment2[0].price} productLink={`https://global.beminimalist.co/products/${treatment2[0].handle}`}/>
+                            )}
                             {moisturize1[0] && (
                                 <CardItem productIndex='Step 4: Moisturize' imageSrc={moisturize1[0].imageUri} productName={moisturize1[0].title} whenTouse={moisturize1[0].whenToUse} price={moisturize1[0].price} productLink={`https://global.beminimalist.co/products/${moisturize1[0].handle}`}/>
                             )}
-                            {/* Check if spf1[0] exists before accessing its properties */}
+                            {moisturize2[0] && (
+                                <CardItem imageSrc={moisturize2[0].imageUri} productName={moisturize2[0].title} whenTouse={moisturize2[0].whenToUse} price={moisturize2[0].price} productLink={`https://global.beminimalist.co/products/${moisturize2[0].handle}`}/>
+                            )}
                             {spf1[0] && (
                                 <CardItem productIndex='Step 5: SPF' imageSrc={spf1[0].imageUri} productName={spf1[0].title} whenTouse={spf1[0].whenToUse} price={spf1[0].price} productLink={`https://global.beminimalist.co/products/${spf1[0].handle}`}/>
+                            )}
+                            {spf2[0] && (
+                                <CardItem imageSrc={spf2[0].imageUri} productName={spf2[0].title} whenTouse={spf2[0].whenToUse} price={spf2[0].price} productLink={`https://global.beminimalist.co/products/${spf2[0].handle}`}/>
                             )}
                         </Tab.Pane>
                     </Tab.Content>
