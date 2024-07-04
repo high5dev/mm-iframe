@@ -6,16 +6,17 @@ type Props = {
     productName: string
     whenTouse: string
     price: string
+    imageSrc: string
 }
 
-const CardItem: React.FC<Props> = ({ productIndex, productName, whenTouse, price }) => {
+const CardItem: React.FC<Props> = ({ productIndex, productName, whenTouse, price, imageSrc }) => {
     return (
         <>
             <span className='d-block font-size-18 ml-18'>{productIndex}</span>
             <div className='item-card mb-5 p-1'>
                 <div className='d-flex'>                    
                     <div className='symbol symbol-50px me-2'>
-                        <img src={toAbsoluteUrl('media/avatars/300-6.jpg')} className='img-product' />
+                        <img src={imageSrc} className='img-product' />
                     </div>
                     <div className='font-size-14 w-100 d-flex row'>
                         <div>

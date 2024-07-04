@@ -11,8 +11,9 @@ interface ScoreState {
     pores: string
     redness: string
     skinTone: string
-    translucency: string
     uniformness: string
+    primaryConcern: any
+    secondaryConcern: any
 }
 
 const initialState: ScoreState = {
@@ -26,8 +27,9 @@ const initialState: ScoreState = {
     pores: '',
     redness: '',
     skinTone: '',
-    translucency: '',
-    uniformness: ''
+    uniformness: '',
+    primaryConcern: null,
+    secondaryConcern: null
 };
 
 const ScoreSlice = createSlice({
@@ -45,8 +47,9 @@ const ScoreSlice = createSlice({
         state.pores = action.payload.pores;
         state.redness = action.payload.redness;
         state.skinTone = action.payload.skinTone;
-        state.translucency = action.payload.translucency;
         state.uniformness = action.payload.uniformness;
+        state.primaryConcern = action.payload.primaryConcern
+        state.secondaryConcern = action.payload.secondaryConcern
       },
       clearScore(state) {
         state.acne = '';
@@ -59,8 +62,9 @@ const ScoreSlice = createSlice({
         state.pores = '';
         state.redness = '';
         state.skinTone = '';
-        state.translucency = '';
         state.uniformness = '';
+        state.primaryConcern = null;
+        state.secondaryConcern = null;
       },
     },
   });

@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import { PageTitle } from '../../../_metronic/layout/core'
 import { RoutineModel } from './RoutineModels'
 import clsx from 'clsx'
-import { useState } from 'react'
+import { useEffect } from 'react'
 import { toAbsoluteUrl } from '../../../_metronic/helpers/AssetHelpers'
 import './styles.scss';
 import { CardItem } from './CardItem'
@@ -12,11 +12,44 @@ import { CardItem2 } from './CardItem2'
 import { CardItem3 } from './CardItem3'
 import { Nav } from 'react-bootstrap'
 import { Tab } from 'react-bootstrap'
+import { useSelector } from 'react-redux';
+import { RootState } from "../../store/store"
 
 
 const SelectDailyRoutinePage = () => {
+    const product = useSelector((state: RootState) => state.product);
+    const concern = useSelector((state : RootState) => state.score)
+    const customer = useSelector((state: RootState) => state.user);
+
+    const mustHave1 = product?.primaryConcernProduct?.Treatment || [];
+    const mustHave2 = product?.secondaryConcernProduct?.Treatment || [];
+
+    const cleanse1 = product?.primaryConcernProduct?.Cleanser || [];
+    const cleanse2 = product?.secondaryConcernProduct?.Cleanser || [];
+    const toner1 = product?.primaryConcernProduct?.Toner || [];
+    const toner2 = product?.secondaryConcernProduct?.Toner || [];
+    const moisturize1 = product?.primaryConcernProduct?.Moisturizer || [];
+    const moisturize2 = product?.secondaryConcernProduct?.Moisturizer || [];
+    const spf1 = product?.primaryConcernProduct?.Sunscreen || [];
+    const spf2 = product?.secondaryConcernProduct?.Sunscreen || [];
+
+    
+
+    const getConcernKeyValue = (concern: Record<string, number>): [string, number] => {
+        const key = Object.keys(concern)[0];
+        const value = concern[key];
+        return [key, value];
+    };
+
+    const [primaryConcernKey, primaryConcernValue] = getConcernKeyValue(concern.primaryConcern);
+    const [secondaryConcernKey, secondaryConcernValue] = getConcernKeyValue(concern.secondaryConcern);
 
     const navigate = useNavigate();
+
+    useEffect(()=> {
+        console.log(mustHave1[0])
+        console.log(mustHave2[0])
+    })
 
     const handleBack = () => {
         navigate('/skin-analysis', { replace: true });
@@ -36,9 +69,9 @@ const SelectDailyRoutinePage = () => {
             </div>
             <div className='d-flex flex-wrap flex-stack mb-6'>
                 <div className='my-2 font-size-14 font-weight-400'>
-                    Hi, customer
+                    Hi, {customer.name}
                 </div>
-                <span className='font-size-14 ms-1 font-weight-400'>Based on your Primary 2 concerns (concern 1 & concern 2), AI has picked the best daily routine for you.</span>
+                <span className='font-size-14 ms-1 font-weight-400'>Based on your Primary 2 concerns ({primaryConcernKey} & {secondaryConcernKey}), AI has picked the best daily routine for you.</span>
             </div>
             <div>
                 <Tab.Container id="left-tabs-example" defaultActiveKey="first">
@@ -46,25 +79,25 @@ const SelectDailyRoutinePage = () => {
                     <div className='d-flex justify-content-center '>
                         <Nav variant="pills" className="d-flex border-primary border" justify style={{ width: "max-content" }}>
                             <Nav.Item className='mx-0 font-size-16'>
-                                <Nav.Link eventKey="first">Essentials</Nav.Link>
+                                <Nav.Link eventKey="first">Must&nbsp;Have</Nav.Link>
                             </Nav.Item>
                             <Nav.Item className='mx-0 font-size-16'>
-                                <Nav.Link eventKey="second">Boosters</Nav.Link>
+                                <Nav.Link eventKey="second">Essentials</Nav.Link>
                             </Nav.Item>
                         </Nav>
                     </div>
                     <Tab.Content>
                         <Tab.Pane eventKey="first">
-                            <CardItem productIndex='Product 1' productName='item1' whenTouse='22:60 AM' price='$1.5' />
-                            <CardItem productIndex='Product 2' productName='item2' whenTouse='22:60 AM' price='$1.7' />
+                            <CardItem productIndex='Product 1' imageSrc={mustHave1[0].imageUri} productName={mustHave1[0].title} whenTouse='22:60 AM' price='₹1.5' />
+                            <CardItem productIndex='Product 2' imageSrc={mustHave2[0].imageUri} productName={mustHave2[0].title} whenTouse='22:60 AM' price='₹1.7' />
                             <CardItem3 className='' />
                         </Tab.Pane>
                         <Tab.Pane eventKey="second">
-                            <CardItem productIndex='Step 1' productName='item1' whenTouse='22:60 AM' price='$1.5' />
-                            <CardItem productIndex='Step 2' productName='item2' whenTouse='23:60 AM' price='$1.7' />
-                            <CardItem productIndex='Step 3' productName='item3' whenTouse='00:60 AM' price='$1.9' />
-                            <CardItem productIndex='Step 4' productName='item4' whenTouse='03:60 AM' price='$2.3' />
-                            <CardItem productIndex='Step 5' productName='item5' whenTouse='06:60 AM' price='$2.5' />
+                            <CardItem productIndex='Step 1: Cleanse' imageSrc={cleanse1[0].imageUri} productName={cleanse1[0].title} whenTouse='22:60 AM' price='₹1.5' />
+                            <CardItem productIndex='Step 2: Tone' imageSrc={toner1[0].imageUri} productName={toner1[0].title} whenTouse='23:60 AM' price='₹1.7' />
+                            <CardItem productIndex='Step 3: Treatment' imageSrc={mustHave1[0].imageUri} productName={mustHave1[0].title} whenTouse='00:60 AM' price='₹1.9' />
+                            <CardItem productIndex='Step 4: Moisturize' imageSrc={moisturize1[0].imageUri} productName={moisturize1[0].title} whenTouse='03:60 AM' price='₹2.3' />
+                            <CardItem productIndex='Step 5: SPF' imageSrc={spf1[0].imageUri} productName={spf1[0].title} whenTouse='06:60 AM' price='₹2.5' />
                         </Tab.Pane>
                     </Tab.Content>
                 </Tab.Container>
@@ -73,10 +106,10 @@ const SelectDailyRoutinePage = () => {
                 <span className='d-flex justify-content-center text-center font-size-18'>You may also like</span>
                 <div className='row'>
                     <div className='col py-8 rounded-2  mb-7 mr-1'>
-                        <CardItem2 className='' />
+                        <CardItem2 imageSrc={toner1[0].imageUri} productName={toner1[0].title} whenTouse='23:60 AM' price='₹1.7' />
                     </div>
                     <div className='col py-8 rounded-2  mb-7 ml-1'>
-                        <CardItem2 className='' />
+                        <CardItem2 imageSrc={toner1[0].imageUri} productName={toner1[0].title} whenTouse='23:60 AM' price='₹1.7'  />
                     </div>
                 </div>
             </div>

@@ -11,6 +11,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { RootState } from "../../store/store"
 import { setScore } from '../../store/slices/scoreSlice';
 import { setUser } from '../../store/slices/custermInfoSlice';
+import { setProduct } from '../../store/slices/productSlice';
 import './styles.scss'
 
 const videoConstraints = {
@@ -49,6 +50,8 @@ const Camera: FC = () => {
             try {
                 const res = await sendImgToHaut(imgSrc, customer);
                 const hautScore = res?.haut[0];
+                const primaryConcernProduct = res?.primaryConcernProduct
+                const secondaryConcernProduct = res?.secondaryConcernProduct
                 dispatch(setScore({
                     acne: hautScore.acne,
                     age: hautScore.age,
@@ -61,7 +64,8 @@ const Camera: FC = () => {
                     pigmentation: hautScore.pigmentation,
                     lines: hautScore.lines,
                     pores: hautScore.pores,
-                    translucency: hautScore.translucency
+                    primaryConcern: hautScore.lowestMetric,
+                    secondaryConcern: hautScore.secondLowestMetric
                 }));
                 dispatch(setUser({
                     name: res?.name,
@@ -72,6 +76,10 @@ const Camera: FC = () => {
                     skinType: res?.skinType,
                     skinSensitivity: res?.skinSensitivity,
                     imageURL: res?.imageUri
+                }));
+                dispatch(setProduct({
+                    primaryConcernProduct: primaryConcernProduct,
+                    secondaryConcernProduct: secondaryConcernProduct
                 }));
                 navigate('/skin-analysis', { replace: true });
             } catch (error) {

@@ -6,8 +6,14 @@ import './styles.scss'
 import { ImageContainer2 } from './ImageContainer2'
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
-import { useSelector, useDispatch } from 'react-redux';
-import { RootState } from "../../store/store"
+import { useSelector } from 'react-redux';
+import { RootState } from "../../store/store";
+import Table from '@mui/material/Table';
+import TableContainer from '@mui/material/TableContainer';
+import TableBody from '@mui/material/TableBody';
+import TableCell from '@mui/material/TableCell';
+import TableRow from '@mui/material/TableRow';
+import Paper from '@mui/material/Paper';
 
 const responsive = {
     desktop: {
@@ -45,6 +51,15 @@ const SkinAnalysisWrapper = () => {
         navigate('/daily-routine', { replace: true });
     };
 
+    const getConcernKeyValue = (concern: Record<string, number>): [string, number] => {
+        const key = Object.keys(concern)[0];
+        const value = concern[key];
+        return [key, value];
+    };
+
+    const [primaryConcernKey, primaryConcernValue] = getConcernKeyValue(score.primaryConcern);
+    const [secondaryConcernKey, secondaryConcernValue] = getConcernKeyValue(score.secondaryConcern);
+
     const intl = useIntl()
     return (
         <>
@@ -57,12 +72,22 @@ const SkinAnalysisWrapper = () => {
                 </div>
             </div>
             <div className=''>
-                <div className='card-319-90 d-flex'>
-                    <div className='row align-items-center justify-content-center font-size-18 px-7'>
-                        <span>Age: {score.age}</span>
-                        <span>Eyes Age: {score.skinTone}</span>
-                        <span>Skin tone:{score.eyeAge}</span>
-                    </div>
+                <div className='d-flex'>
+                    <TableContainer component={Paper}>
+                        <Table style={{ width: '100%' }}>
+                            <TableBody>
+                                <TableRow>
+                                    <TableCell align="center" sx={{ border: 1, borderColor: 'grey.500', textAlign: 'center', fontWeight: 'bold', width: '33%' }}>{score.eyeAge}<br /><span style={{ fontWeight: 'normal' }}>Eye Age</span></TableCell>
+                                    <TableCell align="center" sx={{ border: 1, borderColor: 'grey.500', textAlign: 'center', fontWeight: 'bold', width: '33%' }}>{score.age}<br /><span style={{ fontWeight: 'normal' }}>Perceived Age</span></TableCell>
+                                    <TableCell align="center" sx={{ border: 1, borderColor: 'grey.500', textAlign: 'center', fontWeight: 'bold', width: '33%' }}>{score.skinTone}<br /><span style={{ fontWeight: 'normal' }}>Skintone</span></TableCell>
+                                </TableRow>
+                                <TableRow>
+                                    <TableCell sx={{ border: 1, borderColor: 'grey.500', textAlign: 'center', fontWeight: 'bold', width: '50%' }}>{primaryConcernKey}<br />Primary Concern</TableCell>
+                                    <TableCell sx={{ border: 1, borderColor: 'grey.500', textAlign: 'center', fontWeight: 'bold', width: '50%' }}>{secondaryConcernKey}<br />Secondary Concern</TableCell>
+                                </TableRow>
+                            </TableBody>
+                        </Table>
+                    </TableContainer>
                 </div>
             </div>
             <div className=''>
@@ -91,26 +116,23 @@ const SkinAnalysisWrapper = () => {
                             <ImageContainer2 imageURL={customer?.imageURL} score={score.acne} name='Acne' />
                         </div >
                         <div className=''>
+                            <ImageContainer2 imageURL={customer?.imageURL} score={score.pigmentation} name='Pigmentation' />
+                        </div>
+                        <div className=''>
                             <ImageContainer2 imageURL={customer?.imageURL} score={score.hydration} name='Hydration' />
                         </div>
                         <div className=''>
                             <ImageContainer2 imageURL={customer?.imageURL} score={score.lines} name='Lines' />
                         </div>
                         <div className=''>
-                            <ImageContainer2 imageURL={customer?.imageURL} score={score.eyeBags} name='Eye bags' />
+                            <ImageContainer2 imageURL={customer?.imageURL} score={score.eyeBags} name='Dark Circles' />
                         </div >
-                        <div className=''>
-                            <ImageContainer2 imageURL={customer?.imageURL} score={score.pigmentation} name='Pigmentation' />
-                        </div>
                         <div className=''>
                             <ImageContainer2 imageURL={customer?.imageURL} score={score.pores} name='Pores' />
                         </div>
                         <div className=''>
                             <ImageContainer2 imageURL={customer?.imageURL} score={score.redness} name='Redness' />
                         </div >
-                        <div className=''>
-                            <ImageContainer2 imageURL={customer?.imageURL} score={score.translucency} name='Translucency' />
-                        </div>
                         <div className=''>
                             <ImageContainer2 imageURL={customer?.imageURL} score={score.uniformness} name='Uniformness' />
                         </div>
