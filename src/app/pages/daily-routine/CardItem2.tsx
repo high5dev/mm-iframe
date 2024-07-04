@@ -24,7 +24,7 @@ const CardItem2: FC<Props> = ({ productIndex, productName, whenTouse, price, ima
           Small descriptions will be appeared here
         </div>
         <div className='d-flex justify-content-around'>
-          <span className='font-size-10'>Price: {price}</span>
+          <span className='font-size-10'>Price:₹{price}</span>
           <button className='add-cart-button2 font-size-10 ' style={{minWidth: "fit-content"}}>Add to Cart</button>
         </div>
       </div>

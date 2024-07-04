@@ -6,6 +6,8 @@ interface Product {
     productType: string;
     handle: string;
     status: string;
+    whenToUse: string;
+    price: string;
 }
 
 interface productState {

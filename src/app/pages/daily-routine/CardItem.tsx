@@ -26,7 +26,7 @@ const CardItem: React.FC<Props> = ({ productIndex, productName, whenTouse, price
                             <span className='d-block'>When to use: {whenTouse}</span>
                         </div>
                         <div className='row d-flex align-items-center align-self-end'>
-                            <div className='d-block' style={{maxWidth: "fit-content"}}>Price: {price}</div>
+                            <div className='d-block' style={{maxWidth: "fit-content"}}>Price: ₹{price}</div>
                             <button className='add-cart-button rounded-10 align-items-center pt-0 px-50' style={{minWidth: "fit-content"}}>Add to Cart</button>
                         </div>
                     </div>
