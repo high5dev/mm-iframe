@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 // import { CardItem } from '../../../_metronic/partials/content/cards/CardItem'
 import { PageTitle } from '../../../_metronic/layout/core'
 import { RoutineModel } from './RoutineModels'
+import Carousel from "react-multi-carousel";
 import clsx from 'clsx'
 import { useEffect } from 'react'
 import { toAbsoluteUrl } from '../../../_metronic/helpers/AssetHelpers'
@@ -16,13 +17,34 @@ import { useSelector } from 'react-redux';
 import { RootState } from "../../store/store"
 
 
+const responsive = {
+    desktop: {
+        breakpoint: { max: 3000, min: 1024 },
+        items: 3,
+        slidesToSlide: 3, // optional, default to 1.,
+        partialVisibilityGutter: 40
+    },
+    tablet: {
+        breakpoint: { max: 1024, min: 464 },
+        items: 2,
+        slidesToSlide: 2,
+        partialVisibilityGutter: 40 // optional, default to 1.
+    },
+    mobile: {
+        breakpoint: { max: 464, min: 0 },
+        items: 1,
+        slidesToSlide: 1,
+        partialVisibilityGutter: 40 // optional, default to 1.
+    }
+};
+
 const SelectDailyRoutinePage = () => {
     const product = useSelector((state: RootState) => state.product);
-    const concern = useSelector((state : RootState) => state.score)
+    const concern = useSelector((state: RootState) => state.score)
     const customer = useSelector((state: RootState) => state.user);
 
-    const mustHave1 = product?.primaryConcernProduct?.Treatment || [];
-    const mustHave2 = product?.secondaryConcernProduct?.Treatment || [];
+    const treatment1 = product?.primaryConcernProduct?.Treatment || [];
+    const treatment2 = product?.secondaryConcernProduct?.Treatment || [];
 
     const cleanse1 = product?.primaryConcernProduct?.Cleanser || [];
     const cleanse2 = product?.secondaryConcernProduct?.Cleanser || [];
@@ -33,7 +55,7 @@ const SelectDailyRoutinePage = () => {
     const spf1 = product?.primaryConcernProduct?.Sunscreen || [];
     const spf2 = product?.secondaryConcernProduct?.Sunscreen || [];
 
-    
+
 
     const getConcernKeyValue = (concern: Record<string, number>): [string, number] => {
         const key = Object.keys(concern)[0];
@@ -46,9 +68,9 @@ const SelectDailyRoutinePage = () => {
 
     const navigate = useNavigate();
 
-    useEffect(()=> {
-        console.log(mustHave1[0])
-        console.log(mustHave2[0])
+    useEffect(() => {
+        console.log(treatment1[0])
+        console.log(treatment2[0])
     })
 
     const handleBack = () => {
@@ -88,16 +110,56 @@ const SelectDailyRoutinePage = () => {
                     </div>
                     <Tab.Content>
                         <Tab.Pane eventKey="first">
-                            <CardItem productIndex='Product 1' imageSrc={mustHave1[0].imageUri} productName={mustHave1[0].title} whenTouse='22:60 AM' price='₹1.5' />
-                            <CardItem productIndex='Product 2' imageSrc={mustHave2[0].imageUri} productName={mustHave2[0].title} whenTouse='22:60 AM' price='₹1.7' />
-                            <CardItem3 className='' />
+                            <CardItem productIndex='Product 1' imageSrc={treatment1[0].imageUri} productName={treatment1[0].title} whenTouse='22:60 AM' price='₹1.5' />
+                            <CardItem productIndex='Product 2' imageSrc={treatment2[0].imageUri} productName={treatment2[0].title} whenTouse='22:60 AM' price='₹1.7' />
+                            <Carousel
+                                swipeable={true}
+                                showDots={true}
+                                centerMode={false}
+                                responsive={responsive}
+                                focusOnSelect
+                                infinite={true}
+                                autoPlay={false}
+                                autoPlaySpeed={10000}
+                                keyBoardControl={true}
+                                customTransition="all .5"
+                                transitionDuration={500}
+                                containerClass="carousel-container"
+                                removeArrowOnDeviceType={["tablet", "mobile"]}
+                                dotListClass="custom-dot-list-style"
+                                rewind={true}
+                                itemClass="carousel-item-padding-10-px"
+                            >
+                                <div className=''>
+                                    <CardItem3 imageSrc={treatment2[0].imageUri} productName={treatment2[0].title} concern={primaryConcernKey}/>
+                                </div >
+                                <div className=''>
+                                    <CardItem3 imageSrc={treatment2[0].imageUri} productName={treatment2[0].title} concern={secondaryConcernKey}/>
+                                </div>
+                            </Carousel>
+
                         </Tab.Pane>
                         <Tab.Pane eventKey="second">
-                            <CardItem productIndex='Step 1: Cleanse' imageSrc={cleanse1[0].imageUri} productName={cleanse1[0].title} whenTouse='22:60 AM' price='₹1.5' />
-                            <CardItem productIndex='Step 2: Tone' imageSrc={toner1[0].imageUri} productName={toner1[0].title} whenTouse='23:60 AM' price='₹1.7' />
-                            <CardItem productIndex='Step 3: Treatment' imageSrc={mustHave1[0].imageUri} productName={mustHave1[0].title} whenTouse='00:60 AM' price='₹1.9' />
-                            <CardItem productIndex='Step 4: Moisturize' imageSrc={moisturize1[0].imageUri} productName={moisturize1[0].title} whenTouse='03:60 AM' price='₹2.3' />
-                            <CardItem productIndex='Step 5: SPF' imageSrc={spf1[0].imageUri} productName={spf1[0].title} whenTouse='06:60 AM' price='₹2.5' />
+                            {/* Check if cleanse1[0] exists before accessing its properties */}
+                            {cleanse1[0] && (
+                                <CardItem productIndex='Step 1: Cleanse' imageSrc={cleanse1[0].imageUri} productName={cleanse1[0].title} whenTouse='22:60 AM' price='₹1.5' />
+                            )}
+                            {/* Check if toner1[0] exists before accessing its properties */}
+                            {toner1[0] && (
+                                <CardItem productIndex='Step 2: Tone' imageSrc={toner1[0].imageUri} productName={toner1[0].title} whenTouse='23:60 AM' price='₹1.7' />
+                            )}
+                            {/* Check if mustHave1[0] exists before accessing its properties */}
+                            {treatment1[0] && (
+                                <CardItem productIndex='Step 3: Treatment' imageSrc={treatment1[0].imageUri} productName={treatment1[0].title} whenTouse='00:60 AM' price='₹1.9' />
+                            )}
+                            {/* Check if moisturize1[0] exists before accessing its properties */}
+                            {moisturize1[0] && (
+                                <CardItem productIndex='Step 4: Moisturize' imageSrc={moisturize1[0].imageUri} productName={moisturize1[0].title} whenTouse='03:60 AM' price='₹2.3' />
+                            )}
+                            {/* Check if spf1[0] exists before accessing its properties */}
+                            {spf1[0] && (
+                                <CardItem productIndex='Step 5: SPF' imageSrc={spf1[0].imageUri} productName={spf1[0].title} whenTouse='06:60 AM' price='₹2.5' />
+                            )}
                         </Tab.Pane>
                     </Tab.Content>
                 </Tab.Container>
@@ -109,7 +171,7 @@ const SelectDailyRoutinePage = () => {
                         <CardItem2 imageSrc={toner1[0].imageUri} productName={toner1[0].title} whenTouse='23:60 AM' price='₹1.7' />
                     </div>
                     <div className='col py-8 rounded-2  mb-7 ml-1'>
-                        <CardItem2 imageSrc={toner1[0].imageUri} productName={toner1[0].title} whenTouse='23:60 AM' price='₹1.7'  />
+                        <CardItem2 imageSrc={toner1[0].imageUri} productName={toner1[0].title} whenTouse='23:60 AM' price='₹1.7' />
                     </div>
                 </div>
             </div>
