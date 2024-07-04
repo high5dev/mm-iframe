@@ -7,9 +7,10 @@ type Props = {
     whenTouse: string
     price: string
     imageSrc: string
+    productLink: string
 }
 
-const CardItem: React.FC<Props> = ({ productIndex, productName, whenTouse, price, imageSrc }) => {
+const CardItem: React.FC<Props> = ({ productIndex, productName, whenTouse, price, imageSrc, productLink }) => {
     return (
         <>
             <span className='d-block font-size-18 ml-18'>{productIndex}</span>
@@ -27,7 +28,7 @@ const CardItem: React.FC<Props> = ({ productIndex, productName, whenTouse, price
                         </div>
                         <div className='row d-flex align-items-center align-self-end'>
                             <div className='d-block' style={{maxWidth: "fit-content"}}>Price: ₹{price}</div>
-                            <button className='add-cart-button rounded-10 align-items-center pt-0 px-50' style={{minWidth: "fit-content"}}>Add to Cart</button>
+                            <a href={productLink} target='_blank' className='add-cart-button rounded-10 align-items-center pt-0 px-50' style={{minWidth: "fit-content"}}>Add to Cart</a>
                         </div>
                     </div>
                 </div>

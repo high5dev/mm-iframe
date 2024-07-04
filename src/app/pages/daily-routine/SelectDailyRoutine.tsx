@@ -110,8 +110,8 @@ const SelectDailyRoutinePage = () => {
                     </div>
                     <Tab.Content>
                         <Tab.Pane eventKey="first">
-                            <CardItem productIndex='Product 1' imageSrc={treatment1[0].imageUri} productName={treatment1[0].title} whenTouse={treatment1[0].whenToUse} price={treatment1[0].price} />
-                            <CardItem productIndex='Product 2' imageSrc={treatment2[0].imageUri} productName={treatment2[0].title} whenTouse={treatment2[0].whenToUse} price={treatment2[0].price} />
+                            <CardItem productIndex='Product 1' imageSrc={treatment1[0].imageUri} productName={treatment1[0].title} whenTouse={treatment1[0].whenToUse} price={treatment1[0].price} productLink={`https://global.beminimalist.co/products/${treatment1[0].handle}`} />
+                            <CardItem productIndex='Product 2' imageSrc={treatment2[0].imageUri} productName={treatment2[0].title} whenTouse={treatment2[0].whenToUse} price={treatment2[0].price} productLink={`https://global.beminimalist.co/products/${treatment2[0].handle}`}/>
                             <Carousel
                                 swipeable={true}
                                 showDots={true}
@@ -142,23 +142,23 @@ const SelectDailyRoutinePage = () => {
                         <Tab.Pane eventKey="second">
                             {/* Check if cleanse1[0] exists before accessing its properties */}
                             {cleanse1[0] && (
-                                <CardItem productIndex='Step 1: Cleanse' imageSrc={cleanse1[0].imageUri} productName={cleanse1[0].title} whenTouse={cleanse1[0].whenToUse} price={cleanse1[0].price} />
+                                <CardItem productIndex='Step 1: Cleanse' imageSrc={cleanse1[0].imageUri} productName={cleanse1[0].title} whenTouse={cleanse1[0].whenToUse} price={cleanse1[0].price} productLink={`https://global.beminimalist.co/products/${cleanse1[0].handle}`}/>
                             )}
                             {/* Check if toner1[0] exists before accessing its properties */}
                             {toner1[0] && (
-                                <CardItem productIndex='Step 2: Tone' imageSrc={toner1[0].imageUri} productName={toner1[0].title} whenTouse={toner1[0].whenToUse} price={toner1[0].price} />
+                                <CardItem productIndex='Step 2: Tone' imageSrc={toner1[0].imageUri} productName={toner1[0].title} whenTouse={toner1[0].whenToUse} price={toner1[0].price} productLink={`https://global.beminimalist.co/products/${toner1[0].handle}`}/>
                             )}
                             {/* Check if mustHave1[0] exists before accessing its properties */}
                             {treatment1[0] && (
-                                <CardItem productIndex='Step 3: Treatment' imageSrc={treatment1[0].imageUri} productName={treatment1[0].title} whenTouse={treatment1[0].whenToUse} price={treatment1[0].price} />
+                                <CardItem productIndex='Step 3: Treatment' imageSrc={treatment1[0].imageUri} productName={treatment1[0].title} whenTouse={treatment1[0].whenToUse} price={treatment1[0].price} productLink={`https://global.beminimalist.co/products/${treatment1[0].handle}`}/>
                             )}
                             {/* Check if moisturize1[0] exists before accessing its properties */}
                             {moisturize1[0] && (
-                                <CardItem productIndex='Step 4: Moisturize' imageSrc={moisturize1[0].imageUri} productName={moisturize1[0].title} whenTouse={moisturize1[0].whenToUse} price={moisturize1[0].price} />
+                                <CardItem productIndex='Step 4: Moisturize' imageSrc={moisturize1[0].imageUri} productName={moisturize1[0].title} whenTouse={moisturize1[0].whenToUse} price={moisturize1[0].price} productLink={`https://global.beminimalist.co/products/${moisturize1[0].handle}`}/>
                             )}
                             {/* Check if spf1[0] exists before accessing its properties */}
                             {spf1[0] && (
-                                <CardItem productIndex='Step 5: SPF' imageSrc={spf1[0].imageUri} productName={spf1[0].title} whenTouse={spf1[0].whenToUse} price={spf1[0].price} />
+                                <CardItem productIndex='Step 5: SPF' imageSrc={spf1[0].imageUri} productName={spf1[0].title} whenTouse={spf1[0].whenToUse} price={spf1[0].price} productLink={`https://global.beminimalist.co/products/${spf1[0].handle}`}/>
                             )}
                         </Tab.Pane>
                     </Tab.Content>
@@ -168,10 +168,10 @@ const SelectDailyRoutinePage = () => {
                 <span className='d-flex justify-content-center text-center font-size-18'>You may also like</span>
                 <div className='row'>
                     <div className='col py-8 rounded-2  mb-7 mr-1'>
-                        <CardItem2 imageSrc={toner1[0].imageUri} productName={toner1[0].title} whenTouse={toner1[0].whenToUse} price={toner1[0].price} />
+                        <CardItem2 imageSrc={toner1[0].imageUri} productName={toner1[0].title} whenTouse={toner1[0].whenToUse} price={toner1[0].price} productLink={`https://global.beminimalist.co/products/${toner1[0].handle}`}/>
                     </div>
                     <div className='col py-8 rounded-2  mb-7 ml-1'>
-                        <CardItem2 imageSrc={cleanse2[0].imageUri} productName={cleanse2[0].title} whenTouse={cleanse2[0].whenToUse} price={cleanse2[0].price} />
+                        <CardItem2 imageSrc={cleanse2[0].imageUri} productName={cleanse2[0].title} whenTouse={cleanse2[0].whenToUse} price={cleanse2[0].price} productLink={`https://global.beminimalist.co/products/${cleanse2[0].handle}`}/>
                     </div>
                 </div>
             </div>

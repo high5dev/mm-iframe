@@ -8,9 +8,10 @@ type Props = {
   whenTouse?: string
   price: string
   imageSrc: string
+  productLink: string
 }
 
-const CardItem2: FC<Props> = ({ productIndex, productName, whenTouse, price, imageSrc }) => {
+const CardItem2: FC<Props> = ({ productIndex, productName, whenTouse, price, imageSrc, productLink }) => {
   return (
     <div className='pb-0 gray-background rounded-0'>
       <div className='mb-5'>        
@@ -25,7 +26,7 @@ const CardItem2: FC<Props> = ({ productIndex, productName, whenTouse, price, ima
         </div>
         <div className='d-flex justify-content-around'>
           <span className='font-size-10'>Price:₹{price}</span>
-          <button className='add-cart-button2 font-size-10 ' style={{minWidth: "fit-content"}}>Add to Cart</button>
+          <a href={productLink} target='_blank' className='add-cart-button2 font-size-10' style={{minWidth: "fit-content"}}>Add to Cart</a>
         </div>
       </div>
     </div>
