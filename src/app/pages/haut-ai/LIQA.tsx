@@ -37,11 +37,11 @@ const TakeASelfie: FC = () => {
         }, [setImgSrc]
     )
 
-    const sendImage = async () => {
-        if (imgSrc !== null && customer.email !== '') {
+    const sendImage = async (base64: string) => {
+        if (base64 !== null && customer.email !== '') {
             setIsSending(true);
             try {
-                const res = await sendImgToHaut(imgSrc, customer);
+                const res = await sendImgToHaut(base64, customer);
                 const hautScore = res?.haut[0];
                 const primaryConcernProduct = res?.primaryConcernProduct
                 const secondaryConcernProduct = res?.secondaryConcernProduct
@@ -95,6 +95,7 @@ const TakeASelfie: FC = () => {
             setTimeout(() => {
                 if (base64) {
                     setImgSrc(base64);
+                    sendImage(base64)
                 }
             }, 100);
         };
@@ -108,38 +109,13 @@ const TakeASelfie: FC = () => {
                 liqaElement.removeEventListener('capture', takeASelfie);
             }
         };
-    }, []);
+    }, [customer.email]);
 
     return (
         <>
-            {!imgSrc ? (
-                <div className="mt-20">
-                    <hautai-liqa ref={webcamRef} license="eyJpZCI6IkhFS04tOTA1Mi0wIn0="></hautai-liqa>
-                </div>) : (
-                <>
-                    <img src={imgSrc} alt="Selfie"
-                        className='mb-20 mt-20' />
-                    <Tooltip title="Retake">
-                        <IconButton aria-label="delete" size="large" onClick={recapture} >
-                            <CameraswitchIcon fontSize="large" />
-                        </IconButton>
-                    </Tooltip>
-                    <Tooltip title="Send">
-                        <IconButton
-                            aria-label="send"
-                            size="large"
-                            onClick={sendImage}
-                            disabled={isSending}
-                        >
-                            {isSending ? (
-                                <div className="spinner"></div>
-                            ) : (
-                                <SendIcon fontSize="large" />
-                            )}
-                        </IconButton>
-                    </Tooltip>
-                </>
-            )}
+            <div className="mt-20">
+                <hautai-liqa ref={webcamRef} license="eyJpZCI6IkhFS04tOTA1Mi0wIn0="></hautai-liqa>
+            </div>
         </>
     );
 };
