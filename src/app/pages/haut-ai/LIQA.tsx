@@ -11,6 +11,7 @@ import { RootState } from "../../store/store"
 import { setScore } from '../../store/slices/scoreSlice';
 import { setUser } from '../../store/slices/custermInfoSlice';
 import { setProduct } from '../../store/slices/productSlice';
+// import { preload  } from '"https://liqa.haut.ai/liqa.js"';
 import './styles.scss'
 
 
@@ -89,9 +90,10 @@ const TakeASelfie: FC = () => {
     useEffect(() => {
         const takeASelfie = async (event: CustomEvent) => {
             const capture = event.detail;
+            if (capture.source === "front_camera")
+                capture.transform({ horizontalFlip: true })
             const image: Blob = await capture.blob();
             const base64 = await blobToBase64(image);
-            console.log(base64);
             setTimeout(() => {
                 if (base64) {
                     setImgSrc(base64);
@@ -114,7 +116,7 @@ const TakeASelfie: FC = () => {
     return (
         <>
             <div className="mt-20">
-                <hautai-liqa ref={webcamRef} license="eyJpZCI6IkhFS04tOTA1Mi0wIn0="></hautai-liqa>
+                <hautai-liqa ref={webcamRef} license="eyJpZCI6IkhFS04tOTA1Mi0wIn0=" preset="face"></hautai-liqa>
             </div>
         </>
     );

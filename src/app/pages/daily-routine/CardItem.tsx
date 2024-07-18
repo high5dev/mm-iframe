@@ -3,11 +3,11 @@ import { KTIcon, toAbsoluteUrl } from '../../../_metronic/helpers'
 
 type Props = {
     productIndex?: string
-    productName: string
-    whenTouse: string
-    price: string
-    imageSrc: string
-    productLink: string
+    productName?: string
+    whenTouse?: string
+    price?: string
+    imageSrc?: string
+    productLink?: string
 }
 
 const CardItem: React.FC<Props> = ({ productIndex, productName, whenTouse, price, imageSrc, productLink }) => {
