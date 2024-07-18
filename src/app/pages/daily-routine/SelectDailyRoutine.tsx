@@ -127,7 +127,7 @@ const SelectDailyRoutinePage = () => {
                                     productName={treatment[0].title}
                                     whenTouse={treatment[0].whenToUse}
                                     price={treatment[0].price}
-                                    productLink={`https://global.beminimalist.co/products/${treatment[0].handle}`}
+                                    productLink={`https://beminimalist.co/products/${treatment[0].handle}`}
                                 />
                             )}
                             {treatment[1] && (
@@ -137,7 +137,7 @@ const SelectDailyRoutinePage = () => {
                                     productName={treatment[1].title}
                                     whenTouse={treatment[1].whenToUse}
                                     price={treatment[1].price}
-                                    productLink={`https://global.beminimalist.co/products/${treatment[1].handle}`}
+                                    productLink={`https://beminimalist.co/products/${treatment[1].handle}`}
                                 />
                             )}
                             <Carousel
@@ -173,7 +173,7 @@ const SelectDailyRoutinePage = () => {
                                     productName={cleanse[0].title}
                                     whenTouse={cleanse[0].whenToUse}
                                     price={cleanse[0].price}
-                                    productLink={`https://global.beminimalist.co/products/${cleanse[0].handle}`}
+                                    productLink={`https://beminimalist.co/products/${cleanse[0].handle}`}
                                 />
                             )}
                             {cleanse[1] && cleanse[1].handle !== cleanse[0]?.handle && (
@@ -182,7 +182,7 @@ const SelectDailyRoutinePage = () => {
                                     productName={cleanse[1].title}
                                     whenTouse={cleanse[1].whenToUse}
                                     price={cleanse[1].price}
-                                    productLink={`https://global.beminimalist.co/products/${cleanse[1].handle}`}
+                                    productLink={`https://beminimalist.co/products/${cleanse[1].handle}`}
                                 />
                             )}
                             {toner[0] && (
@@ -192,7 +192,7 @@ const SelectDailyRoutinePage = () => {
                                     productName={toner[0].title}
                                     whenTouse={toner[0].whenToUse}
                                     price={toner[0].price}
-                                    productLink={`https://global.beminimalist.co/products/${toner[0].handle}`}
+                                    productLink={`https://beminimalist.co/products/${toner[0].handle}`}
                                 />
                             )}
                             {toner[1] && toner[1].handle !== toner[0]?.handle && (
@@ -201,7 +201,7 @@ const SelectDailyRoutinePage = () => {
                                     productName={toner[1].title}
                                     whenTouse={toner[1].whenToUse}
                                     price={toner[1].price}
-                                    productLink={`https://global.beminimalist.co/products/${toner[1].handle}`}
+                                    productLink={`https://beminimalist.co/products/${toner[1].handle}`}
                                 />
                             )}
                             {treatment[0] && (
@@ -211,7 +211,7 @@ const SelectDailyRoutinePage = () => {
                                     productName={treatment[0].title}
                                     whenTouse={treatment[0].whenToUse}
                                     price={treatment[0].price}
-                                    productLink={`https://global.beminimalist.co/products/${treatment[0].handle}`}
+                                    productLink={`https://beminimalist.co/products/${treatment[0].handle}`}
                                 />
                             )}
                             {treatment[1] && treatment[1].handle !== treatment[0]?.handle && (
@@ -220,7 +220,7 @@ const SelectDailyRoutinePage = () => {
                                     productName={treatment[1].title}
                                     whenTouse={treatment[1].whenToUse}
                                     price={treatment[1].price}
-                                    productLink={`https://global.beminimalist.co/products/${treatment[1].handle}`}
+                                    productLink={`https://beminimalist.co/products/${treatment[1].handle}`}
                                 />
                             )}
                             {moisturize[0] && (
@@ -230,7 +230,7 @@ const SelectDailyRoutinePage = () => {
                                     productName={moisturize[0].title}
                                     whenTouse={moisturize[0].whenToUse}
                                     price={moisturize[0].price}
-                                    productLink={`https://global.beminimalist.co/products/${moisturize[0].handle}`}
+                                    productLink={`https://beminimalist.co/products/${moisturize[0].handle}`}
                                 />
                             )}
                             {moisturize[1] && moisturize[1].handle !== moisturize[0]?.handle && (
@@ -239,7 +239,7 @@ const SelectDailyRoutinePage = () => {
                                     productName={moisturize[1].title}
                                     whenTouse={moisturize[1].whenToUse}
                                     price={moisturize[1].price}
-                                    productLink={`https://global.beminimalist.co/products/${moisturize[1].handle}`}
+                                    productLink={`https://beminimalist.co/products/${moisturize[1].handle}`}
                                 />
                             )}
                             {spf[0] && (
@@ -249,7 +249,7 @@ const SelectDailyRoutinePage = () => {
                                     productName={spf[0].title}
                                     whenTouse={spf[0].whenToUse}
                                     price={spf[0].price}
-                                    productLink={`https://global.beminimalist.co/products/${spf[0].handle}`}
+                                    productLink={`https://beminimalist.co/products/${spf[0].handle}`}
                                 />
                             )}
                             {spf[1] && spf[1].handle !== spf[0]?.handle && (
@@ -258,7 +258,7 @@ const SelectDailyRoutinePage = () => {
                                     productName={spf[1].title}
                                     whenTouse={spf[1].whenToUse}
                                     price={spf[1].price}
-                                    productLink={`https://global.beminimalist.co/products/${spf[1].handle}`}
+                                    productLink={`https://beminimalist.co/products/${spf[1].handle}`}
                                 />
                             )}
                         </Tab.Pane>
@@ -275,7 +275,7 @@ const SelectDailyRoutinePage = () => {
                                 productName={toner[0].title}
                                 whenTouse={toner[0].whenToUse}
                                 price={toner[0].price}
-                                productLink={`https://global.beminimalist.co/products/${toner[0].handle}`}
+                                productLink={`https://beminimalist.co/products/${toner[0].handle}`}
                             />
                         )}
                     </div>
@@ -286,7 +286,7 @@ const SelectDailyRoutinePage = () => {
                                 productName={cleanse[1].title}
                                 whenTouse={cleanse[1].whenToUse}
                                 price={cleanse[1].price}
-                                productLink={`https://global.beminimalist.co/products/${cleanse[1].handle}`}
+                                productLink={`https://beminimalist.co/products/${cleanse[1].handle}`}
                             />
                         )}
                     </div>
