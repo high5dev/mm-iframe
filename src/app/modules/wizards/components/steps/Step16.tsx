@@ -78,7 +78,7 @@ const Step16: FC = () => {
                 className='h-35px h-lg-35px' />
 
               <span className='fw-bold'>
-                <span className='text-gray-900 fw-bolder fs-4 mb-2 text-center'>Oily/Combination Skin</span>
+                <span className='text-gray-900 fw-bolder fs-4 mb-2 text-center'>Oily/Combination</span>
               </span>
             </label>
           </div>

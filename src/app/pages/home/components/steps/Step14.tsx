@@ -31,7 +31,7 @@ const Step14: FC = () => {
           <div className='col d-flex justify-content-center'>
             <button
               type='button'
-              className={`btn btn-block d-flex align-items-center fixed-width-lg btn-203-66 mb-5 ${values.gender === 'Male' ? 'btn-primary' : 'btn-outline-primary'}`}
+              className={`btn btn-block d-flex align-items-center fixed-width-lg btn-203-66 mb-5 transparent-button ${values.gender === 'Male' ? 'selected-btn' : 'btn-outline-primary'}`}
               onClick={() => handleButtonClick('Male')}
             >
               <span className='font-size-20 mb-2 text-center'>Male</span>
@@ -42,7 +42,7 @@ const Step14: FC = () => {
           <div className='col d-flex justify-content-center'>
             <button
               type='button'
-              className={`btn btn-block d-flex align-items-center fixed-width-lg btn-203-66 mb-5 ${values.gender === 'Female' ? 'btn-primary' : 'btn-outline-primary'}`}
+              className={`btn btn-block d-flex align-items-center fixed-width-lg btn-203-66 mb-5 transparent-button ${values.gender === 'Female' ? 'selected-btn' : 'btn-outline-primary'}`}
               onClick={() => handleButtonClick('Female')}
             >
               <span className='font-size-20 mb-2 text-center'>Female</span>
@@ -53,7 +53,7 @@ const Step14: FC = () => {
           <div className='col d-flex justify-content-center'>
             <button
               type='button'
-              className={`btn btn-block d-flex align-items-center fixed-width-lg btn-203-66 mb-5 ${values.gender === 'notSure' ? 'btn-primary' : 'btn-outline-primary'}`}
+              className={`transparent-button btn btn-block d-flex align-items-center fixed-width-lg btn-203-66 mb-5 ${values.gender === 'notSure' ? 'btn-primary' : 'btn-outline-primary'}`}
               onClick={() => handleButtonClick('notSure')}
             >
               <span className='font-size-20 mb-2 text-center'>Prefer not to say</span>

@@ -29,7 +29,7 @@ const TakeASelfie: FC = () => {
             const reader = new FileReader();
             reader.onloadend = () => resolve(reader.result as string | null);
             reader.readAsDataURL(blob);
-        });
+        }); 
     }
 
     const recapture = useCallback(

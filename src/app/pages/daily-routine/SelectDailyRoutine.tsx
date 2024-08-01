@@ -165,6 +165,7 @@ const SelectDailyRoutinePage = () => {
                                 ))}
                             </Carousel>
                         </Tab.Pane>
+                        <div style={{height:'20px'}}></div>
                         <Tab.Pane eventKey='second'>
                             {cleanse[0] && (
                                 <CardItem

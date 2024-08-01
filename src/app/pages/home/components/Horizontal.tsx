@@ -26,6 +26,7 @@ import { right } from '@popperjs/core';
 import { useSelector, useDispatch } from 'react-redux';
 import { RootState } from "../../../store/store"
 import { setUser } from '../../../store/slices/custermInfoSlice';
+import BackIcon from './icons/BackIcon';
 
 const ColorlibConnector = styled(StepConnector)(() => ({
   [`&.${stepConnectorClasses.alternativeLabel}`]: {
@@ -161,19 +162,18 @@ const Horizontal: FC = () => {
     }
   };
 
-
   return (
     <>
       {/* <Toolbar /> */}
       <div className=''>
-        {activeStep === 0 || activeStep === 1 ? (
+        {activeStep > 0 ? (
           <button
             onClick={handleBack}
             type='button'
-            className='btn btn-top-back align-items-center p-0'
+            className='btn align-items-center p-0 back-button'
             data-kt-stepper-action='previous'
           >
-            <span className='indicator-label font-size-12'>{'<'} Back</span>
+            <span className='indicator-label'><BackIcon/>Back</span>
           </button>
         ) : (
           <>
@@ -203,6 +203,7 @@ const Horizontal: FC = () => {
               {activeStep === 6 && <Step17 />}
               {activeStep === 7 && <Step18 prevStep={handleBack} />}
               <div className='mx-auto mw-600px w-100 pt-2 pb-10'>
+                {/*
                 <div className='mr-2 row button-alignment'>
                   {activeStep !== 0 && activeStep !== 1 && activeStep !== 7 ? (
                     <button
@@ -215,7 +216,7 @@ const Horizontal: FC = () => {
                   ) : (
                     <></>
                   )}
-                </div>
+                  </div>*/}
               </div>
             </Form>
           )}

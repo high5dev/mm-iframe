@@ -58,13 +58,18 @@
 }
 
 .img-193-298 {
-    width: 195px !important;
-    height: 300px !important;
+    width: auto;
+    height: 300px;
 }
 
 .image-container{
   position: relative;
   display: inline-block;
+  overflow: hidden;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .img-31-31 {
@@ -86,4 +91,109 @@
 
 .carousel-item-width-220-px {
     width: 220px !important;
+}
+
+.image-frame {
+    background: #5F5F5F;
+    text-align: center;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 400;
+    padding: 5px;
+    margin: 5px;
+}
+
+.image-frame-name {
+    padding-bottom: 5px;
+}
+
+.optimal-score {
+    position: absolute !important;
+    left: -10px !important;
+}
+
+.stable-score {
+    position: absolute !important;
+    left: -50px !important;
+}
+
+.trouble-score {
+    position: absolute;
+    left: -100px;
+}
+
+.severe-score {
+    position: absolute;
+    left: -150px;
+}
+
+.text-left {
+    text-align: left !important;
+    font-size: 12px !important;
+}
+
+.analysis-table-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.analysis-top-row-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.analysis-top-row-container div {
+    border: 1px solid;
+    border-right: none;
+    width: 100%;
+    text-align: center;
+    font-weight: bold;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-size: 14px;
+}
+
+.analysis-top-row-container div span {
+    font-weight: normal;
+}
+
+.analysis-top-row-container div:nth-child(3) {
+    border-right: 1px solid;
+}
+
+.analysis-bottom-row-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.analysis-bottom-row-container div {
+    border: 1px solid;
+    border-right: none;
+    border-top: 0px;
+    width: 100%;
+    text-align: center;
+    font-weight: bold;
+    text-transform: capitalize;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-size: 14px;
+}
+
+.analysis-bottom-row-container div span {
+    font-weight: normal;
+    text-transform: none;
+}
+
+.analysis-bottom-row-container div:nth-child(2) {
+    border-right: 1px solid;
+}
+
+.slick-slider .slick-track,
+.slick-slider .slick-list
+{
+    -webkit-transform: translate3d(0, 0, 0);
+       -moz-transform: translate3d(0, 0, 0);
+        -ms-transform: translate3d(0, 0, 0);
+         -o-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
 }

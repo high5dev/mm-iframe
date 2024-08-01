@@ -45,12 +45,16 @@
 }
 
 .fixed-width-lg-md {
-    background-color: #000000;
-    color: #ffffff;
+    width: 275px;
+    color: #000000;
     line-height: 24.2px;
-    border-radius: 0;
-    border: #000000 1px solid !important;
+    border-radius: 15px;
+    border: 1px solid #000 !important;
+    background-color: transparent;
+    padding: 50px;
+    display: flex;
     justify-content: center;
+    align-items: center;
 }
 
 .btn-203-66 {
@@ -70,13 +74,17 @@
 
 
 .btn.btn-block.d-flex.fixed-width-xlg {
-    width: 279px !important;
-    height: 110px !important;
     background-color: #000000;
-    color: #ffffff;
-    line-height: 24.2px;
-    border-radius: 0;
-    justify-content: start;
+    line-height: 20px;
+    justify-content: space-between;
+    flex-direction: column;
+    background: transparent;
+    border: 1px solid #000000 !important;
+    color: #000;
+    border-radius: 15px;
+    height: 150px;
+    width: 190px;
+    font-size: 16px;
 }
 
 .font-size-20 {
@@ -192,16 +200,6 @@
     margin-left: 30px;
 }
 
-.btn-check:checked+.btn,
-:not(.btn-check)+.btn:active,
-.btn:first-child:active,
-.btn.active,
-.btn.show {
-    background-color: #ffffff !important;
-    color: #000000 !important;
-    border: solid 1px#000000 !important;
-}
-
 .background-image-container {
     position: relative;
     background-size: cover;
@@ -252,7 +250,40 @@
 }
 
 .transparent-button {
-    border: 1px solid #000;
+    width: 275px !important;
+    height: 45px !important;
+    color: #000000 !important;
+    line-height: 24.2px !important;
+    border-radius: 15px !important;
+    border: 1px solid #000 !important;
+    background-color: transparent !important;
+    padding: 25px !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+}
+
+.selected-btn {
+    background: black !important;
+    color: #fff !important;
+}
+
+.back-button {
+    border: none;
+    display: flex;
+    justify-content: space-between;
+    font-size: 18px;
+    line-height: 22px;
     background-color: transparent;
-    padding: 38px;
+    color: #000000;
+}
+
+.back-button svg {
+margin-right: 5px;
+}
+
+.display-flex-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

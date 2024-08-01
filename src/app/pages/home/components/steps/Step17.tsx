@@ -31,7 +31,7 @@ const Step17: FC = () => {
               onChange={() => handleRadioChange('Yes')}
             />
             <label
-              className='btn btn-block d-flex align-items-center fixed-width-lg-md mb-5 btn-203-66'
+              className={`btn btn-block d-flex align-items-center fixed-width-lg-md btn-203-66 mb-5 ${values.skinSensitivity === 'Yes' ? 'selected-btn' : 'btn-outline-primary'}`}
               htmlFor='kt_create_account_form_skin_sensitive_yes'
             >
                 <span className='font-size-20 mb-2 text-center'>Yes</span>
@@ -50,7 +50,7 @@ const Step17: FC = () => {
               onChange={() => handleRadioChange('No')}
             />
             <label
-              className='btn btn-block d-flex align-items-center fixed-width-lg-md mb-5 btn-203-66'
+              className={`btn btn-block d-flex align-items-center fixed-width-lg-md btn-203-66 mb-5 ${values.skinSensitivity === 'No' ? 'selected-btn' : 'btn-outline-primary'}`}
               htmlFor='kt_create_account_form_skin_sensitive_no'
             >
 
@@ -58,25 +58,25 @@ const Step17: FC = () => {
             </label>
           </div>
         </div>
-        {/* <div className='row'>
+        <div className='row'>
           <div className='col d-flex justify-content-center'>
             <Field
               type='radio'
-              className='btn-check text-center visually-hidden'
               name='skinSensitivity'
               value='Sometimes'
               checked={values.skinSensitivity === 'Sometimes'}
+              className='btn-check text-center visually-hidden'
               id='kt_create_account_form_skin_sensitive_sometimes'
               onChange={() => handleRadioChange('Sometimes')}
             />
             <label
-              className='btn btn-block d-flex align-items-center fixed-width-lg-md btn-203-66 mb-5'
+              className={`btn btn-block d-flex align-items-center fixed-width-lg-md btn-203-66 mb-5 ${values.skinSensitivity === 'Sometimes' ? 'selected-btn' : 'btn-outline-primary'}`}
               htmlFor='kt_create_account_form_skin_sensitive_sometimes'
             >
                 <span className='font-size-20 mb-2 text-center'>Sometimes</span>
             </label>
           </div>
-        </div> */}
+        </div>
         {/* <div className='text-danger mt-2'>
           <ErrorMessage name='skinSensitivity' />
         </div> */}
