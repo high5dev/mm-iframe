@@ -1,40 +1,11 @@
 import React, { FC } from 'react'
 import { KTIcon } from '../../../../../_metronic/helpers'
 import { ErrorMessage, Field } from 'formik'
-import Slider from "react-slick";
 import './styles.scss'
-
-const settings = {
-  dots: true,
-  infinite: true,
-  speed: 500,
-  slidesToShow: 1,
-  slidesToScroll: 1,
-};
 
 const Step11: FC = () => {
   return (
     <div className='w-100 container'>
-      <Slider {...settings}>
-        <div>
-          <h3>1</h3>
-        </div>
-        <div>
-          <h3>2</h3>
-        </div>
-        <div>
-          <h3>3</h3>
-        </div>
-        <div>
-          <h3>4</h3>
-        </div>
-        <div>
-          <h3>5</h3>
-        </div>
-        <div>
-          <h3>6</h3>
-        </div>
-      </Slider>
       <div className='pb-10 pb-lg-15'>
         <h2 className='text-center font-size-24'>Hi there,<br /><br />Please share your Name?</h2>
       </div>
