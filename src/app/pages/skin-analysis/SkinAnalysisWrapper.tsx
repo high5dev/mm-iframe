@@ -41,7 +41,7 @@ const responsive = {
 
 const SkinAnalysisWrapper = () => {
     const score = useSelector((state: RootState) => state.score);
-    const customer = useSelector((state:RootState) => state.user)
+    const customer = useSelector((state: RootState) => state.user)
 
     const navigate = useNavigate();
 
@@ -68,7 +68,7 @@ const SkinAnalysisWrapper = () => {
         speed: 500,
         slidesToShow: 1.75,
         slidesToScroll: 1,
-      };
+    };
 
     const intl = useIntl()
     return (
@@ -77,16 +77,16 @@ const SkinAnalysisWrapper = () => {
             <PageTitle breadcrumbs={[]}>Skin Analysis</PageTitle>
 
             <div className=''>
-                <div className='d-flex align-items-center margin-top-65 font-size-25' style={{marginBottom: '7px'}}>
+                <div className='d-flex align-items-center margin-top-65 font-size-25' style={{ marginBottom: '7px' }}>
                     Skin Analysis
                 </div>
             </div>
-            <div className='' style={{marginBottom: '24px'}}>
+            <div className='' style={{ marginBottom: '24px' }}>
                 <div className='d-flex analysis-table-container'>
                     <div className='analysis-top-row-container'>
-                    <div>{score.eyeAge}<br /><span>Eye Age</span></div>
-                    <div>{score.age}<br /><span>Perceived Age</span></div>
-                    <div>{score.skinTone}<br /><span>Skintone</span></div>
+                        <div>{score.eyeAge}<br /><span>Eye Age</span></div>
+                        <div>{score.age}<br /><span>Perceived Age</span></div>
+                        <div>{score.skinTone}<br /><span>Skintone</span></div>
                     </div>
                     <div className='analysis-bottom-row-container'>
                         <div>{primaryConcernKey}<br /><span>Primary Concern</span></div>
@@ -142,32 +142,32 @@ const SkinAnalysisWrapper = () => {
                         </div>
                     </Carousel>
     */}
-     <Slider {...settings}>
-     <div className='image-slide'>
-        <ImageContainer2 imageURL={customer?.imageURL} score={score.acne} name='Acne' />
-    </div >
-    <div className='image-slide'>
-        <ImageContainer2 imageURL={customer?.imageURL} score={score.pigmentation} name='Pigmentation' />
-    </div>
-    <div className='image-slide'>
-        <ImageContainer2 imageURL={customer?.imageURL} score={score.hydration} name='Hydration' />
-    </div>
-    <div className='image-slide'>
-        <ImageContainer2 imageURL={customer?.imageURL} score={score.lines} name='Lines' />
-    </div>
-    <div className='image-slide'>
-        <ImageContainer2 imageURL={customer?.imageURL} score={score.eyeBags} name='Dark Circles' />
-    </div >
-    <div className='image-slide'>
-        <ImageContainer2 imageURL={customer?.imageURL} score={score.pores} name='Pores' />
-    </div>
-    <div className='image-slide'>
-        <ImageContainer2 imageURL={customer?.imageURL} score={score.redness} name='Redness' />
-    </div >
-    <div className='image-slide'>
-        <ImageContainer2 imageURL={customer?.imageURL} score={score.uniformness} name='Uniformness' />
-    </div>
-    </Slider>
+                    <Slider {...settings}>
+                        <div className='image-slide'>
+                            <ImageContainer2 imageURL={customer?.imageURL} score={score.acne} name='Acne' />
+                        </div >
+                        <div className='image-slide'>
+                            <ImageContainer2 imageURL={customer?.imageURL} score={score.pigmentation} name='Pigmentation' />
+                        </div>
+                        <div className='image-slide'>
+                            <ImageContainer2 imageURL={customer?.imageURL} score={score.hydration} name='Hydration' />
+                        </div>
+                        <div className='image-slide'>
+                            <ImageContainer2 imageURL={customer?.imageURL} score={score.lines} name='Lines' />
+                        </div>
+                        <div className='image-slide'>
+                            <ImageContainer2 imageURL={customer?.imageURL} score={score.eyeBags} name='Dark Circles' />
+                        </div >
+                        <div className='image-slide'>
+                            <ImageContainer2 imageURL={customer?.imageURL} score={score.pores} name='Pores' />
+                        </div>
+                        <div className='image-slide'>
+                            <ImageContainer2 imageURL={customer?.imageURL} score={score.redness} name='Redness' />
+                        </div >
+                        <div className='image-slide'>
+                            <ImageContainer2 imageURL={customer?.imageURL} score={score.uniformness} name='Uniformness' />
+                        </div>
+                    </Slider>
                 </div>
             </div>
             <div className=''>
@@ -186,7 +186,7 @@ const SkinAnalysisWrapper = () => {
                         onClick={handleBack}
                         className="btn-next-md align-items-center back-button"
                     >
-                        <span className='indicator-label font-size-20 text-center line-height-24'><LeftArrow/>Retake</span>
+                        <span className='indicator-label font-size-20 text-center line-height-24'><LeftArrow />Retake</span>
                     </button>
                 </div>
             </div>
