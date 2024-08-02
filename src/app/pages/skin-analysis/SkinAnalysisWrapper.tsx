@@ -62,7 +62,7 @@ const SkinAnalysisWrapper = () => {
     const [primaryConcernKey, primaryConcernValue] = getConcernKeyValue(score.primaryConcern);
     const [secondaryConcernKey, secondaryConcernValue] = getConcernKeyValue(score.secondaryConcern);
 
-    var settings = {
+    const settings = {
         dots: false,
         infinite: true,
         speed: 500,
