@@ -5,9 +5,12 @@
     background-color: #000000;
     color: #ffffff;
     position: absolute;
-    top: 240px; /* Adjust as needed */
-    left: 0px; /* Adjust as needed */
-    z-index: 1; /* Ensure the button appears above the image */
+    top: 240px;
+    /* Adjust as needed */
+    left: 0px;
+    /* Adjust as needed */
+    z-index: 1;
+    /* Ensure the button appears above the image */
 }
 
 .fixed-height-button-2 {
@@ -17,9 +20,12 @@
     background-color: #D9D9D9;
     color: #000000;
     position: absolute;
-    top: 240px; /* Adjust as needed */
-    right: 0px; /* Adjust as needed */
-    z-index: 1; /* Ensure the button appears above the image */
+    top: 240px;
+    /* Adjust as needed */
+    right: 0px;
+    /* Adjust as needed */
+    z-index: 1;
+    /* Ensure the button appears above the image */
 }
 
 .btn-top-back {
@@ -43,6 +49,7 @@
 .font-size-25 {
     font-size: 25px !important;
 }
+
 .font-size-18 {
     font-size: 18px !important;
 }
@@ -62,23 +69,26 @@
     height: 300px;
 }
 
-.image-container{
-  position: relative;
-  display: inline-block;
-  overflow: hidden;
-  height: 300px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.image-container {
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .img-31-31 {
     width: 31px !important;
     height: 31px !important;
     position: absolute;
-    top: 10px; /* Adjust as needed */
-    left: 148px; /* Adjust as needed */
-    z-index: 1; /* Ensure the button appears above the image */
+    top: 10px;
+    /* Adjust as needed */
+    left: 148px;
+    /* Adjust as needed */
+    z-index: 1;
+    /* Ensure the button appears above the image */
 }
 
 .w-203 {
@@ -189,11 +199,25 @@
 }
 
 .slick-slider .slick-track,
-.slick-slider .slick-list
-{
+.slick-slider .slick-list {
     -webkit-transform: translate3d(0, 0, 0);
-       -moz-transform: translate3d(0, 0, 0);
-        -ms-transform: translate3d(0, 0, 0);
-         -o-transform: translate3d(0, 0, 0);
-            transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0);
+    -ms-transform: translate3d(0, 0, 0);
+    -o-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+}
+
+.scroll-container {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 20px; // Optional: space between slides
+    padding: 10px 0; // Optional: space above and below the slides
+}
+
+.image-slide {
+    flex: 0 0 auto; // Prevent the slide from growing or shrinking
+    width: 200px; // Set your desired width
+    scroll-snap-align: start;
+    justify-content: center;
 }

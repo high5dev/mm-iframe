@@ -94,6 +94,32 @@ const SkinAnalysisWrapper = () => {
                     </div>
                 </div>
             </div>
+            <div className="scroll-container">
+                <div className="image-slide">
+                    <ImageContainer2 imageURL={customer?.imageURL} score={score.acne} name="Acne" />
+                </div>
+                <div className="image-slide">
+                    <ImageContainer2 imageURL={customer?.imageURL} score={score.pigmentation} name="Pigmentation" />
+                </div>
+                <div className="image-slide">
+                    <ImageContainer2 imageURL={customer?.imageURL} score={score.hydration} name="Hydration" />
+                </div>
+                <div className="image-slide">
+                    <ImageContainer2 imageURL={customer?.imageURL} score={score.lines} name="Lines" />
+                </div>
+                <div className="image-slide">
+                    <ImageContainer2 imageURL={customer?.imageURL} score={score.eyeBags} name="Dark Circles" />
+                </div>
+                <div className="image-slide">
+                    <ImageContainer2 imageURL={customer?.imageURL} score={score.pores} name="Pores" />
+                </div>
+                <div className="image-slide">
+                    <ImageContainer2 imageURL={customer?.imageURL} score={score.redness} name="Redness" />
+                </div>
+                <div className="image-slide">
+                    <ImageContainer2 imageURL={customer?.imageURL} score={score.uniformness} name="Uniformness" />
+                </div>
+            </div>
             <div className=''>
                 <div>
                     {/*
@@ -142,7 +168,7 @@ const SkinAnalysisWrapper = () => {
                         </div>
                     </Carousel>
     */}
-                    <Slider {...settings}>
+                    {/* <Slider {...settings}>
                         <div className='image-slide'>
                             <ImageContainer2 imageURL={customer?.imageURL} score={score.acne} name='Acne' />
                         </div >
@@ -167,7 +193,7 @@ const SkinAnalysisWrapper = () => {
                         <div className='image-slide'>
                             <ImageContainer2 imageURL={customer?.imageURL} score={score.uniformness} name='Uniformness' />
                         </div>
-                    </Slider>
+                    </Slider> */}
                 </div>
             </div>
             <div className=''>
